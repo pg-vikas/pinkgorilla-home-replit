@@ -1,0 +1,352 @@
+```text
+REPLIT DESIGN PROMPT
+
+Project Name
+Pink Gorilla Main Website
+
+Primary Goal
+Build the main Pink Gorilla website as a premium, modern, high converting marketing site that clearly explains what Pink Gorilla does, what Gorilla Core is, what Gorilla Apps are, how pricing works, and how a business becomes a client.
+
+This site is both a brand showcase and a conversion machine. It must be stunning, fast, easy to understand, and structured to guide a visitor into a discovery call or onboarding.
+
+Core Message
+Pink Gorilla helps businesses build and run their digital infrastructure.
+Two product layers.
+Gorilla Core for front end foundation.
+Gorilla Apps for back end business software.
+Both can be bundled, modular, and industry tuned.
+
+Tone
+Founder level confidence, clear language, no fluff.
+Simple explanations.
+Premium visuals.
+Bold outcomes.
+
+Tech Requirements
+Use Next.js 14 with App Router
+Use TypeScript
+Use Tailwind CSS
+Use Framer Motion for animation
+Use server actions for forms where useful
+Use a clean component system with reusable sections
+Use responsive design mobile first
+Use accessible markup and keyboard friendly UI
+Use SEO metadata per page and structured data
+Optimize images and loading for high performance
+
+Design Requirements
+Look and feel
+Premium, futuristic, Apple level clean with bold energy
+Neon accents and deep dark backgrounds are allowed but keep readability high
+Soft glow gradients, subtle noise texture, glass panels, clean typography
+Micro interactions on hover and scroll
+Cards with crisp borders, soft shadows, smooth motion
+
+Brand Theme Suggestions
+Primary: deep charcoal and off white base
+Accent: pink and electric lime and cyan used sparingly
+Typography: modern sans serif, large headings, tight spacing, crisp body text
+Buttons: pill shape, confident, animated hover states
+Spacing: generous, luxurious layout, no clutter
+
+Site Structure
+Pages
+Home
+Gorilla Core
+Gorilla Apps
+Industries
+Pricing
+Case Studies
+About
+Contact
+
+Optional page
+Login and Client Portal entry point that links to Gorilla Hub
+This is only a marketing link and does not require authentication logic
+
+Navigation
+Sticky top nav with subtle blur on scroll
+Links: Core, Apps, Industries, Pricing, Case Studies, About, Contact
+Primary CTA button: Book a Call
+Secondary CTA text link: Client Login
+
+Hero must show value in 5 seconds
+
+Home Page Sections
+
+1. Announcement Bar
+Short rotating messages
+Launch Specials
+Industry Bundles
+New Apps added monthly
+Clicking opens Pricing page
+
+2. Hero Section
+Headline example
+Build your business on real digital infrastructure
+Subheadline
+Web, SEO, reputation, and custom software that actually runs the operation
+Primary CTA
+Book a Call
+Secondary CTA
+Explore Gorilla Core
+Hero visual
+Animated gradient background with floating glass shapes
+Include a mini product preview card stack for Core and Apps with motion
+
+3. Two Product System
+Split section with two large cards
+
+Card A
+Gorilla Core
+Your online foundation
+Website, hosting, edits, SEO, security, performance
+
+Card B
+Gorilla Apps
+Your operations layer
+CRM, payments, dispatch, estimates, reviews, analytics, automations
+
+Each card has
+3 to 5 bullet outcomes
+Learn More button
+Subtle animated icon
+
+4. Industry Search and Bundles
+This is a key feature
+Provide a search bar where a user can type their industry
+Show instant results with cards
+
+Industries example seed list
+Landscaping
+Hardscape
+Arborist
+General Contractor
+HVAC
+Plumbing
+Cleaning
+Real Estate
+Medical clinic
+Law firm
+Restaurant
+Ecommerce
+
+Each industry card shows
+Recommended Core tier
+Recommended Apps bundle
+Estimated monthly range
+Button: View bundle
+
+Create an internal local JSON data file for industries and bundles
+
+5. Gorilla Apps Catalog Preview
+Show a grid of apps with category filters and search
+
+App categories
+Sales and CRM
+Operations and Dispatch
+Payments and Billing
+Reputation and Reviews
+Analytics and Tracking
+Automation and Integrations
+Client Experience
+
+Each app card includes
+Name
+One sentence benefit
+Tag: Works standalone or Bundle ready
+Button: View details
+
+Clicking opens a modal with full description and a list of key features
+
+Create an internal local JSON data file for apps
+
+6. Pricing Preview
+Show Gorilla Core tiers
+Core Starter, Core Growth, Core Pro, Core Enterprise
+
+Include a button to Pricing page
+Include a secondary toggle that switches view
+Core only view
+Core plus Apps view
+
+Add a Launch and Implementation summary box
+Launch Lite
+Launch Standard
+Launch Advanced
+Launch Enterprise
+
+All pricing should be editable from a local config file
+
+7. Case Studies Preview
+Show 3 to 6 case study cards with placeholder content
+Before and after metrics placeholders
+Lead increases
+Calls booked
+Traffic growth
+Conversion rate improvements
+
+Each card links to Case Studies page
+
+8. How It Works
+A simple 4 step system
+Discovery
+Launch
+Build
+Scale
+
+Each step has
+Short text
+Time expectations placeholder
+Animated number reveal
+
+9. Founder Note Section
+Short statement from the founder about why Pink Gorilla exists
+It should feel personal and serious
+Add a CTA button
+Talk to us
+
+10. Final CTA
+Full width premium panel
+Ready to upgrade your business infrastructure
+Buttons
+Book a Call
+View Pricing
+
+11. Footer
+Links
+Socials placeholders
+Contact info placeholders
+Newsletter signup
+Legal links placeholders
+
+Product Pages
+
+Gorilla Core Page
+Explain Core in clear sections
+What Core includes
+Tier comparison table
+Feature list
+Hosting and security explanation
+SEO approach explained in plain language
+FAQ
+CTA to pricing and booking
+
+Gorilla Apps Page
+Full app catalog with filters and search
+Category tabs
+Featured bundles
+Apps can be added a la carte
+Include a section called
+Build your stack
+User selects apps and sees an estimated range
+This is only a front end estimator with local pricing values
+
+Industries Page
+Search and filter industries
+Each industry has its own detail view
+Core recommendation
+Apps bundle recommendation
+Typical outcomes
+Common workflows
+CTA to book call
+
+Pricing Page
+Must be easy and scannable
+Core tiers
+Apps bundles
+A la carte modules section
+Launch and implementation section
+Enterprise minimums
+FAQ about launch costs
+CTA
+
+Case Studies Page
+Grid of case studies
+Each case study opens a detail page with
+Problem
+Solution
+Build timeline
+Results
+Tools used
+
+About Page
+Explain Pink Gorilla mission and approach
+Show the ecosystem names
+Gorilla Core
+Gorilla Apps
+Gorilla Hub
+Launchpad
+Add a values section
+Add a team section with placeholders
+Add a partner mention placeholder
+
+Contact Page
+Booking CTA
+Contact form with validation
+Name
+Business name
+Email
+Phone
+Industry dropdown
+Message
+Budget range dropdown
+Submit success state
+
+Also add a scheduling embed placeholder section
+Calendly style embed placeholder
+
+Stunning Dynamic Functionality Requirements
+Smooth page transitions
+Scroll reveal animations per section
+Sticky nav with active section highlighting on Home
+Industry search with instant results and bundle cards
+Apps catalog with filters and modal details
+Build your stack estimator that updates totals live
+Pricing toggle views with animated transitions
+Testimonial carousel or results carousel with touch support
+Form validation with animated success toast
+Performance target 90 plus on mobile
+
+Data Files
+Create local data files in /data
+apps.ts
+industries.ts
+pricing.ts
+caseStudies.ts
+
+Each app object should include
+id
+name
+category
+oneLiner
+description
+keyFeatures array
+startingPriceMonthly optional
+bundleEligible boolean
+
+Each industry object should include
+id
+name
+recommendedCoreTier
+recommendedBundles array
+typicalOutcomes array
+workflowHighlights array
+
+Deliverables
+Complete working site with all pages
+Reusable components and a clear design system
+No broken links
+All content editable from data files
+Beautiful animations that do not slow the site
+Mobile experience must be excellent
+Use placeholder images in /public
+
+Important Style Constraint
+Do not use hyphens or em dashes in visible copy.
+Use simple punctuation instead.
+
+Start Now
+Generate the full codebase and implement the entire site described above.
+Make it visually stunning, fast, and conversion focused.
+```
