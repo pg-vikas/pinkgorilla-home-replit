@@ -1,14 +1,26 @@
 import { Link } from "wouter";
+import { FloatingElement } from "@/components/motion/FloatingElement";
+import { GeometricShape } from "@/components/motion/GeometricShape";
 
 export function Footer() {
   return (
-    <footer className="bg-background border-t border-white/10 py-16">
-      <div className="container mx-auto px-4">
+    <footer className="bg-background border-t border-white/10 py-16 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+         <FloatingElement delay={0} duration={10} yOffset={-30} className="bottom-0 left-[10%] opacity-10">
+            <GeometricShape type="circle" color="primary" variant="glow" size="w-64 h-64" />
+         </FloatingElement>
+         <FloatingElement delay={4} duration={12} yOffset={30} className="top-0 right-[5%] opacity-10">
+            <GeometricShape type="circle" color="secondary" variant="glow" size="w-48 h-48" />
+         </FloatingElement>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="space-y-4">
-            <Link href="/" className="text-2xl font-bold font-display tracking-tighter flex items-center gap-2 cursor-pointer">
-                <span className="text-primary">Pink</span>
-                <span className="text-foreground">Gorilla</span>
+            <Link href="/" className="text-2xl font-bold font-display tracking-tighter flex items-center gap-2 cursor-pointer group">
+                <span className="text-primary group-hover:text-primary/80 transition-colors">Pink</span>
+                <span className="text-foreground group-hover:text-white transition-colors">Gorilla</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Premium digital infrastructure for modern businesses. Build, operate, and scale with confidence.

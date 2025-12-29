@@ -3,11 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Grid3X3 } from "lucide-react";
 import { motion } from "framer-motion";
+import { FloatingElement } from "@/components/motion/FloatingElement";
+import { GeometricShape } from "@/components/motion/GeometricShape";
 
 export function AppsPreview() {
   return (
-    <section className="py-24 bg-background relative">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-background relative overflow-hidden">
+      {/* Background Motion */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+         <FloatingElement delay={1} duration={12} yOffset={20} rotate={-10} className="top-20 left-[40%] opacity-10">
+            <GeometricShape type="pill" color="secondary" variant="glass" size="w-32 h-12" />
+         </FloatingElement>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">Gorilla Apps Catalog</h2>
@@ -30,7 +39,7 @@ export function AppsPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group p-6 rounded-2xl bg-card border border-white/5 hover:border-secondary/30 transition-all hover:bg-card/80"
+              className="group p-6 rounded-2xl bg-card border border-white/5 hover:border-secondary/30 transition-all hover:bg-card/80 z-10"
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="text-xs font-medium px-2 py-1 rounded bg-secondary/10 text-secondary border border-secondary/20">

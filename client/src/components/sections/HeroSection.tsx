@@ -1,20 +1,35 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, Layers, Zap } from "lucide-react";
+import { ArrowRight, Layers, Zap, Hexagon, Circle } from "lucide-react";
 import heroBg from "@assets/generated_images/futuristic_abstract_background_with_dark_glass_and_neon_accents.png";
+import { FloatingElement } from "@/components/motion/FloatingElement";
+import { GeometricShape } from "@/components/motion/GeometricShape";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
       {/* Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src={heroBg}
           alt="Abstract Background"
           className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+        
+        {/* Floating Background Elements */}
+        <FloatingElement delay={0} duration={8} yOffset={40} xOffset={20} className="top-[10%] left-[5%] opacity-30">
+          <GeometricShape type="circle" color="primary" variant="glow" size="w-64 h-64" />
+        </FloatingElement>
+        
+        <FloatingElement delay={2} duration={10} yOffset={-30} rotate={10} className="bottom-[20%] right-[10%] opacity-20">
+           <GeometricShape type="square" color="secondary" variant="glow" size="w-96 h-96" />
+        </FloatingElement>
+
+        <FloatingElement delay={1} duration={12} xOffset={-50} className="top-[40%] right-[30%] opacity-10">
+           <GeometricShape type="triangle" color="white" variant="outline" size="w-40 h-40" />
+        </FloatingElement>
       </div>
 
       <div className="container relative z-10 px-4 mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -67,13 +82,11 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative hidden lg:block h-[600px] w-full"
         >
-          {/* Floating Elements */}
-          <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-10 right-10 z-20"
-          >
-            <div className="w-64 glass-panel p-6 rounded-2xl border-l-4 border-l-primary bg-black/40">
+          {/* Floating Elements - Replaced custom motion divs with FloatingElement system */}
+          
+          {/* Card 1: Core */}
+          <FloatingElement delay={0} duration={6} yOffset={-20} xOffset={10} rotate={2} className="top-10 right-10 z-20">
+            <div className="w-64 glass-panel p-6 rounded-2xl border-l-4 border-l-primary bg-black/40 hover:bg-black/60 transition-colors cursor-default">
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-2 bg-primary/20 rounded-lg text-primary">
                   <Layers className="h-6 w-6" />
@@ -88,14 +101,11 @@ export function HeroSection() {
                 <div className="h-2 bg-white/10 rounded w-1/2"></div>
               </div>
             </div>
-          </motion.div>
+          </FloatingElement>
 
-          <motion.div
-            animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-20 left-10 z-30"
-          >
-            <div className="w-64 glass-panel p-6 rounded-2xl border-l-4 border-l-secondary bg-black/40">
+          {/* Card 2: Apps */}
+          <FloatingElement delay={1} duration={7} yOffset={20} xOffset={-5} rotate={-2} className="bottom-20 left-10 z-30">
+            <div className="w-64 glass-panel p-6 rounded-2xl border-l-4 border-l-secondary bg-black/40 hover:bg-black/60 transition-colors cursor-default">
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-2 bg-secondary/20 rounded-lg text-secondary">
                   <Zap className="h-6 w-6" />
@@ -110,10 +120,19 @@ export function HeroSection() {
                 <span className="px-2 py-1 rounded bg-secondary/10 text-[10px] text-secondary border border-secondary/20">Dispatch</span>
               </div>
             </div>
-          </motion.div>
+          </FloatingElement>
+          
+          {/* Decorative shapes around the product stack */}
+          <FloatingElement delay={2} duration={5} scale={1.2} className="top-0 left-20 z-10 opacity-60">
+             <GeometricShape type="circle" color="primary" variant="glass" size="w-20 h-20" className="rounded-full" />
+          </FloatingElement>
+          
+          <FloatingElement delay={3} duration={8} rotate={45} className="bottom-40 right-20 z-10 opacity-60">
+             <GeometricShape type="hexagon" color="secondary" variant="outline" size="w-24 h-24" />
+          </FloatingElement>
 
           {/* Central Glow */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20 blur-3xl rounded-full opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20 blur-3xl rounded-full opacity-50 pointer-events-none" />
         </motion.div>
       </div>
     </section>

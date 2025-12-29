@@ -4,6 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, ArrowRight, Package } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FloatingElement } from "@/components/motion/FloatingElement";
+import { GeometricShape } from "@/components/motion/GeometricShape";
+import { Link } from "wouter";
 
 export function IndustrySearchPreview() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,8 +16,18 @@ export function IndustrySearchPreview() {
   );
 
   return (
-    <section className="py-24 bg-black/40 border-y border-white/5">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-black/40 border-y border-white/5 relative overflow-hidden">
+      {/* Background Motion */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <FloatingElement delay={2} duration={20} rotate={180} className="top-10 left-10 opacity-5">
+           <GeometricShape type="square" color="accent" variant="outline" size="w-32 h-32" />
+        </FloatingElement>
+        <FloatingElement delay={5} duration={15} yOffset={-20} className="bottom-10 right-10 opacity-5">
+           <GeometricShape type="circle" color="white" variant="outline" size="w-40 h-40" />
+        </FloatingElement>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">Built for Your Industry</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -41,7 +54,7 @@ export function IndustrySearchPreview() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="group relative p-6 rounded-2xl bg-card border border-white/5 hover:border-accent/50 transition-all hover:-translate-y-1"
+                className="group relative p-6 rounded-2xl bg-card border border-white/5 hover:border-accent/50 transition-all hover:-translate-y-1 z-10"
               >
                 <div className="flex justify-between items-start mb-6">
                   <div>
@@ -85,8 +98,10 @@ export function IndustrySearchPreview() {
         )}
         
         <div className="text-center mt-12">
-           <Button variant="link" className="text-muted-foreground hover:text-white">
-             View All Industries <ArrowRight className="ml-2 h-4 w-4" />
+           <Button asChild variant="link" className="text-muted-foreground hover:text-white">
+             <Link href="/industries">
+               View All Industries <ArrowRight className="ml-2 h-4 w-4" />
+             </Link>
            </Button>
         </div>
       </div>

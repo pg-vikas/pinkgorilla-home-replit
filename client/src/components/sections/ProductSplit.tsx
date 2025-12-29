@@ -2,13 +2,27 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Check, Layers, Zap, ArrowRight } from "lucide-react";
+import { FloatingElement } from "@/components/motion/FloatingElement";
+import { GeometricShape } from "@/components/motion/GeometricShape";
 
 export function ProductSplit() {
   return (
     <section className="py-24 bg-background relative overflow-hidden">
-      <div className="container mx-auto px-4">
+      {/* Background Motion */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+         <FloatingElement delay={0} duration={15} yOffset={100} xOffset={-50} className="top-20 -left-20 opacity-20">
+            <GeometricShape type="circle" color="primary" variant="glow" size="w-[500px] h-[500px]" />
+         </FloatingElement>
+         <FloatingElement delay={5} duration={18} yOffset={-80} xOffset={50} className="bottom-20 -right-20 opacity-20">
+            <GeometricShape type="circle" color="secondary" variant="glow" size="w-[500px] h-[500px]" />
+         </FloatingElement>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">The Dual System</h2>
+          <FloatingElement delay={0} duration={4} yOffset={5} className="relative inline-block">
+             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">The Dual System</h2>
+          </FloatingElement>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Complete digital dominance requires two layers. A rock-solid foundation to capture attention, and an operations layer to deliver on promises.
           </p>
@@ -25,6 +39,11 @@ export function ProductSplit() {
           >
             <div className="absolute top-0 right-0 p-32 bg-primary/10 blur-[100px] rounded-full group-hover:bg-primary/20 transition-all duration-700" />
             
+            {/* Floating Badge */}
+            <FloatingElement delay={1} duration={4} yOffset={-5} className="absolute top-8 right-8 z-20">
+               <GeometricShape type="circle" color="primary" variant="outline" size="w-8 h-8" className="opacity-50" />
+            </FloatingElement>
+
             <div className="relative z-10">
               <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 border border-primary/20">
                 <Layers className="h-7 w-7" />
@@ -71,6 +90,11 @@ export function ProductSplit() {
             className="group relative rounded-3xl p-8 lg:p-12 border border-white/5 bg-card/40 hover:bg-card/60 transition-all overflow-hidden"
           >
              <div className="absolute top-0 right-0 p-32 bg-secondary/10 blur-[100px] rounded-full group-hover:bg-secondary/20 transition-all duration-700" />
+            
+             {/* Floating Badge */}
+            <FloatingElement delay={2} duration={5} yOffset={5} className="absolute top-8 right-8 z-20">
+               <GeometricShape type="hexagon" color="secondary" variant="outline" size="w-10 h-10" className="opacity-50" />
+            </FloatingElement>
 
             <div className="relative z-10">
               <div className="h-14 w-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-8 border border-secondary/20">

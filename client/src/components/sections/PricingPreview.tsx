@@ -3,16 +3,25 @@ import { coreTiers, launchPackages } from "@/data/pricing";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Check, Star } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { FloatingElement } from "@/components/motion/FloatingElement";
+import { GeometricShape } from "@/components/motion/GeometricShape";
 
 export function PricingPreview() {
   const [annual, setAnnual] = useState(false);
 
   return (
     <section className="py-24 bg-black/40 border-y border-white/5 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,255,0.05),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,255,0.05),transparent_70%)] pointer-events-none" />
       
+       {/* Background Motion */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+         <FloatingElement delay={3} duration={14} xOffset={20} className="top-[20%] right-[10%] opacity-10">
+            <GeometricShape type="triangle" color="primary" variant="outline" size="w-40 h-40" />
+         </FloatingElement>
+      </div>
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">Transparent Pricing</h2>
@@ -35,7 +44,7 @@ export function PricingPreview() {
               key={tier.id}
               whileHover={{ y: -5 }}
               className={cn(
-                "relative flex flex-col p-6 rounded-2xl bg-card border transition-all",
+                "relative flex flex-col p-6 rounded-2xl bg-card border transition-all z-10",
                 tier.isPopular ? "border-primary/50 shadow-[0_0_30px_rgba(255,0,255,0.1)]" : "border-white/5 hover:border-white/10"
               )}
             >
