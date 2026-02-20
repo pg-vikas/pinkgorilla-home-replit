@@ -1,18 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FloatingElement } from "@/components/motion/FloatingElement";
+import heroVideo from "@/assets/videos/hero-background.mp4";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20" id="hero">
       {/* Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
-          src="https://picsum.photos/id/1015/1920/1080"
-          alt="Hero Background"
-          className="w-full h-full object-cover opacity-30"
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <video
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40 scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>
 
       <div className="container relative z-10 px-4 mx-auto grid lg:grid-cols-2 gap-12 items-center">
