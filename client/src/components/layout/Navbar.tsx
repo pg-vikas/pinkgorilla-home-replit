@@ -19,14 +19,25 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Core", href: "/core" },
-    { name: "Apps", href: "/apps" },
-    { name: "Industries", href: "/industries" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "What We Do", href: "#what-we-do" },
+    { name: "Core", href: "#core" },
+    { name: "Apps", href: "#apps" },
+    { name: "Who We Work With", href: "#who-we-work-with" },
+    { name: "Process", href: "#process" },
   ];
+
+  const handleNavClick = (href: string) => {
+    setMobileMenuOpen(false);
+    if (location !== "/") {
+      // If we are not on the home page, redirect to home page and then anchor
+      window.location.href = "/" + href;
+      return;
+    }
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav
@@ -38,21 +49,34 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold font-display tracking-tighter flex items-center gap-2 cursor-pointer">
-            <span className="text-primary">Pink</span>
-            <span className="text-foreground">Gorilla</span>
+        {/* Animated Logo */}
+        <Link href="/" className="text-2xl font-bold font-display tracking-tighter flex items-center gap-2 cursor-pointer group">
+           <motion.span 
+              className="text-primary inline-block"
+              whileHover={{ scale: 1.1, rotate: -5 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+           >
+              PINK
+           </motion.span>
+           <motion.span 
+              className="text-foreground inline-block"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+           >
+              GORILLA
+           </motion.span>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary cursor-pointer",
-                  location === link.href ? "text-primary" : "text-muted-foreground"
-                )}>
+            <button 
+              key={link.name} 
+              onClick={() => handleNavClick(link.href)}
+              className="text-sm font-medium transition-colors text-muted-foreground hover:text-primary cursor-pointer"
+            >
                 {link.name}
-            </Link>
+            </button>
           ))}
         </div>
 
@@ -64,11 +88,17 @@ export function Navbar() {
           >
             Client Login
           </a>
-          <Link href="/contact">
+          <button onClick={() => {
+              if (location !== "/") {
+                window.location.href = "/#hero";
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+          }}>
             <Button className="rounded-full px-6 font-bold shadow-[0_0_15px_rgba(255,0,255,0.3)] hover:shadow-[0_0_25px_rgba(255,0,255,0.5)] transition-all">
               Book a Call
             </Button>
-          </Link>
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -91,17 +121,22 @@ export function Navbar() {
           >
             <div className="container mx-auto px-4 py-8 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <Link key={link.name} href={link.href} className="text-lg font-medium py-2 border-b border-white/5 cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
+                <button 
+                  key={link.name} 
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-lg font-medium py-2 border-b border-white/5 cursor-pointer text-left"
+                >
                     {link.name}
-                </Link>
+                </button>
               ))}
               <div className="pt-4 flex flex-col gap-4">
                 <a href="#" className="text-center text-muted-foreground">
                   Client Login
                 </a>
-                <Link href="/contact">
-                  <Button className="w-full rounded-full">Book a Call</Button>
-                </Link>
+                <Button className="w-full rounded-full" onClick={() => {
+                   setMobileMenuOpen(false);
+                   window.scrollTo({ top: 0, behavior: "smooth" });
+                }}>Book a Call</Button>
               </div>
             </div>
           </motion.div>

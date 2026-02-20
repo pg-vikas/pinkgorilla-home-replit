@@ -1,0 +1,138 @@
+```text
+Build a premium ultra modern animated homepage for “Pink Gorilla Software” using React + TypeScript + Tailwind in Replit.
+
+Core goal
+Create a bold high impact homepage with lots of movement, big readable typography, large images, and a clean luxury tech feel. The page should feel alive even when the user is not scrolling.
+
+Important constraints
+Do not use any em dashes or hyphens anywhere in the UI text.
+No gorilla illustrations or gorilla icons.
+No external paid APIs.
+Use only placeholder images via https://picsum.photos for now.
+
+Tech stack and libraries
+React + TypeScript + Tailwind
+Framer Motion for animations
+Lucide React icons
+Optional: React Three Fiber for a subtle 3D background object OR use animated gradient blobs if that is too heavy.
+
+Design direction
+Luxury tech, Apple level spacing and polish
+Very large font sizes, simple copy, bold headings
+Big hero image on the right or as a full width background with overlay
+Soft glass panels, gentle shadows, rounded corners
+Motion everywhere, but smooth and not chaotic
+
+Page layout and sections
+1 Hero
+Left side:
+Headline: Build Your Business on Unshakable Digital Infrastructure
+Subheadline: Pink Gorilla designs, builds, and powers complete digital ecosystems for serious operators who want more than just a website.
+CTAs: Build My Platform and Book a Strategy Call
+Right side:
+Large hero visual using a big image and animated overlays
+Add floating animated badges like:
+Websites
+CRM
+Payments
+Automation
+Analytics
+AI
+
+2 Section 1 What We Actually Do
+Title: Most agencies design. We engineer.
+Body copy:
+We do not just launch websites. We build digital command centers that power your entire business.
+Think of us as part of your company, not just someone you are in business with. We operate alongside you, helping guide the full circle of your technology from the simple foundational pieces to the most advanced systems as your growth demands it.
+From brand identity and websites to CRM, payments, automation, analytics, and AI integrations, we architect the backbone that keeps everything connected and moving forward.
+Whether you need clean basics or complex infrastructure, we scale with you.
+Closing line:
+This is long term digital partnership.
+
+Add a big animated graphic for this section:
+Create a “Command Center” visual card with moving lines connecting feature nodes
+Nodes: Brand, Website, CRM, Payments, Automation, Analytics, AI
+Animate nodes with gentle pulse, and lines with flowing gradient.
+
+3 Gorilla Core section
+Large split layout
+Left: Big icon style illustration made from shapes, not a gorilla
+Right: Cards for:
+Custom websites
+Brand identity systems
+Domains and hosting
+Email infrastructure
+Security and optimization
+Add hover motion and micro interactions.
+
+4 Gorilla Apps section
+Another bold section with a dark background
+Add animated dashboard preview using divs and charts
+Include cards for:
+CRM and lead tracking
+Broadcast and communication tools
+Analytics dashboards
+Payment integrations
+Client portals
+
+5 Who We Work With
+Use a marquee style moving text strip
+Add 4 big tiles with short statements:
+Want control
+Value long term systems
+Care about execution
+Serious about scaling
+Add a warm line:
+If you are building something meaningful, we would love to talk.
+
+6 Process section
+4 step horizontal timeline with scroll based animation
+Steps:
+Alignment First
+Architecture Before Aesthetics
+Execution With Precision
+Scale Without Chaos
+
+7 Closing call to action
+Huge final banner with big text:
+Strong brands are not loud. They are structured.
+Pink Gorilla builds the structure.
+CTA button: Book a Strategy Call
+
+Movement requirements
+Make motion visible throughout:
+Animated background gradient that slowly shifts
+Floating orbs that drift
+Parallax on hero image
+Scroll triggered reveals for each section
+Hover animations for all cards and buttons
+Subtle animated noise overlay optional
+
+Interactivity
+Add a top nav with animated logo text “PINK GORILLA” and links to sections
+Add a sticky floating button bottom right: Start a Build
+Clicking CTAs opens a modal with a simple form:
+Name, Email, Business Name, What are you building
+No backend needed, just show a success toast.
+
+Accessibility and performance
+Ensure good contrast, large font sizes, keyboard navigable buttons, aria labels.
+Animations should respect prefers reduced motion.
+
+Deliverables
+Create a single page app with components:
+Navbar
+Hero
+WhatWeDo
+GorillaCore
+GorillaApps
+WhoWeWorkWith
+Process
+FinalCTA
+ModalLeadForm
+Use clean, well structured code with Tailwind utilities and Framer Motion variants.
+
+Finally
+Make sure no UI text contains em dashes or hyphens.
+Make it look expensive, modern, bold, and alive.
+```
