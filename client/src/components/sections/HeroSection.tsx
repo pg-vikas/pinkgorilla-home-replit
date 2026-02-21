@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FloatingElement } from "@/components/motion/FloatingElement";
 import heroVideo from "@/assets/videos/hero-background.mp4";
-import heroShape from "@/assets/images/hero-shape.png";
+import digitalGalaxy from "@/assets/images/digital-galaxy.png";
 
 export function HeroSection() {
   return (
@@ -147,9 +147,9 @@ export function HeroSection() {
 
              <FloatingElement delay={0} duration={8} yOffset={20} className="relative z-10 flex items-center justify-center w-full h-full">
                <motion.img 
-                 src={heroShape} 
-                 alt="Advanced Mathematical Structure" 
-                 className="w-[80%] h-auto max-w-[500px] object-contain opacity-100 drop-shadow-[0_0_80px_rgba(255,255,255,0.6)]" 
+                 src={digitalGalaxy} 
+                 alt="Digital Spiral Galaxy" 
+                 className="w-[90%] h-auto max-w-[600px] object-contain opacity-100 drop-shadow-[0_0_80px_rgba(255,255,255,0.6)] mix-blend-screen" 
                  animate={{ rotate: 360, scale: [1, 1.05, 1] }}
                  transition={{ 
                    rotate: { duration: 15, repeat: Infinity, ease: "linear" },
