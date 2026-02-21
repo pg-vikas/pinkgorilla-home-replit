@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FloatingElement } from "@/components/motion/FloatingElement";
 import heroVideo from "@/assets/videos/hero-background.mp4";
-import digitalGalaxy from "@/assets/images/digital-galaxy.png";
+import morphingOrb from "@/assets/images/morphing-orb.png";
 
 export function HeroSection() {
   return (
@@ -188,7 +188,7 @@ export function HeroSection() {
                  
                  {/* Glitch / Morph Layer 1 */}
                  <motion.img 
-                   src={digitalGalaxy} 
+                   src={morphingOrb} 
                    alt="" 
                    className="absolute inset-0 w-full h-full object-contain opacity-60 mix-blend-screen"
                    animate={{ 
@@ -203,7 +203,7 @@ export function HeroSection() {
                  
                  {/* Glitch / Morph Layer 2 */}
                  <motion.img 
-                   src={digitalGalaxy} 
+                   src={morphingOrb} 
                    alt="" 
                    className="absolute inset-0 w-full h-full object-contain opacity-60 mix-blend-color-dodge"
                    animate={{ 
@@ -218,8 +218,8 @@ export function HeroSection() {
 
                  {/* Main Core Layer */}
                  <motion.img 
-                   src={digitalGalaxy} 
-                   alt="Digital Spiral Galaxy" 
+                   src={morphingOrb} 
+                   alt="Digital Morphing Orb" 
                    className="relative z-10 w-full h-full object-contain opacity-100 drop-shadow-[0_0_80px_rgba(255,255,255,0.8)] mix-blend-screen" 
                    animate={{ 
                      rotateZ: [0, 360],
