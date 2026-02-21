@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FloatingElement } from "@/components/motion/FloatingElement";
 import heroVideo from "@/assets/videos/hero-background.mp4";
+import heroShape from "@/assets/images/hero-shape.png";
 
 export function HeroSection() {
   return (
@@ -53,9 +54,11 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative hidden lg:block h-[600px] w-full"
         >
-           <div className="absolute inset-0 rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl">
-             <img src="https://picsum.photos/id/2/800/800" alt="Platform Preview" className="w-full h-full object-cover opacity-60" />
-             <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 mix-blend-overlay"></div>
+           <div className="absolute inset-0 rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl bg-black/40 flex items-center justify-center">
+             <FloatingElement delay={0} duration={12} yOffset={20} rotate={15}>
+               <img src={heroShape} alt="Advanced Mathematical Structure" className="w-[80%] h-auto max-w-[500px] object-contain opacity-90 drop-shadow-[0_0_30px_rgba(255,0,255,0.4)]" />
+             </FloatingElement>
+             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 mix-blend-overlay pointer-events-none"></div>
            </div>
 
           {/* Floating Badges */}
