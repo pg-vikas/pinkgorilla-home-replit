@@ -54,10 +54,54 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative hidden lg:block h-[600px] w-full"
         >
-           <div className="absolute inset-0 rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl bg-black/40 flex items-center justify-center">
+           <div className="absolute inset-0 flex items-center justify-center">
              
+             {/* Techy Digital Code Background */}
+             <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none z-0 opacity-60 mix-blend-screen">
+               {[...Array(15)].map((_, i) => (
+                 <motion.div
+                   key={`hex-${i}`}
+                   initial={{ y: "-100%", opacity: 0 }}
+                   animate={{ 
+                     y: ["-10%", "110%"], 
+                     opacity: [0, 0.4, 0] 
+                   }}
+                   transition={{ 
+                     duration: 10 + Math.random() * 15, 
+                     repeat: Infinity, 
+                     delay: Math.random() * 10,
+                     ease: "linear" 
+                   }}
+                   className="absolute font-mono text-xs text-cyan-400/40 whitespace-pre leading-relaxed tracking-widest"
+                   style={{ left: `${Math.random() * 100}%` }}
+                 >
+                   {Array.from({length: 20}).map(() => Math.random().toString(36).substring(2, 8).toUpperCase()).join("\n")}
+                 </motion.div>
+               ))}
+               {[...Array(15)].map((_, i) => (
+                 <motion.div
+                   key={`bin-${i}`}
+                   initial={{ y: "110%", opacity: 0 }}
+                   animate={{ 
+                     y: ["110%", "-10%"], 
+                     opacity: [0, 0.3, 0] 
+                   }}
+                   transition={{ 
+                     duration: 15 + Math.random() * 20, 
+                     repeat: Infinity, 
+                     delay: Math.random() * 10,
+                     ease: "linear" 
+                   }}
+                   className="absolute font-mono text-[10px] text-primary/30 whitespace-pre leading-loose tracking-widest"
+                   style={{ left: `${Math.random() * 100}%` }}
+                 >
+                   {Array.from({length: 30}).map(() => Math.round(Math.random())).join("\n")}
+                 </motion.div>
+               ))}
+             </div>
+
              {/* Dynamic Light Show Behind the Tesseract */}
-             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
+             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden rounded-3xl">
                {/* Deep Outer Nebula Glow */}
                <motion.div
                  animate={{ 
@@ -136,13 +180,6 @@ export function HeroSection() {
                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                  className="absolute w-[450px] h-[450px] border-4 border-cyan-400/60 rounded-full blur-[4px]"
                />
-               
-               {/* Strobe Flash */}
-               <motion.div
-                 animate={{ opacity: [0, 0.15, 0] }}
-                 transition={{ duration: 0.1, repeat: Infinity, ease: "linear" }}
-                 className="absolute inset-0 bg-white mix-blend-overlay pointer-events-none"
-               />
              </div>
 
              <FloatingElement delay={0} duration={8} yOffset={20} className="relative z-10 flex items-center justify-center w-full h-full">
@@ -157,7 +194,6 @@ export function HeroSection() {
                  }}
                />
              </FloatingElement>
-             <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 mix-blend-overlay pointer-events-none z-10"></div>
            </div>
 
           {/* Orbiting Badges */}
