@@ -57,14 +57,15 @@ export function HeroSection() {
            <div className="absolute inset-0 flex items-center justify-center">
              
              {/* Techy Digital Code Background */}
-             <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none z-0 opacity-60 mix-blend-screen">
-               {[...Array(15)].map((_, i) => (
+             <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none z-0 opacity-80 mix-blend-screen">
+               {/* Hex Layer */}
+               {[...Array(30)].map((_, i) => (
                  <motion.div
                    key={`hex-${i}`}
                    initial={{ y: "-100%", opacity: 0 }}
                    animate={{ 
                      y: ["-10%", "110%"], 
-                     opacity: [0, 0.4, 0] 
+                     opacity: [0, 0.6, 0] 
                    }}
                    transition={{ 
                      duration: 10 + Math.random() * 15, 
@@ -72,19 +73,21 @@ export function HeroSection() {
                      delay: Math.random() * 10,
                      ease: "linear" 
                    }}
-                   className="absolute font-mono text-xs text-cyan-400/40 whitespace-pre leading-relaxed tracking-widest"
+                   className="absolute font-mono text-xs text-cyan-400/50 whitespace-pre leading-relaxed tracking-widest"
                    style={{ left: `${Math.random() * 100}%` }}
                  >
-                   {Array.from({length: 20}).map(() => Math.random().toString(36).substring(2, 8).toUpperCase()).join("\n")}
+                   {Array.from({length: 25}).map(() => Math.random().toString(36).substring(2, 8).toUpperCase()).join("\n")}
                  </motion.div>
                ))}
-               {[...Array(15)].map((_, i) => (
+               
+               {/* Binary Layer */}
+               {[...Array(40)].map((_, i) => (
                  <motion.div
                    key={`bin-${i}`}
                    initial={{ y: "110%", opacity: 0 }}
                    animate={{ 
                      y: ["110%", "-10%"], 
-                     opacity: [0, 0.3, 0] 
+                     opacity: [0, 0.4, 0] 
                    }}
                    transition={{ 
                      duration: 15 + Math.random() * 20, 
@@ -92,10 +95,32 @@ export function HeroSection() {
                      delay: Math.random() * 10,
                      ease: "linear" 
                    }}
-                   className="absolute font-mono text-[10px] text-primary/30 whitespace-pre leading-loose tracking-widest"
+                   className="absolute font-mono text-[10px] text-primary/40 whitespace-pre leading-loose tracking-widest"
                    style={{ left: `${Math.random() * 100}%` }}
                  >
-                   {Array.from({length: 30}).map(() => Math.round(Math.random())).join("\n")}
+                   {Array.from({length: 40}).map(() => Math.round(Math.random())).join("\n")}
+                 </motion.div>
+               ))}
+
+               {/* Data Stream Layer */}
+               {[...Array(20)].map((_, i) => (
+                 <motion.div
+                   key={`data-${i}`}
+                   initial={{ x: "-100%", opacity: 0 }}
+                   animate={{ 
+                     x: ["-10%", "110%"], 
+                     opacity: [0, 0.7, 0] 
+                   }}
+                   transition={{ 
+                     duration: 5 + Math.random() * 8, 
+                     repeat: Infinity, 
+                     delay: Math.random() * 5,
+                     ease: "linear" 
+                   }}
+                   className="absolute font-mono text-xs text-white/30 whitespace-nowrap tracking-tighter"
+                   style={{ top: `${Math.random() * 100}%` }}
+                 >
+                   {`SYS.CORE.${Math.random().toString(36).substring(2, 10).toUpperCase()} // OK`}
                  </motion.div>
                ))}
              </div>
@@ -141,34 +166,6 @@ export function HeroSection() {
                  className="absolute w-48 h-48 bg-primary rounded-full blur-[30px]"
                />
 
-               {/* Hyper-Speed Rotating Radar/Energy Beam */}
-               <motion.div 
-                 animate={{ rotate: 360 }}
-                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                 className="absolute w-[1000px] h-[1000px] rounded-full opacity-80 mix-blend-screen"
-                 style={{
-                   background: "conic-gradient(from 0deg, transparent 0 340deg, rgba(0, 255, 255, 0.8) 360deg)"
-                 }}
-               />
-               
-               <motion.div 
-                 animate={{ rotate: -360 }}
-                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                 className="absolute w-[900px] h-[900px] rounded-full opacity-80 mix-blend-screen"
-                 style={{
-                   background: "conic-gradient(from 0deg, transparent 0 340deg, rgba(255, 0, 255, 0.8) 360deg)"
-                 }}
-               />
-
-               <motion.div 
-                 animate={{ rotate: 360 }}
-                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                 className="absolute w-[1200px] h-[1200px] rounded-full opacity-40 mix-blend-screen"
-                 style={{
-                   background: "conic-gradient(from 180deg, transparent 0 350deg, rgba(255, 255, 255, 0.8) 360deg)"
-                 }}
-               />
-
                {/* Geometric Energy Rings */}
                <motion.div
                  animate={{ scale: [1, 2, 1], opacity: [1, 0, 1], rotate: [0, 90, 180] }}
@@ -183,10 +180,12 @@ export function HeroSection() {
              </div>
 
              <FloatingElement delay={0} duration={8} yOffset={20} className="relative z-10 flex items-center justify-center w-full h-full">
+               {/* Dark Background behind Galaxy */}
+               <div className="absolute w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] bg-black/90 rounded-full blur-2xl z-0 pointer-events-none" />
                <motion.img 
                  src={digitalGalaxy} 
                  alt="Digital Spiral Galaxy" 
-                 className="w-[90%] h-auto max-w-[600px] object-contain opacity-100 drop-shadow-[0_0_80px_rgba(255,255,255,0.6)] mix-blend-screen" 
+                 className="relative z-10 w-[90%] h-auto max-w-[600px] object-contain opacity-100 drop-shadow-[0_0_80px_rgba(255,255,255,0.6)] mix-blend-screen" 
                  animate={{ rotate: 360, scale: [1, 1.05, 1] }}
                  transition={{ 
                    rotate: { duration: 15, repeat: Infinity, ease: "linear" },
