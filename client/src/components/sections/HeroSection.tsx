@@ -55,10 +55,47 @@ export function HeroSection() {
           className="relative hidden lg:block h-[600px] w-full"
         >
            <div className="absolute inset-0 rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl bg-black/40 flex items-center justify-center">
-             <FloatingElement delay={0} duration={12} yOffset={20} rotate={15}>
-               <img src={heroShape} alt="Advanced Mathematical Structure" className="w-[80%] h-auto max-w-[500px] object-contain opacity-90 drop-shadow-[0_0_30px_rgba(255,0,255,0.4)]" />
+             
+             {/* Dynamic Light Show Behind the Tesseract */}
+             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+               <motion.div
+                 animate={{ 
+                   scale: [1, 1.5, 1],
+                   rotate: [0, 90, 180, 270, 360],
+                   opacity: [0.3, 0.7, 0.3]
+                 }}
+                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                 className="absolute w-96 h-96 bg-primary/40 rounded-[40%_60%_70%_30%] blur-[80px]"
+               />
+               <motion.div
+                 animate={{ 
+                   scale: [1.2, 0.8, 1.2],
+                   rotate: [360, 270, 180, 90, 0],
+                   opacity: [0.4, 0.8, 0.4]
+                 }}
+                 transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+                 className="absolute w-[400px] h-[400px] bg-cyan-500/30 rounded-[60%_40%_30%_70%] blur-[90px]"
+               />
+               <motion.div
+                 animate={{ 
+                   scale: [0.8, 1.3, 0.8],
+                   opacity: [0.2, 0.6, 0.2]
+                 }}
+                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                 className="absolute w-64 h-64 bg-white/20 rounded-full blur-[60px]"
+               />
+               {/* Pulse Core */}
+               <motion.div
+                 animate={{ scale: [1, 2, 1], opacity: [0.8, 0, 0.8] }}
+                 transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
+                 className="absolute w-32 h-32 bg-primary/60 rounded-full blur-[40px]"
+               />
+             </div>
+
+             <FloatingElement delay={0} duration={12} yOffset={20} rotate={15} className="relative z-10">
+               <img src={heroShape} alt="Advanced Mathematical Structure" className="w-[80%] h-auto max-w-[500px] object-contain opacity-100 drop-shadow-[0_0_50px_rgba(255,255,255,0.3)]" />
              </FloatingElement>
-             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 mix-blend-overlay pointer-events-none"></div>
+             <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 mix-blend-overlay pointer-events-none z-10"></div>
            </div>
 
           {/* Orbiting Badges */}
