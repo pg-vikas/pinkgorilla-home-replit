@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FloatingElement } from "@/components/motion/FloatingElement";
-import heroVideo from "@/assets/videos/hero-background.mp4";
 import { cn } from "@/lib/utils";
 import { Command, Figma, Slack, Trello, Hexagon, Layers, Box, Database, Chrome, Cloud, Layout, Globe, Briefcase, Building2, Shield, Lock, Fingerprint, Activity } from "lucide-react";
 
@@ -40,17 +39,9 @@ function LogoSphere({ className }: { className?: string }) {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20" id="hero">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 bg-background" id="hero">
       {/* Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <video
-          src={heroVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-40 scale-105"
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>
 
@@ -89,130 +80,6 @@ export function HeroSection() {
           className="relative hidden lg:block h-[600px] w-full"
         >
            <div className="absolute inset-0 flex items-center justify-center">
-             
-             {/* Techy Digital Code Background */}
-             <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none z-0 opacity-100 mix-blend-screen">
-               {/* Hex Layer */}
-               {[...Array(60)].map((_, i) => (
-                 <motion.div
-                   key={`hex-${i}`}
-                   initial={{ y: "-100%", opacity: 0 }}
-                   animate={{ 
-                     y: ["-10%", "110%"], 
-                     opacity: [0, 0.8, 0] 
-                   }}
-                   transition={{ 
-                     duration: 8 + Math.random() * 12, 
-                     repeat: Infinity, 
-                     delay: Math.random() * 10,
-                     ease: "linear" 
-                   }}
-                   className="absolute font-mono text-xs text-cyan-400/80 whitespace-pre leading-relaxed tracking-widest drop-shadow-[0_0_8px_rgba(0,255,255,0.8)]"
-                   style={{ left: `${Math.random() * 100}%` }}
-                 >
-                   {Array.from({length: 25}).map(() => Math.random().toString(36).substring(2, 8).toUpperCase()).join("\n")}
-                 </motion.div>
-               ))}
-               
-               {/* Binary Layer */}
-               {[...Array(80)].map((_, i) => (
-                 <motion.div
-                   key={`bin-${i}`}
-                   initial={{ y: "110%", opacity: 0 }}
-                   animate={{ 
-                     y: ["110%", "-10%"], 
-                     opacity: [0, 0.7, 0] 
-                   }}
-                   transition={{ 
-                     duration: 12 + Math.random() * 18, 
-                     repeat: Infinity, 
-                     delay: Math.random() * 10,
-                     ease: "linear" 
-                   }}
-                   className="absolute font-mono text-[10px] text-primary/70 whitespace-pre leading-loose tracking-widest drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]"
-                   style={{ left: `${Math.random() * 100}%` }}
-                 >
-                   {Array.from({length: 40}).map(() => Math.round(Math.random())).join("\n")}
-                 </motion.div>
-               ))}
-
-               {/* Data Stream Layer */}
-               {[...Array(30)].map((_, i) => (
-                 <motion.div
-                   key={`data-${i}`}
-                   initial={{ x: "-100%", opacity: 0 }}
-                   animate={{ 
-                     x: ["-10%", "110%"], 
-                     opacity: [0, 0.9, 0] 
-                   }}
-                   transition={{ 
-                     duration: 4 + Math.random() * 6, 
-                     repeat: Infinity, 
-                     delay: Math.random() * 5,
-                     ease: "linear" 
-                   }}
-                   className="absolute font-mono text-sm text-white/60 whitespace-nowrap tracking-tighter drop-shadow-[0_0_10px_rgba(255,255,255,1)]"
-                   style={{ top: `${Math.random() * 100}%` }}
-                 >
-                   {`SYS.CORE.${Math.random().toString(36).substring(2, 10).toUpperCase()} // OK`}
-                 </motion.div>
-               ))}
-             </div>
-
-             {/* Dynamic Light Show Behind the Tesseract */}
-             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden rounded-3xl">
-               {/* Deep Outer Nebula Glow */}
-               <motion.div
-                 animate={{ 
-                   scale: [1, 1.8, 1],
-                   rotate: [0, 180, 360],
-                   opacity: [0.6, 1, 0.6]
-                 }}
-                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                 className="absolute w-[600px] h-[600px] bg-primary/60 rounded-[40%_60%_70%_30%] blur-[100px] mix-blend-screen"
-               />
-               
-               {/* High-Speed Cyan Energy Field */}
-               <motion.div
-                 animate={{ 
-                   scale: [1.2, 0.9, 1.2],
-                   rotate: [360, 180, 0],
-                   opacity: [0.7, 1, 0.7]
-                 }}
-                 transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                 className="absolute w-[550px] h-[550px] bg-cyan-400/60 rounded-[60%_40%_30%_70%] blur-[90px] mix-blend-screen"
-               />
-
-               {/* Intense Core Brightness */}
-               <motion.div
-                 animate={{ 
-                   scale: [0.8, 1.6, 0.8],
-                   opacity: [0.6, 1, 0.6]
-                 }}
-                 transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute w-80 h-80 bg-white/60 rounded-full blur-[50px] mix-blend-overlay"
-               />
-
-               {/* Rapid Pulsing Plasma Core */}
-               <motion.div
-                 animate={{ scale: [1, 3, 1], opacity: [1, 0, 1] }}
-                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
-                 className="absolute w-48 h-48 bg-primary rounded-full blur-[30px]"
-               />
-
-               {/* Geometric Energy Rings */}
-               <motion.div
-                 animate={{ scale: [1, 2, 1], opacity: [1, 0, 1], rotate: [0, 90, 180] }}
-                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute w-96 h-96 border-2 border-primary/80 rounded-full blur-[2px]"
-               />
-               <motion.div
-                 animate={{ scale: [2, 1, 2], opacity: [0, 1, 0], rotate: [360, 180, 0] }}
-                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute w-[450px] h-[450px] border-4 border-cyan-400/60 rounded-full blur-[4px]"
-               />
-             </div>
-
              <FloatingElement delay={0} duration={8} yOffset={20} className="relative z-10 flex items-center justify-center w-full h-full perspective-[1000px]">
                {/* Dark Background behind Galaxy - Made much more transparent */}
                <div className="absolute w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] bg-black/30 rounded-full blur-[80px] z-0 pointer-events-none" />
