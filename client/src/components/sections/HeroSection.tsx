@@ -57,16 +57,16 @@ export function HeroSection() {
            <div className="absolute inset-0 rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl bg-black/40 flex items-center justify-center">
              
              {/* Dynamic Light Show Behind the Tesseract */}
-             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
                {/* Deep Outer Nebula Glow */}
                <motion.div
                  animate={{ 
                    scale: [1, 1.8, 1],
                    rotate: [0, 180, 360],
-                   opacity: [0.4, 0.8, 0.4]
+                   opacity: [0.6, 1, 0.6]
                  }}
-                 transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute w-[500px] h-[500px] bg-primary/50 rounded-[40%_60%_70%_30%] blur-[100px]"
+                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                 className="absolute w-[600px] h-[600px] bg-primary/60 rounded-[40%_60%_70%_30%] blur-[100px] mix-blend-screen"
                />
                
                {/* High-Speed Cyan Energy Field */}
@@ -74,63 +74,88 @@ export function HeroSection() {
                  animate={{ 
                    scale: [1.2, 0.9, 1.2],
                    rotate: [360, 180, 0],
-                   opacity: [0.5, 0.9, 0.5]
+                   opacity: [0.7, 1, 0.7]
                  }}
-                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute w-[450px] h-[450px] bg-cyan-400/50 rounded-[60%_40%_30%_70%] blur-[90px]"
+                 transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                 className="absolute w-[550px] h-[550px] bg-cyan-400/60 rounded-[60%_40%_30%_70%] blur-[90px] mix-blend-screen"
                />
 
                {/* Intense Core Brightness */}
                <motion.div
                  animate={{ 
-                   scale: [0.8, 1.4, 0.8],
-                   opacity: [0.4, 1, 0.4]
+                   scale: [0.8, 1.6, 0.8],
+                   opacity: [0.6, 1, 0.6]
                  }}
-                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute w-72 h-72 bg-white/40 rounded-full blur-[50px]"
+                 transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                 className="absolute w-80 h-80 bg-white/60 rounded-full blur-[50px] mix-blend-overlay"
                />
 
                {/* Rapid Pulsing Plasma Core */}
                <motion.div
-                 animate={{ scale: [1, 2.5, 1], opacity: [1, 0, 1] }}
-                 transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
-                 className="absolute w-40 h-40 bg-primary/80 rounded-full blur-[30px]"
+                 animate={{ scale: [1, 3, 1], opacity: [1, 0, 1] }}
+                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
+                 className="absolute w-48 h-48 bg-primary rounded-full blur-[30px]"
                />
 
-               {/* Rotating Radar/Energy Beam */}
+               {/* Hyper-Speed Rotating Radar/Energy Beam */}
                <motion.div 
                  animate={{ rotate: 360 }}
-                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                 className="absolute w-[800px] h-[800px] rounded-full opacity-60"
+                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                 className="absolute w-[1000px] h-[1000px] rounded-full opacity-80 mix-blend-screen"
                  style={{
-                   background: "conic-gradient(from 0deg, transparent 0 340deg, rgba(0, 255, 255, 0.6) 360deg)"
+                   background: "conic-gradient(from 0deg, transparent 0 340deg, rgba(0, 255, 255, 0.8) 360deg)"
                  }}
                />
                
                <motion.div 
                  animate={{ rotate: -360 }}
-                 transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                 className="absolute w-[700px] h-[700px] rounded-full opacity-60"
+                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                 className="absolute w-[900px] h-[900px] rounded-full opacity-80 mix-blend-screen"
                  style={{
-                   background: "conic-gradient(from 0deg, transparent 0 340deg, rgba(255, 0, 255, 0.6) 360deg)"
+                   background: "conic-gradient(from 0deg, transparent 0 340deg, rgba(255, 0, 255, 0.8) 360deg)"
+                 }}
+               />
+
+               <motion.div 
+                 animate={{ rotate: 360 }}
+                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                 className="absolute w-[1200px] h-[1200px] rounded-full opacity-40 mix-blend-screen"
+                 style={{
+                   background: "conic-gradient(from 180deg, transparent 0 350deg, rgba(255, 255, 255, 0.8) 360deg)"
                  }}
                />
 
                {/* Geometric Energy Rings */}
                <motion.div
-                 animate={{ scale: [1, 1.5, 1], opacity: [0.8, 0, 0.8], rotate: [0, 90, 180] }}
-                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute w-80 h-80 border border-primary/50 rounded-full blur-[2px]"
+                 animate={{ scale: [1, 2, 1], opacity: [1, 0, 1], rotate: [0, 90, 180] }}
+                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                 className="absolute w-96 h-96 border-2 border-primary/80 rounded-full blur-[2px]"
                />
                <motion.div
-                 animate={{ scale: [1.5, 1, 1.5], opacity: [0, 0.8, 0], rotate: [360, 180, 0] }}
-                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute w-96 h-96 border-2 border-cyan-400/40 rounded-full blur-[4px]"
+                 animate={{ scale: [2, 1, 2], opacity: [0, 1, 0], rotate: [360, 180, 0] }}
+                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                 className="absolute w-[450px] h-[450px] border-4 border-cyan-400/60 rounded-full blur-[4px]"
+               />
+               
+               {/* Strobe Flash */}
+               <motion.div
+                 animate={{ opacity: [0, 0.15, 0] }}
+                 transition={{ duration: 0.1, repeat: Infinity, ease: "linear" }}
+                 className="absolute inset-0 bg-white mix-blend-overlay pointer-events-none"
                />
              </div>
 
-             <FloatingElement delay={0} duration={12} yOffset={20} rotate={15} className="relative z-10">
-               <img src={heroShape} alt="Advanced Mathematical Structure" className="w-[80%] h-auto max-w-[500px] object-contain opacity-100 drop-shadow-[0_0_50px_rgba(255,255,255,0.3)]" />
+             <FloatingElement delay={0} duration={8} yOffset={20} className="relative z-10 flex items-center justify-center w-full h-full">
+               <motion.img 
+                 src={heroShape} 
+                 alt="Advanced Mathematical Structure" 
+                 className="w-[80%] h-auto max-w-[500px] object-contain opacity-100 drop-shadow-[0_0_80px_rgba(255,255,255,0.6)]" 
+                 animate={{ rotate: 360, scale: [1, 1.05, 1] }}
+                 transition={{ 
+                   rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+                   scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                 }}
+               />
              </FloatingElement>
              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 mix-blend-overlay pointer-events-none z-10"></div>
            </div>
