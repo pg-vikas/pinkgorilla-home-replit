@@ -179,19 +179,62 @@ export function HeroSection() {
                />
              </div>
 
-             <FloatingElement delay={0} duration={8} yOffset={20} className="relative z-10 flex items-center justify-center w-full h-full">
+             <FloatingElement delay={0} duration={8} yOffset={20} className="relative z-10 flex items-center justify-center w-full h-full perspective-[1000px]">
                {/* Dark Background behind Galaxy - Made much more transparent */}
                <div className="absolute w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] bg-black/30 rounded-full blur-[80px] z-0 pointer-events-none" />
-               <motion.img 
-                 src={digitalGalaxy} 
-                 alt="Digital Spiral Galaxy" 
-                 className="relative z-10 w-[90%] h-auto max-w-[600px] object-contain opacity-80 drop-shadow-[0_0_80px_rgba(255,255,255,0.6)] mix-blend-screen" 
-                 animate={{ rotate: 360, scale: [1, 1.05, 1] }}
-                 transition={{ 
-                   rotate: { duration: 15, repeat: Infinity, ease: "linear" },
-                   scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                 }}
-               />
+               
+               {/* Morphing Holographic Container */}
+               <div className="relative w-[90%] max-w-[600px] aspect-square flex items-center justify-center">
+                 
+                 {/* Glitch / Morph Layer 1 */}
+                 <motion.img 
+                   src={digitalGalaxy} 
+                   alt="" 
+                   className="absolute inset-0 w-full h-full object-contain opacity-60 mix-blend-screen"
+                   animate={{ 
+                     rotateZ: [0, 360], 
+                     rotateX: [0, 45, -45, 0],
+                     rotateY: [0, -45, 45, 0],
+                     scale: [1, 1.3, 0.8, 1],
+                     filter: ["hue-rotate(0deg) blur(2px)", "hue-rotate(180deg) blur(6px)", "hue-rotate(360deg) blur(2px)"]
+                   }}
+                   transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                 />
+                 
+                 {/* Glitch / Morph Layer 2 */}
+                 <motion.img 
+                   src={digitalGalaxy} 
+                   alt="" 
+                   className="absolute inset-0 w-full h-full object-contain opacity-60 mix-blend-color-dodge"
+                   animate={{ 
+                     rotateZ: [360, 0], 
+                     rotateX: [0, -30, 30, 0],
+                     rotateY: [0, 60, -60, 0],
+                     scale: [0.9, 1.4, 0.9],
+                     filter: ["hue-rotate(90deg) blur(4px)", "hue-rotate(270deg) blur(1px)", "hue-rotate(90deg) blur(4px)"]
+                   }}
+                   transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                 />
+
+                 {/* Main Core Layer */}
+                 <motion.img 
+                   src={digitalGalaxy} 
+                   alt="Digital Spiral Galaxy" 
+                   className="relative z-10 w-full h-full object-contain opacity-100 drop-shadow-[0_0_80px_rgba(255,255,255,0.8)] mix-blend-screen" 
+                   animate={{ 
+                     rotateZ: [0, 360],
+                     scale: [1, 1.1, 0.9, 1],
+                     skewX: [0, 10, -10, 0],
+                     skewY: [0, -10, 10, 0]
+                   }}
+                   transition={{ 
+                     rotateZ: { duration: 20, repeat: Infinity, ease: "linear" },
+                     scale: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+                     skewX: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                     skewY: { duration: 7, repeat: Infinity, ease: "easeInOut" }
+                   }}
+                 />
+               </div>
              </FloatingElement>
            </div>
 
