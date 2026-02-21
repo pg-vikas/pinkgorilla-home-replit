@@ -110,7 +110,7 @@ export function HeroSection() {
              </div>
           </FloatingElement>
 
-          <FloatingElement delay={0.5} duration={5} yOffset={10} xOffset={20} className="top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+          <FloatingElement delay={0.5} duration={5} yOffset={10} xOffset={20} className="top-[60%] left-[40%] -translate-x-1/2 -translate-y-1/2 z-20">
              <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-yellow-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
                 <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-accent/30 backdrop-blur-xl text-accent font-bold shadow-[0_0_30px_rgba(173,255,47,0.2)] text-lg flex items-center gap-3">
@@ -127,7 +127,79 @@ export function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-white/10 rounded-full blur-xl opacity-40 group-hover:opacity-80 transition-opacity duration-500" />
                 <div className="px-8 py-4 rounded-full bg-white/10 border-2 border-white/30 backdrop-blur-xl text-white font-bold shadow-[0_0_40px_rgba(255,255,255,0.3)] text-lg flex items-center gap-3 relative overflow-hidden">
                   <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.3)_50%,transparent_75%)] bg-[length:250%_250%] animate-[shimmer_2s_infinite]" />
-                  <span className="relative z-10">AI Engine</span>
+                  <span className="relative z-10 flex items-center gap-2">
+                    <motion.div animate={{ rotate: 360 }} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} className="w-4 h-4 border-t-2 border-r-2 border-white rounded-full" />
+                    AI Engine
+                  </span>
+                </div>
+             </div>
+          </FloatingElement>
+
+          {/* New Badges */}
+          <FloatingElement delay={3} duration={10} yOffset={30} xOffset={-30} className="top-[30%] -left-24 z-20">
+             <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+                <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-emerald-500/30 backdrop-blur-xl text-emerald-400 font-bold shadow-[0_0_30px_rgba(16,185,129,0.2)] text-lg flex items-center gap-3">
+                  <div className="flex gap-1">
+                    {[0, 1, 2].map((i) => (
+                      <motion.div
+                        key={i}
+                        className="w-1.5 h-1.5 rounded-full bg-emerald-400"
+                        animate={{ opacity: [0.2, 1, 0.2] }}
+                        transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.3 }}
+                      />
+                    ))}
+                  </div>
+                  Support
+                </div>
+             </div>
+          </FloatingElement>
+
+          <FloatingElement delay={4} duration={11} yOffset={-25} xOffset={25} className="bottom-[10%] left-[20%] z-20">
+             <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-400 to-gray-200 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+                <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-slate-400/30 backdrop-blur-xl text-slate-300 font-bold shadow-[0_0_30px_rgba(148,163,184,0.2)] text-lg flex items-center gap-3">
+                  <div className="w-4 h-4 border-2 border-slate-400 rounded-sm relative">
+                    <motion.div 
+                      className="absolute inset-0 bg-slate-400/50" 
+                      animate={{ scaleY: [0, 1, 0], originY: "bottom" }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                  </div>
+                  Stability
+                </div>
+             </div>
+          </FloatingElement>
+
+          <FloatingElement delay={1.8} duration={8.5} yOffset={35} xOffset={-20} className="top-[70%] right-[5%] z-20">
+             <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+                <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-rose-500/30 backdrop-blur-xl text-rose-400 font-bold shadow-[0_0_30px_rgba(244,63,94,0.2)] text-lg flex items-center gap-3">
+                  <motion.div 
+                    className="w-5 h-5 flex items-center justify-center border border-rose-400 rounded-full"
+                    animate={{ rotate: [0, 90, 180, 270, 360] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                  >
+                    <div className="w-1.5 h-1.5 bg-rose-400 rounded-full absolute -top-1" />
+                  </motion.div>
+                  Control
+                </div>
+             </div>
+          </FloatingElement>
+
+          <FloatingElement delay={2.2} duration={7.5} yOffset={-15} xOffset={30} className="top-[15%] right-[25%] z-20">
+             <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-400 to-indigo-400 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+                <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-sky-400/30 backdrop-blur-xl text-sky-300 font-bold shadow-[0_0_30px_rgba(56,189,248,0.2)] text-lg flex items-center gap-3">
+                  <div className="relative w-5 h-5">
+                    <motion.div 
+                      className="absolute inset-0 border-2 border-sky-400 rounded-full"
+                      animate={{ scale: [1, 1.5, 1], opacity: [1, 0, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                    <div className="absolute inset-1 bg-sky-400 rounded-full" />
+                  </div>
+                  Clarity
                 </div>
              </div>
           </FloatingElement>
