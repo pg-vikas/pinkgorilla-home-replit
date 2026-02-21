@@ -2,7 +2,41 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FloatingElement } from "@/components/motion/FloatingElement";
 import heroVideo from "@/assets/videos/hero-background.mp4";
-import morphingOrb from "@/assets/images/morphing-orb.png";
+import { cn } from "@/lib/utils";
+import { Command, Figma, Slack, Trello, Hexagon, Layers, Box, Database, Chrome, Cloud, Layout, Globe, Briefcase, Building2, Shield, Lock, Fingerprint, Activity } from "lucide-react";
+
+function LogoSphere({ className }: { className?: string }) {
+  const icons = [Command, Figma, Slack, Hexagon, Layers, Box, Database, Chrome, Cloud, Layout, Globe, Briefcase, Building2, Shield, Lock, Fingerprint, Trello, Activity];
+  
+  return (
+    <div className={cn("absolute inset-0 flex items-center justify-center", className)} style={{ transformStyle: "preserve-3d" }}>
+      {icons.map((Icon, i) => {
+        const phi = Math.acos(-1 + (2 * i) / icons.length);
+        const theta = Math.sqrt(icons.length * Math.PI) * phi;
+        const radius = 160;
+        const x = radius * Math.cos(theta) * Math.sin(phi);
+        const y = radius * Math.sin(theta) * Math.sin(phi);
+        const z = radius * Math.cos(phi);
+        
+        const colors = ["text-primary", "text-cyan-400", "text-white"];
+        const color = colors[i % colors.length];
+        
+        return (
+          <div
+            key={i}
+            className={cn("absolute flex items-center justify-center", color)}
+            style={{
+              transform: `translate3d(${x}px, ${y}px, ${z}px) rotateX(${theta}rad) rotateY(${phi}rad)`,
+              transformStyle: "preserve-3d"
+            }}
+          >
+            <Icon className="w-16 h-16 opacity-90" style={{ filter: "drop-shadow(0 0 15px currentColor)" }} />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export function HeroSection() {
   return (
@@ -184,13 +218,12 @@ export function HeroSection() {
                <div className="absolute w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] bg-black/30 rounded-full blur-[80px] z-0 pointer-events-none" />
                
                {/* Morphing Holographic Container */}
-               <div className="relative w-[90%] max-w-[600px] aspect-square flex items-center justify-center">
+               <div className="relative w-[90%] max-w-[600px] aspect-square flex items-center justify-center" style={{ transformStyle: "preserve-3d" }}>
                  
                  {/* Glitch / Morph Layer 1 */}
-                 <motion.img 
-                   src={morphingOrb} 
-                   alt="" 
-                   className="absolute inset-0 w-full h-full object-contain opacity-60 mix-blend-screen"
+                 <motion.div 
+                   className="absolute inset-0 w-full h-full opacity-40 mix-blend-screen"
+                   style={{ transformStyle: "preserve-3d" }}
                    animate={{ 
                      rotateZ: [0, 360], 
                      rotateX: [0, 45, -45, 0],
@@ -199,13 +232,14 @@ export function HeroSection() {
                      filter: ["hue-rotate(0deg) blur(2px)", "hue-rotate(180deg) blur(6px)", "hue-rotate(360deg) blur(2px)"]
                    }}
                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                 />
+                 >
+                   <LogoSphere />
+                 </motion.div>
                  
                  {/* Glitch / Morph Layer 2 */}
-                 <motion.img 
-                   src={morphingOrb} 
-                   alt="" 
-                   className="absolute inset-0 w-full h-full object-contain opacity-60 mix-blend-color-dodge"
+                 <motion.div 
+                   className="absolute inset-0 w-full h-full opacity-40 mix-blend-color-dodge"
+                   style={{ transformStyle: "preserve-3d" }}
                    animate={{ 
                      rotateZ: [360, 0], 
                      rotateX: [0, -30, 30, 0],
@@ -214,26 +248,29 @@ export function HeroSection() {
                      filter: ["hue-rotate(90deg) blur(4px)", "hue-rotate(270deg) blur(1px)", "hue-rotate(90deg) blur(4px)"]
                    }}
                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                 />
+                 >
+                   <LogoSphere />
+                 </motion.div>
 
                  {/* Main Core Layer */}
-                 <motion.img 
-                   src={morphingOrb} 
-                   alt="Digital Morphing Orb" 
-                   className="relative z-10 w-full h-full object-contain opacity-100 drop-shadow-[0_0_80px_rgba(255,255,255,0.8)] mix-blend-screen" 
+                 <motion.div 
+                   className="relative z-10 w-full h-full opacity-100 mix-blend-screen" 
+                   style={{ transformStyle: "preserve-3d" }}
                    animate={{ 
                      rotateZ: [0, 360],
-                     scale: [1, 1.1, 0.9, 1],
-                     skewX: [0, 10, -10, 0],
-                     skewY: [0, -10, 10, 0]
+                     rotateX: [0, 360],
+                     rotateY: [0, 360],
+                     scale: [1, 1.1, 0.9, 1]
                    }}
                    transition={{ 
-                     rotateZ: { duration: 20, repeat: Infinity, ease: "linear" },
-                     scale: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-                     skewX: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-                     skewY: { duration: 7, repeat: Infinity, ease: "easeInOut" }
+                     rotateZ: { duration: 25, repeat: Infinity, ease: "linear" },
+                     rotateX: { duration: 30, repeat: Infinity, ease: "linear" },
+                     rotateY: { duration: 35, repeat: Infinity, ease: "linear" },
+                     scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
                    }}
-                 />
+                 >
+                   <LogoSphere />
+                 </motion.div>
                </div>
              </FloatingElement>
            </div>
