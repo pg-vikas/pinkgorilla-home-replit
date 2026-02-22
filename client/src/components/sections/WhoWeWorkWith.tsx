@@ -17,7 +17,7 @@ export function WhoWeWorkWith() {
           animate={{ x: [0, -1000] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         >
-          {Array(10).fill("WHO WE WORK WITH").map((text, i) => (
+          {Array(10).fill("WORK WITH REAL PEOPLE, REAL RESULTS").map((text, i) => (
             <span key={i} className="text-2xl font-display font-bold text-primary tracking-widest uppercase">
               {text} •
             </span>
