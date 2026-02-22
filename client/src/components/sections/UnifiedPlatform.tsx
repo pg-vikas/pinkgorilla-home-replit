@@ -59,7 +59,7 @@ export function UnifiedPlatform() {
              transition={{ delay: 0.1 }}
              className="text-xl text-muted-foreground"
            >
-             Front-end presence and back-end operations working in perfect harmony.
+             Front-end presence and back-end operations working in perfect harmony. Decide if Gorilla Core is what your business needs or Gorilla Apps or Both for bundled value and super charging your entire business.
            </motion.p>
         </div>
 
