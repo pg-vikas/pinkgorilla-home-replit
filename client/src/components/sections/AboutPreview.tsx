@@ -33,12 +33,49 @@ export function AboutPreview() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row gap-12 items-center mb-16">
           <div className="md:w-1/2">
-            <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
-              Your All-In-One <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Growth Buddy</span>
+            <h2 className="text-4xl md:text-5xl font-bold font-display mb-8">
+              About <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Pink Gorilla</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Pink Gorilla is your all-in-one growth buddy that helps you from establishing your business online to maintaining it and helping your business grow. We don't blend in. We build what breaks through.
-            </p>
+            
+            <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="font-medium text-foreground text-lg md:text-xl">
+                Most agencies focus on appearance.<br/>
+                We focus on structure.
+              </p>
+              
+              <p>
+                Pink Gorilla was created for founders who are serious about what they are building. Not temporary campaigns. Not surface level solutions. Real companies with long horizons.
+              </p>
+              
+              <p>
+                We believe technology should feel controlled, aligned, and intentional. Your brand, your systems, your customer experience, your internal operations. All connected. All working together. Nothing scattered.
+              </p>
+              
+              <p className="font-medium text-foreground text-lg md:text-xl">
+                We do not operate outside your business.<br/>
+                We operate alongside it.
+              </p>
+              
+              <p>
+                Our role is simple. Bring clarity where there is chaos. Structure where there is fragmentation. Strength where there are weak points.
+              </p>
+              
+              <p className="font-medium text-foreground text-lg md:text-xl">
+                Pink Gorilla is not a vendor.<br/>
+                It is a long term digital partner.
+              </p>
+              
+              <p>
+                We think like owners.<br/>
+                We move with precision.<br/>
+                We build foundations strong enough to grow on.
+              </p>
+              
+              <p className="font-bold text-primary text-lg md:text-xl">
+                If you are building something meaningful, you will feel the difference.
+              </p>
+            </div>
+
             <a href="/about" className="inline-flex items-center text-primary font-bold hover:text-white transition-colors gap-2 group">
               Meet the full team
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-1 transition-transform">
