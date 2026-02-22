@@ -225,24 +225,56 @@ export function GorillaLabs() {
                 </Button>
               </div>
 
-              {/* Social Media Icons */}
-              <div className="flex items-center gap-4 text-muted-foreground">
-                <p className="text-sm font-medium mr-2">Follow our labs:</p>
-                <a href="#" className="p-2.5 rounded-full bg-card/50 border border-white/10 hover:border-primary/50 hover:text-white hover:bg-white/5 transition-all">
-                  <Instagram size={20} />
-                </a>
-                <a href="#" className="p-2.5 rounded-full bg-card/50 border border-white/10 hover:border-primary/50 hover:text-white hover:bg-white/5 transition-all">
-                  <Youtube size={20} />
-                </a>
-                <a href="#" className="p-2.5 rounded-full bg-card/50 border border-white/10 hover:border-primary/50 hover:text-white hover:bg-white/5 transition-all">
-                  <Facebook size={20} />
-                </a>
-                <a href="#" className="p-2.5 rounded-full bg-card/50 border border-white/10 hover:border-primary/50 hover:text-white hover:bg-white/5 transition-all">
-                  <Music2 size={20} /> {/* TikTok alternative icon */}
-                </a>
-                <a href="#" className="p-2.5 rounded-full bg-card/50 border border-white/10 hover:border-primary/50 hover:text-white hover:bg-white/5 transition-all">
-                  <Twitter size={20} />
-                </a>
+              {/* Dynamic Social Media Icons */}
+              <div className="pt-10">
+                <p className="text-sm font-medium text-muted-foreground mb-6">Connect with the ecosystem:</p>
+                <div className="flex flex-wrap items-center gap-6 md:gap-10">
+                  {[
+                    { icon: Instagram, color: "text-[#E1306C]", glow: "bg-[#E1306C]", delay: 0 },
+                    { icon: Youtube, color: "text-[#FF0000]", glow: "bg-[#FF0000]", delay: 0.2 },
+                    { icon: Facebook, color: "text-[#1877F2]", glow: "bg-[#1877F2]", delay: 0.4 },
+                    { icon: Music2, color: "text-[#fe0979]", glow: "bg-[#00f2fe]", delay: 0.6 },
+                    { icon: Twitter, color: "text-[#1DA1F2]", glow: "bg-[#1DA1F2]", delay: 0.8 },
+                  ].map((social, i) => (
+                    <motion.a
+                      key={i}
+                      href="#"
+                      className="relative group block"
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ 
+                        duration: 4, 
+                        repeat: Infinity, 
+                        ease: "easeInOut",
+                        delay: social.delay 
+                      }}
+                      whileHover={{ scale: 1.15 }}
+                    >
+                      {/* Dynamic Light Trail/Glow */}
+                      <motion.div
+                        className={cn(
+                          "absolute inset-0 rounded-full blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-500",
+                          social.glow
+                        )}
+                        animate={{ 
+                          scale: [1, 1.8, 1],
+                          opacity: [0.3, 0.7, 0.3]
+                        }}
+                        transition={{ 
+                          duration: 3, 
+                          repeat: Infinity, 
+                          ease: "easeInOut",
+                          delay: social.delay 
+                        }}
+                      />
+                      
+                      {/* Icon Container */}
+                      <div className="relative z-10 bg-card/40 p-5 rounded-3xl border border-white/10 backdrop-blur-md overflow-hidden transition-all duration-300 group-hover:bg-background/80 group-hover:border-white/30 shadow-2xl">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-full group-hover:translate-x-full" />
+                        <social.icon size={48} className={cn("transition-colors duration-300 drop-shadow-[0_0_15px_currentColor]", social.color)} />
+                      </div>
+                    </motion.a>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
