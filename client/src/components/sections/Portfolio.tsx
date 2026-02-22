@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Smartphone, Globe, Cloud, Play } from "lucide-react";
+import { ArrowRight, Code, Smartphone, Globe, Cloud, Play, Database, CreditCard, LayoutTemplate } from "lucide-react";
 import { useRef } from "react";
 
 import appSample1 from "@/assets/images/app-sample-1.png";
@@ -11,7 +11,10 @@ const capabilities = [
   { name: "Apps", icon: Smartphone, desc: "Native and cross-platform mobile applications that users love." },
   { name: "Custom Software", icon: Code, desc: "Bespoke internal tools and platforms tailored to your operations." },
   { name: "SaaS Products", icon: Cloud, desc: "Scalable software-as-a-service architectures from ground up." },
-  { name: "AI Video Generation", icon: Play, desc: "Cutting-edge AI integrations to automate media and content." }
+  { name: "AI Video Generation", icon: Play, desc: "Cutting-edge AI integrations to automate media and content." },
+  { name: "CRM Platforms", icon: Database, desc: "Tailored customer relationship management systems for your workflows." },
+  { name: "Client Portals", icon: LayoutTemplate, desc: "Dedicated secure environments for your customers to interact." },
+  { name: "Payment & Billing", icon: CreditCard, desc: "Seamless financial flows and subscription management engines." }
 ];
 
 const portfolioItems = [
