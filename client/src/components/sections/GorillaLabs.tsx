@@ -147,7 +147,7 @@ export function GorillaLabs() {
     <section 
       ref={containerRef}
       id="gorilla-labs" 
-      className="relative min-h-[90vh] py-24 bg-background overflow-hidden border-y border-white/5"
+      className="relative py-24 bg-background overflow-hidden border-y border-white/5"
     >
       {/* Background Effects */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none opacity-30" />
