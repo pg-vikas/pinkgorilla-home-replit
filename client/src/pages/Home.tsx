@@ -6,6 +6,7 @@ import { Process } from "@/components/sections/Process";
 import { AboutPreview } from "@/components/sections/AboutPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { GorillaLabs } from "@/components/sections/GorillaLabs";
+import { Portfolio } from "@/components/sections/Portfolio";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <UnifiedPlatform />
       <FinalCTA />
+      <Portfolio />
       <WhoWeWorkWith />
       <Process />
       <GorillaLabs />
