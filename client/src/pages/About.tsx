@@ -65,8 +65,8 @@ const team = [
 export default function About() {
   return (
     <div className="min-h-screen bg-background pt-20 overflow-hidden relative">
-      <GeometricShape color="primary" size="600px" top="-10%" left="-10%" delay={0} />
-      <GeometricShape color="secondary" size="500px" top="20%" right="-10%" delay={2} />
+      <GeometricShape color="primary" size="600px" delay={0} />
+      <GeometricShape color="secondary" size="500px" delay={2} />
       
       {/* Hero Section */}
       <section className="py-20 text-center container mx-auto px-4 relative z-10">

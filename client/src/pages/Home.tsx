@@ -3,6 +3,7 @@ import { WhatWeDo } from "@/components/sections/WhatWeDo";
 import { UnifiedPlatform } from "@/components/sections/UnifiedPlatform";
 import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith";
 import { Process } from "@/components/sections/Process";
+import { AboutPreview } from "@/components/sections/AboutPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <UnifiedPlatform />
       <WhoWeWorkWith />
       <Process />
+      <AboutPreview />
       <WhatWeDo />
       <FinalCTA />
     </div>
