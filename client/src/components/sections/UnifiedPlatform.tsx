@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-mot
 import { FloatingElement } from "@/components/motion/FloatingElement";
 import { GeometricShape } from "@/components/motion/GeometricShape";
 import { useRef, useState } from "react";
+import { Link } from "wouter";
 
 export function UnifiedPlatform() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -130,6 +131,20 @@ export function UnifiedPlatform() {
                   </motion.div>
                 ))}
              </div>
+
+             <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               className="flex flex-wrap gap-4 mt-12 w-full max-w-md justify-end relative z-30"
+             >
+                <Link href="/core">
+                  <a className="px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:border-cyan-500/50 text-white font-medium transition-colors">Explore More</a>
+                </Link>
+                <Link href="/pricing">
+                  <a className="px-6 py-3 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500 hover:text-black font-bold transition-all shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.5)]">Pricing</a>
+                </Link>
+             </motion.div>
           </div>
 
           {/* Right Branch - Gorilla Apps (Back-end) */}
@@ -169,6 +184,20 @@ export function UnifiedPlatform() {
                   </motion.div>
                 ))}
              </div>
+
+             <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               className="flex flex-wrap gap-4 mt-12 w-full max-w-md justify-start relative z-30"
+             >
+                <Link href="/apps">
+                  <a className="px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 text-white font-medium transition-colors">Explore More</a>
+                </Link>
+                <Link href="/pricing">
+                  <a className="px-6 py-3 rounded-full bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-white font-bold transition-all shadow-[0_0_15px_rgba(255,0,255,0.2)] hover:shadow-[0_0_25px_rgba(255,0,255,0.5)]">Pricing</a>
+                </Link>
+             </motion.div>
           </div>
 
         </div>
