@@ -22,12 +22,18 @@ export function Navbar() {
     { name: "What We Do", href: "#what-we-do" },
     { name: "Core", href: "#core" },
     { name: "Apps", href: "#apps" },
-    { name: "Who We Work With", href: "#who-we-work-with" },
     { name: "Process", href: "#process" },
+    { name: "About Us", href: "/about" },
   ];
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
+    
+    if (href.startsWith('/')) {
+      window.location.href = href;
+      return;
+    }
+
     if (location !== "/") {
       // If we are not on the home page, redirect to home page and then anchor
       window.location.href = "/" + href;
