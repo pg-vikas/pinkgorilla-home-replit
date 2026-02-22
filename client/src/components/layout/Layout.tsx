@@ -29,7 +29,7 @@ export function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary/20 relative">
       {/* Global Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1.5 z-[100] bg-gradient-to-r from-primary via-cyan-400 to-primary origin-left shadow-[0_0_15px_rgba(255,0,255,0.8)]"
+        className="fixed top-0 left-0 right-0 h-3 z-[100] bg-gradient-to-r from-primary via-cyan-400 to-primary origin-left shadow-[0_0_25px_rgba(255,0,255,1)]"
         style={{ scaleX }}
       />
 
