@@ -16,7 +16,7 @@ export function Layout({ children }: LayoutProps) {
   const y = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
   
   // Smooth out the scroll progress for the top bar
-  const scaleX = useSpring(scrollYProgress, {
+  const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
@@ -26,11 +26,11 @@ export function Layout({ children }: LayoutProps) {
   const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary/20 relative">
+    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary/20 relative pl-3">
       {/* Global Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-3 z-[100] bg-gradient-to-r from-primary via-cyan-400 to-primary origin-left shadow-[0_0_25px_rgba(255,0,255,1)]"
-        style={{ scaleX }}
+        className="fixed top-0 left-0 bottom-0 w-3 z-[100] bg-gradient-to-b from-primary via-cyan-400 to-primary origin-top shadow-[0_0_25px_rgba(255,0,255,1)]"
+        style={{ scaleY }}
       />
 
       <Navbar />
