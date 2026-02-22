@@ -20,7 +20,7 @@ export function WhatWeDo() {
             </h2>
             <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
               <p>
-                We do not just launch websites. We build digital command centers that power your entire business.
+                We do not just launch award winning websites, mobile apps and custom enterprise software. We build digital command centers that power your entire business.
               </p>
               <p>
                 Think of us as part of your company, not just someone you are in business with. We operate alongside you, helping guide the full circle of your technology from the simple foundational pieces to the most advanced systems as your growth demands it.
