@@ -226,13 +226,13 @@ export function GorillaLabs() {
           </motion.div>
 
           {/* Middle Column: Vertical Social Media Elevator */}
-          <div className="hidden lg:flex flex-col items-center justify-center h-[600px] lg:h-[800px] overflow-hidden relative w-32 md:w-40 relative z-20">
+          <div className="hidden lg:flex flex-col items-center justify-center h-[600px] lg:h-[800px] overflow-hidden relative w-48 md:w-64 relative z-20">
             {/* Fade gradients top and bottom */}
             <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none" />
             <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
             
             <motion.div 
-              className="flex flex-col gap-14 py-14"
+              className="flex flex-col gap-20 py-20"
               animate={{ y: ["0%", "-50%"] }}
               transition={{
                 duration: 35,
@@ -241,7 +241,7 @@ export function GorillaLabs() {
               }}
             >
               {[...Array(4)].map((_, arrayIndex) => (
-                <div key={arrayIndex} className="flex flex-col gap-14">
+                <div key={arrayIndex} className="flex flex-col gap-20">
                   {[
                     { icon: Instagram, color: "text-[#E1306C]", glow: "bg-[#E1306C]" },
                     { icon: Youtube, color: "text-[#FF0000]", glow: "bg-[#FF0000]" },
@@ -261,7 +261,7 @@ export function GorillaLabs() {
                       {/* Dynamic Light Trail/Glow */}
                       <motion.div
                         className={cn(
-                          "absolute inset-0 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500",
+                          "absolute inset-0 rounded-full blur-[40px] opacity-50 group-hover:opacity-100 transition-opacity duration-500",
                           social.glow
                         )}
                         animate={{ 
@@ -277,9 +277,9 @@ export function GorillaLabs() {
                       />
                       
                       {/* Icon Container */}
-                      <div className="relative z-10 bg-card/40 p-6 rounded-[2rem] border border-white/10 backdrop-blur-md overflow-hidden transition-all duration-300 group-hover:bg-background/80 group-hover:border-white/30 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+                      <div className="relative z-10 bg-card/40 p-8 rounded-[3rem] border border-white/10 backdrop-blur-md overflow-hidden transition-all duration-300 group-hover:bg-background/80 group-hover:border-white/30 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                         <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-full group-hover:translate-x-full" />
-                        <social.icon size={56} className={cn("transition-colors duration-300 drop-shadow-[0_0_20px_currentColor]", social.color)} />
+                        <social.icon size={96} className={cn("transition-colors duration-300 drop-shadow-[0_0_20px_currentColor]", social.color)} />
                       </div>
                     </motion.a>
                   ))}
