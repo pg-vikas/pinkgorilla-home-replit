@@ -71,19 +71,33 @@ export function WhatWeDo() {
                     <div key={node} className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       {/* Connection Line */}
                       <svg className="absolute inset-0 w-full h-full z-0 overflow-visible" style={{ pointerEvents: 'none' }}>
-                         <motion.line
+                         {/* Static Dashed Line */}
+                         <line
                            x1="50%"
                            y1="50%"
                            x2={`calc(50% + ${x}px)`}
                            y2={`calc(50% + ${y}px)`}
                            stroke="var(--primary)"
-                           strokeWidth="2"
-                           strokeOpacity="0.3"
-                           initial={{ pathLength: 0 }}
-                           whileInView={{ pathLength: 1 }}
-                           viewport={{ once: true }}
-                           transition={{ duration: 1.5, delay: i * 0.1 }}
+                           strokeWidth="1"
+                           strokeOpacity="0.2"
                            strokeDasharray="4 4"
+                         />
+                         
+                         {/* Animated Pong Ball */}
+                         <motion.circle
+                           r="3"
+                           fill="white"
+                           style={{ filter: "drop-shadow(0 0 5px white)" }}
+                           animate={{
+                             cx: ["50%", `calc(50% + ${x}px)`, "50%"],
+                             cy: ["50%", `calc(50% + ${y}px)`, "50%"]
+                           }}
+                           transition={{
+                             duration: 2 + Math.random() * 2,
+                             repeat: Infinity,
+                             ease: "linear",
+                             delay: Math.random() * 2
+                           }}
                          />
                       </svg>
 
