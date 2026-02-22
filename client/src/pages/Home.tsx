@@ -12,12 +12,12 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20">
       <HeroSection />
       <UnifiedPlatform />
+      <FinalCTA />
       <WhoWeWorkWith />
       <Process />
       <GorillaLabs />
       <AboutPreview />
       <WhatWeDo />
-      <FinalCTA />
     </div>
   );
 }
