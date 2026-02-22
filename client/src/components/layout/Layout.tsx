@@ -26,10 +26,10 @@ export function Layout({ children }: LayoutProps) {
   const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary/20 relative pl-3">
+    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary/20 relative pl-9">
       {/* Global Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 bottom-0 w-3 z-[100] bg-gradient-to-b from-primary via-cyan-400 to-primary origin-top shadow-[0_0_25px_rgba(255,0,255,1)]"
+        className="fixed top-0 left-0 bottom-0 w-9 z-[100] bg-gradient-to-b from-primary via-cyan-400 to-primary origin-top shadow-[0_0_25px_rgba(255,0,255,1)]"
         style={{ scaleY }}
       />
 
