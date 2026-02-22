@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Smartphone, Globe, Cloud, Play, Database, CreditCard, LayoutTemplate } from "lucide-react";
+import { 
+  ArrowRight, Code, Smartphone, Globe, Cloud, Play, Database, CreditCard, LayoutTemplate,
+  Webhook, Phone, MessageSquare, PenTool, Mail, Calendar, BarChart, Repeat, Server, FolderSync, MessageCircle
+} from "lucide-react";
 import { useRef } from "react";
 
 import appSample1 from "@/assets/images/app-sample-1.png";
@@ -14,7 +17,18 @@ const capabilities = [
   { name: "AI Video Generation", icon: Play, desc: "Cutting-edge AI integrations to automate media and content." },
   { name: "CRM Platforms", icon: Database, desc: "Tailored customer relationship management systems for your workflows." },
   { name: "Client Portals", icon: LayoutTemplate, desc: "Dedicated secure environments for your customers to interact." },
-  { name: "Payment & Billing", icon: CreditCard, desc: "Seamless financial flows and subscription management engines." }
+  { name: "Payment & Billing", icon: CreditCard, desc: "Seamless financial flows and subscription management engines." },
+  { name: "API Integrations", icon: Webhook, desc: "Connecting your disparate tools into a single, cohesive ecosystem." },
+  { name: "Phone & Texting Systems", icon: Phone, desc: "Automated call routing and two-way SMS architectures." },
+  { name: "Communication Tech", icon: MessageSquare, desc: "Omnichannel messaging solutions for internal and external chat." },
+  { name: "Signature Technology", icon: PenTool, desc: "Legally binding e-signature flows built directly into your apps." },
+  { name: "Email Automation Sequences", icon: Mail, desc: "Complex lifecycle marketing and transactional email systems." },
+  { name: "Appointment Booking Tools", icon: Calendar, desc: "Custom scheduling engines with integrated availability." },
+  { name: "Reporting & Analytics", icon: BarChart, desc: "Real-time data visualization and KPI tracking dashboards." },
+  { name: "Subscription Systems", icon: Repeat, desc: "Recurring revenue models with automated dunning management." },
+  { name: "Hosting Configuration", icon: Server, desc: "Enterprise-grade infrastructure deployment and management." },
+  { name: "File Sharing Systems", icon: FolderSync, desc: "Secure document storage, transfer, and permission management." },
+  { name: "Twilio Integrations", icon: MessageCircle, desc: "Advanced voice, video, and messaging API implementations." }
 ];
 
 const portfolioItems = [
