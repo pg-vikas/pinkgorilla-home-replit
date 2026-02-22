@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Play, X } from "lucide-react";
+import { Play, X, Instagram, Youtube, Facebook, Music2, Twitter, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Replace these URLs with your actual cinematic video sources
@@ -213,15 +213,37 @@ export function GorillaLabs() {
               </AnimatePresence>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 mt-12">
-              <Button size="lg" className="rounded-full px-8 font-bold shadow-[0_0_20px_rgba(255,0,128,0.3)] hover:shadow-[0_0_30px_rgba(255,0,128,0.5)] transition-all group overflow-hidden relative">
-                <span className="relative z-10">Talk to Gorilla Labs</span>
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 font-bold border-white/20 hover:bg-white/5 transition-all group">
-                See Campaign Samples
-              </Button>
+            {/* CTAs & Social Links */}
+            <div className="flex flex-col gap-8 mt-12">
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" className="rounded-full px-8 font-bold shadow-[0_0_20px_rgba(255,0,128,0.3)] hover:shadow-[0_0_30px_rgba(255,0,128,0.5)] transition-all group overflow-hidden relative">
+                  <span className="relative z-10">Talk to Gorilla Labs</span>
+                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full px-8 font-bold border-white/20 hover:bg-white/5 transition-all group">
+                  See Campaign Samples
+                </Button>
+              </div>
+
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-4 text-muted-foreground">
+                <p className="text-sm font-medium mr-2">Follow our labs:</p>
+                <a href="#" className="p-2.5 rounded-full bg-card/50 border border-white/10 hover:border-primary/50 hover:text-white hover:bg-white/5 transition-all">
+                  <Instagram size={20} />
+                </a>
+                <a href="#" className="p-2.5 rounded-full bg-card/50 border border-white/10 hover:border-primary/50 hover:text-white hover:bg-white/5 transition-all">
+                  <Youtube size={20} />
+                </a>
+                <a href="#" className="p-2.5 rounded-full bg-card/50 border border-white/10 hover:border-primary/50 hover:text-white hover:bg-white/5 transition-all">
+                  <Facebook size={20} />
+                </a>
+                <a href="#" className="p-2.5 rounded-full bg-card/50 border border-white/10 hover:border-primary/50 hover:text-white hover:bg-white/5 transition-all">
+                  <Music2 size={20} /> {/* TikTok alternative icon */}
+                </a>
+                <a href="#" className="p-2.5 rounded-full bg-card/50 border border-white/10 hover:border-primary/50 hover:text-white hover:bg-white/5 transition-all">
+                  <Twitter size={20} />
+                </a>
+              </div>
             </div>
           </motion.div>
 
