@@ -1,0 +1,101 @@
+```text
+REPLIT PROMPT
+Project: Pink Gorilla homepage
+Goal: Add a new homepage section titled “Gorilla Labs” that feels cinematic, premium, and alive. This section must include the provided copy, plus stunning, dynamic, movie quality video samples integrated into the layout. The design must feel bold, architectural, and modern. No cheap templates.
+
+TECH ASSUMPTION
+If this project is React, implement as a new component and import into the homepage.
+If this project is plain HTML, implement as a new section in index.html with supporting CSS and JS.
+Detect the project type automatically by checking for package.json and src folder.
+
+SECTION REQUIREMENTS
+1. Create a new full width section named Gorilla Labs placed on the homepage below the main services section.
+2. The section must have:
+   - A left content column with the copy
+   - A right cinematic “Media Wall” that showcases video samples in a premium way
+   - A dark luxury background with subtle cosmic particles and soft gradients
+   - Smooth scroll entrance animations and hover microinteractions
+
+COPY CONTENT
+Add three selectable copy modes with a segmented toggle UI labeled:
+Direct, Energetic, Minimal
+
+When toggled, the text swaps with a smooth fade and slight upward motion.
+
+Copy mode 1 label Direct
+Headline: Gorilla Labs is the radical marketing arm of Pink Gorilla.
+Body:
+A dedicated team of creators, designers, graphic artists, strategists, and social media operators focused on building authentic, high impact campaigns that move real audiences.
+We do not manufacture content.
+We create ecosystems.
+From concept to execution, Gorilla Labs brings structure, creativity, and consistency together into one unified marketing force.
+
+Copy mode 2 label Energetic
+Headline: Gorilla Labs is where culture meets execution.
+Body:
+It is our high impact marketing division built around authentic storytelling, social media dominance, and content that feels real, not staged.
+Behind every campaign is a coordinated team of creators, designers, editors, and organizers working in sync to build a living, breathing content ecosystem around your brand.
+This is not random posting.
+This is controlled momentum.
+
+Copy mode 3 label Minimal
+Headline: Gorilla Labs is the marketing division of Pink Gorilla.
+Body:
+A collaborative team of creators, designers, and social media specialists producing authentic content and coordinated campaigns that build real presence and sustained momentum.
+It is marketing as an ecosystem, not isolated posts.
+
+VISUAL AND MOTION DIRECTION
+A. Cinematic Media Wall
+- Build a media wall with 3 to 6 video tiles arranged in an asymmetrical grid.
+- Each tile is a video element with rounded corners and a soft glow edge.
+- Videos should autoplay muted loop inline.
+- Use a subtle parallax effect on scroll, so the media wall moves slightly slower than the page.
+- On hover: the tile gently scales up, glow intensifies, and a title label appears with a soft blur backdrop.
+- Add a “Play Focus” interaction: clicking a tile expands it into a centered modal lightbox with smooth animation.
+
+B. Movie quality feel
+- Add a dark overlay and subtle film grain texture.
+- Add soft light leaks or gradient bloom behind the videos.
+- Add a slow moving cosmic particle layer behind content using canvas or CSS only.
+- Add smooth easing transitions. Everything should feel premium.
+
+VIDEO CONTENT
+Use placeholder videos that look cinematic.
+Include 3 to 6 sample mp4 sources using publicly available placeholder video URLs, but structure the code so I can replace with my own later.
+Each tile should have a label such as:
+Brand Film, Social Reel, Founder Story, Product Montage, UGC Cut, Campaign Teaser
+
+Add a note in code comments showing exactly where to replace the URLs.
+
+LAYOUT DETAILS
+- Section height: at least 90vh on desktop.
+- Responsive:
+  - Desktop: two columns, text left and media wall right
+  - Mobile: media wall stacks above or below with a swipeable carousel or stacked cards
+- Typography:
+  - Very large bold headline
+  - Clean readable body
+  - Plenty of spacing
+- Buttons:
+  - Add a primary CTA button: “Talk to Gorilla Labs”
+  - Add a secondary CTA: “See Campaign Samples”
+  - CTAs should have subtle animated sheen on hover
+
+ANIMATION REQUIREMENTS
+- On scroll into view: section fades in, text slides in from left, media wall slides in from right.
+- Dot grid or particle layer slowly drifts.
+- Parallax for media wall and background.
+- Respect reduced motion preference.
+
+IMPLEMENTATION NOTES
+- Create clean, reusable components and CSS.
+- No external heavy animation libraries unless already present. Prefer IntersectionObserver and requestAnimationFrame for parallax.
+- Ensure video autoplay works on mobile by using muted, playsInline, and no audio.
+- Add accessibility: buttons, focus states, aria labels for modal.
+
+DELIVERABLES
+- Updated homepage with Gorilla Labs section fully integrated
+- All CSS for the new section
+- All JS or React logic for toggles, animations, parallax, and modal
+- Clear comments for where to replace video sources and labels
+```

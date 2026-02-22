@@ -5,6 +5,7 @@ import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith";
 import { Process } from "@/components/sections/Process";
 import { AboutPreview } from "@/components/sections/AboutPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { GorillaLabs } from "@/components/sections/GorillaLabs";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <UnifiedPlatform />
       <WhoWeWorkWith />
       <Process />
+      <GorillaLabs />
       <AboutPreview />
       <WhatWeDo />
       <FinalCTA />
