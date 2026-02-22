@@ -308,6 +308,89 @@ export function HeroSection() {
                  </div>
                </motion.div>
             </FloatingElement>
+
+            {/* New Words */}
+            <FloatingElement delay={0.8} duration={8} yOffset={25} xOffset={-25} className="bottom-[5%] right-[15%]">
+               <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
+                 <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500 to-purple-600 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+                    <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-fuchsia-500/30 backdrop-blur-xl text-fuchsia-400 font-bold shadow-[0_0_30px_rgba(217,70,239,0.2)] text-lg flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-sm bg-fuchsia-400 animate-ping" />
+                      Custom Software
+                    </div>
+                 </div>
+               </motion.div>
+            </FloatingElement>
+
+            <FloatingElement delay={3.5} duration={9} yOffset={-30} xOffset={20} className="top-[45%] -right-16">
+               <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
+                 <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-400 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+                    <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-amber-500/30 backdrop-blur-xl text-amber-400 font-bold shadow-[0_0_30px_rgba(245,158,11,0.2)] text-lg flex items-center gap-3">
+                      <div className="flex gap-0.5">
+                        <motion.div animate={{ height: ["4px", "12px", "4px"] }} transition={{ duration: 1, repeat: Infinity }} className="w-1 bg-amber-400 rounded-full" />
+                        <motion.div animate={{ height: ["12px", "4px", "12px"] }} transition={{ duration: 1, repeat: Infinity }} className="w-1 bg-amber-400 rounded-full" />
+                      </div>
+                      Employee Tracking
+                    </div>
+                 </div>
+               </motion.div>
+            </FloatingElement>
+
+            <FloatingElement delay={1.2} duration={7} yOffset={20} xOffset={-10} className="bottom-[35%] -left-32">
+               <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
+                 <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-green-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+                    <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-lime-400/30 backdrop-blur-xl text-lime-400 font-bold shadow-[0_0_30px_rgba(163,230,53,0.2)] text-lg flex items-center gap-3">
+                      <motion.div animate={{ rotate: 180 }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="w-4 h-4 border-2 border-lime-400 border-t-transparent rounded-full" />
+                      Reporting
+                    </div>
+                 </div>
+               </motion.div>
+            </FloatingElement>
+
+            <FloatingElement delay={4.5} duration={10} yOffset={-20} xOffset={30} className="-top-12 left-[20%]">
+               <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
+                 <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+                    <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-blue-400/30 backdrop-blur-xl text-blue-400 font-bold shadow-[0_0_30px_rgba(96,165,250,0.2)] text-lg flex items-center gap-3">
+                      <div className="flex gap-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-bounce" style={{ animationDelay: "0ms" }} />
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-bounce" style={{ animationDelay: "150ms" }} />
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-bounce" style={{ animationDelay: "300ms" }} />
+                      </div>
+                      Communication
+                    </div>
+                 </div>
+               </motion.div>
+            </FloatingElement>
+
+            <FloatingElement delay={2.8} duration={8.5} yOffset={25} xOffset={-15} className="top-[85%] left-[10%]">
+               <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
+                 <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-stone-400 to-neutral-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+                    <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-stone-400/30 backdrop-blur-xl text-stone-300 font-bold shadow-[0_0_30px_rgba(168,162,158,0.2)] text-lg flex items-center gap-3">
+                      <div className="relative w-4 h-4 border-2 border-stone-400 rounded-full flex items-center justify-center">
+                        <div className="w-1 h-1 bg-stone-400 rounded-full" />
+                      </div>
+                      Compliance
+                    </div>
+                 </div>
+               </motion.div>
+            </FloatingElement>
+
+            <FloatingElement delay={0.2} duration={6} yOffset={-10} xOffset={20} className="bottom-[45%] right-[8%]">
+               <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
+                 <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+                    <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-emerald-400/30 backdrop-blur-xl text-emerald-400 font-bold shadow-[0_0_30px_rgba(52,211,153,0.2)] text-lg flex items-center gap-3">
+                      <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity }} className="w-0 h-0 border-l-[6px] border-l-emerald-400 border-y-[4px] border-y-transparent" />
+                      Growth
+                    </div>
+                 </div>
+               </motion.div>
+            </FloatingElement>
+
           </motion.div>
         </motion.div>
       </div>
