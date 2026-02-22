@@ -156,7 +156,7 @@ export function GorillaLabs() {
       <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-accent/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-16 items-center">
           
           {/* Left Column: Copy Content */}
           <motion.div 
@@ -213,40 +213,46 @@ export function GorillaLabs() {
               </AnimatePresence>
             </div>
 
-            {/* CTAs & Social Links */}
-            <div className="flex flex-col gap-8 mt-12">
-              <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="rounded-full px-8 font-bold shadow-[0_0_20px_rgba(255,0,128,0.3)] hover:shadow-[0_0_30px_rgba(255,0,128,0.5)] transition-all group overflow-hidden relative">
-                  <span className="relative z-10">Talk to Gorilla Labs</span>
-                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-8 font-bold border-white/20 hover:bg-white/5 transition-all group">
-                  See Campaign Samples
-                </Button>
-              </div>
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4 mt-12">
+              <Button size="lg" className="rounded-full px-8 font-bold shadow-[0_0_20px_rgba(255,0,128,0.3)] hover:shadow-[0_0_30px_rgba(255,0,128,0.5)] transition-all group overflow-hidden relative">
+                <span className="relative z-10">Talk to Gorilla Labs</span>
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full px-8 font-bold border-white/20 hover:bg-white/5 transition-all group">
+                See Campaign Samples
+              </Button>
+            </div>
+          </motion.div>
 
-              {/* Dynamic Social Media Icons */}
-              <div className="pt-10">
-                <p className="text-sm font-medium text-muted-foreground mb-6">Connect with the ecosystem:</p>
-                <div className="flex flex-wrap items-center gap-6 md:gap-10">
+          {/* Middle Column: Vertical Social Media Elevator */}
+          <div className="hidden lg:flex flex-col items-center justify-center h-[600px] lg:h-[800px] overflow-hidden relative w-24 relative z-20">
+            {/* Fade gradients top and bottom */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
+            
+            <motion.div 
+              className="flex flex-col gap-10 py-10"
+              animate={{ y: ["0%", "-50%"] }}
+              transition={{
+                duration: 20,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+            >
+              {[...Array(3)].map((_, arrayIndex) => (
+                <div key={arrayIndex} className="flex flex-col gap-10">
                   {[
-                    { icon: Instagram, color: "text-[#E1306C]", glow: "bg-[#E1306C]", delay: 0 },
-                    { icon: Youtube, color: "text-[#FF0000]", glow: "bg-[#FF0000]", delay: 0.2 },
-                    { icon: Facebook, color: "text-[#1877F2]", glow: "bg-[#1877F2]", delay: 0.4 },
-                    { icon: Music2, color: "text-[#fe0979]", glow: "bg-[#00f2fe]", delay: 0.6 },
-                    { icon: Twitter, color: "text-[#1DA1F2]", glow: "bg-[#1DA1F2]", delay: 0.8 },
+                    { icon: Instagram, color: "text-[#E1306C]", glow: "bg-[#E1306C]" },
+                    { icon: Youtube, color: "text-[#FF0000]", glow: "bg-[#FF0000]" },
+                    { icon: Facebook, color: "text-[#1877F2]", glow: "bg-[#1877F2]" },
+                    { icon: Music2, color: "text-[#fe0979]", glow: "bg-[#00f2fe]" },
+                    { icon: Twitter, color: "text-[#1DA1F2]", glow: "bg-[#1DA1F2]" },
                   ].map((social, i) => (
                     <motion.a
                       key={i}
                       href="#"
-                      className="relative group block"
-                      animate={{ y: [0, -15, 0] }}
-                      transition={{ 
-                        duration: 4, 
-                        repeat: Infinity, 
-                        ease: "easeInOut",
-                        delay: social.delay 
-                      }}
+                      className="relative group block mx-auto"
                       whileHover={{ scale: 1.15 }}
                     >
                       {/* Dynamic Light Trail/Glow */}
@@ -263,21 +269,21 @@ export function GorillaLabs() {
                           duration: 3, 
                           repeat: Infinity, 
                           ease: "easeInOut",
-                          delay: social.delay 
+                          delay: i * 0.2
                         }}
                       />
                       
                       {/* Icon Container */}
-                      <div className="relative z-10 bg-card/40 p-5 rounded-3xl border border-white/10 backdrop-blur-md overflow-hidden transition-all duration-300 group-hover:bg-background/80 group-hover:border-white/30 shadow-2xl">
+                      <div className="relative z-10 bg-card/40 p-4 rounded-2xl border border-white/10 backdrop-blur-md overflow-hidden transition-all duration-300 group-hover:bg-background/80 group-hover:border-white/30 shadow-2xl">
                         <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-full group-hover:translate-x-full" />
-                        <social.icon size={48} className={cn("transition-colors duration-300 drop-shadow-[0_0_15px_currentColor]", social.color)} />
+                        <social.icon size={36} className={cn("transition-colors duration-300 drop-shadow-[0_0_15px_currentColor]", social.color)} />
                       </div>
                     </motion.a>
                   ))}
                 </div>
-              </div>
-            </div>
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>
 
           {/* Right Column: Cinematic Media Wall */}
           <motion.div 
