@@ -26,13 +26,13 @@ const team = [
 
 export function AboutPreview() {
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-card/20 border-y border-white/5">
+    <section id="about" className="pt-40 pb-24 relative overflow-hidden bg-card/20 border-b border-white/5">
       <GeometricShape color="primary" size="400px" delay={0} />
       <GeometricShape color="secondary" size="300px" delay={2} />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row gap-12 items-center mb-16">
-          <div className="md:w-1/2">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center mb-16">
+          <div className="lg:w-1/2">
             <h2 className="text-4xl md:text-5xl font-bold font-display mb-8">
               About <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Pink Gorilla</span>
             </h2>
@@ -85,7 +85,7 @@ export function AboutPreview() {
             </a>
           </div>
 
-          <div className="md:w-1/2 grid grid-cols-2 gap-4">
+          <div className="lg:w-5/12 lg:ml-auto grid grid-cols-2 gap-4 lg:gap-6">
             {team.map((member, i) => (
               <motion.div 
                 key={i} 
