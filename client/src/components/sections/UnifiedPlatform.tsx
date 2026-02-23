@@ -115,24 +115,26 @@ export function UnifiedPlatform() {
           </div>
         </motion.div>
 
-        <div className="text-center mb-32 max-w-5xl mx-auto space-y-8 px-4">
-           <motion.h2 
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             className="text-5xl md:text-7xl lg:text-8xl font-black font-display uppercase tracking-tight"
-           >
-             The Complete Ecosystem
-           </motion.h2>
-           <motion.p
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ delay: 0.1 }}
-             className="text-2xl md:text-3xl text-white/90 font-medium leading-relaxed"
-           >
-             Front-end presence and back-end operations working in perfect harmony. Decide if Gorilla Core is what your business needs or Gorilla Apps or Both for bundled value and super charging your entire business.
-           </motion.p>
+        <div className="relative w-[100vw] left-1/2 -translate-x-1/2 bg-black/40 border-y border-white/5 backdrop-blur-sm py-16 mb-24">
+          <div className="text-center max-w-5xl mx-auto space-y-8 px-4 relative z-10">
+             <motion.h2 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               className="text-5xl md:text-7xl lg:text-8xl font-black font-display uppercase tracking-tight"
+             >
+               The Complete Ecosystem
+             </motion.h2>
+             <motion.p
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.1 }}
+               className="text-2xl md:text-3xl text-white/90 font-medium leading-relaxed"
+             >
+               Front-end presence and back-end operations working in perfect harmony. Decide if Gorilla Core is what your business needs or Gorilla Apps or Both for bundled value and super charging your entire business.
+             </motion.p>
+          </div>
         </div>
 
         <div ref={containerRef} className="relative w-full max-w-[1400px] mx-auto flex flex-col md:flex-row items-stretch justify-center gap-8 md:gap-0 mt-16 pb-32 min-h-[1200px] md:min-h-[900px]">
