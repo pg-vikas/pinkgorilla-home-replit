@@ -60,60 +60,35 @@ export function UnifiedPlatform() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="relative w-[100vw] ml-[calc(50%-50vw)] px-4 py-32 mb-16 flex flex-col items-center justify-center overflow-hidden border-y border-white/5 bg-black/40 backdrop-blur-md shadow-[0_0_100px_rgba(0,255,255,0.05)] group" style={{ perspective: '1000px' }}>
+          <div className="relative w-[100vw] ml-[calc(50%-50vw)] px-4 py-32 mb-16 flex flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-cyan-950/20 via-black to-primary/10 border-y border-white/5 backdrop-blur-md">
             
-            {/* Digital Skyline & Road Background */}
-            <div className="absolute inset-0 pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity duration-1000">
-              {/* Skyline Buildings */}
-              <div className="absolute top-0 left-0 right-0 bottom-[40%] flex items-end justify-between px-4 gap-1 sm:gap-2 opacity-30 [mask-image:linear-gradient(to_bottom,transparent_10%,black_100%)]">
-                {[...Array(30)].map((_, i) => {
-                  const heights = [30, 70, 45, 90, 20, 60, 85, 40, 75, 50, 80, 25, 65, 95, 35, 55, 80, 40, 70, 20, 60, 85, 40, 75, 50, 80, 25, 65, 95, 35];
-                  return (
-                    <div 
-                      key={i}
-                      className={`w-full bg-gradient-to-t ${i % 3 === 0 ? 'from-primary' : 'from-cyan-500'} to-transparent`}
-                      style={{ height: `${heights[i]}%` }}
-                    />
-                  );
-                })}
-              </div>
-
-              {/* Moving Road / Grid */}
-              <motion.div 
-                className="absolute left-[-50%] right-[-50%] top-[60%] bottom-[-50%] bg-[linear-gradient(rgba(0,255,255,0.15)_2px,transparent_2px),linear-gradient(90deg,rgba(0,255,255,0.15)_2px,transparent_2px)] bg-[size:40px_40px] [mask-image:linear-gradient(to_bottom,transparent,black)]"
-                style={{ transformOrigin: 'top center', transform: 'rotateX(75deg)' }}
-                animate={{ backgroundPosition: ["0px 0px", "0px 40px"] }}
-                transition={{ duration: 1, ease: "linear", repeat: Infinity }}
-              />
-              
-              {/* Horizon Glow */}
-              <div className="absolute top-[60%] left-0 w-full h-[2px] bg-cyan-500/50 shadow-[0_0_20px_#00ffff]" />
-              <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-full h-[40%] bg-cyan-500/10 blur-[50px] mix-blend-screen" />
-            </div>
+            {/* Clean Banner Background Elements */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent pointer-events-none" />
 
             {/* Content */}
             <div className="relative z-10 w-full flex flex-col items-center">
-              <h3 className="text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[4vw] font-black font-display leading-[1.1] tracking-tighter w-full text-center uppercase">
-                <span className="text-white inline-block mx-2 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+              <h3 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] font-black font-display leading-[1.1] tracking-tighter w-full text-center uppercase">
+                <span className="text-white inline-block mx-2 drop-shadow-md">
                   Agencies Build.
                 </span>
-                <span className="text-white inline-block mx-2 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                <span className="text-white inline-block mx-2 drop-shadow-md">
                   Invoice. Leave.
                 </span>
                 
-                <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 relative w-full">
-                  <span className="text-white inline-block drop-shadow-[0_0_15px_rgba(0,0,0,0.5)] text-center">
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 relative w-full">
+                  <span className="text-white inline-block drop-shadow-md text-center">
                     We engineer
                   </span>
-                  <div className="relative w-full sm:w-[30vw] md:w-[25vw] h-[10vw] sm:h-[8vw] md:h-[5vw] flex items-center justify-center overflow-hidden">
+                  <div className="relative w-full sm:w-[40vw] md:w-[35vw] lg:w-[28vw] h-[16vw] sm:h-[12vw] md:h-[10vw] lg:h-[8vw] flex items-center justify-center overflow-hidden">
                     <AnimatePresence mode="wait">
                       <motion.span 
                         key={outcomeIndex}
-                        initial={{ y: 20, opacity: 0 }}
+                        initial={{ y: 30, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -20, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="text-primary absolute text-center w-full whitespace-nowrap drop-shadow-[0_0_15px_rgba(255,0,255,0.3)]"
+                        exit={{ y: -30, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className="text-primary absolute text-center w-full whitespace-nowrap drop-shadow-md"
                       >
                         {outcomes[outcomeIndex]}
                       </motion.span>
@@ -122,9 +97,9 @@ export function UnifiedPlatform() {
                 </div>
               </h3>
               
-              <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent my-10" />
+              <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-cyan-500/80 to-transparent my-12" />
 
-              <p className="text-xl md:text-3xl leading-relaxed font-light text-white/90 max-w-5xl mx-auto text-center px-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+              <p className="text-2xl md:text-4xl leading-relaxed font-light text-white/90 max-w-6xl mx-auto text-center px-4 drop-shadow-sm">
                 Pink Gorilla runs your digital systems on a low monthly model and stays in your corner. We maintain, improve, automate, and help your business grow through structured technology that works every day.
               </p>
             </div>
