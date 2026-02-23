@@ -74,10 +74,19 @@ export function UnifiedPlatform() {
 
           {/* Mobile static circle */}
           <FloatingElement delay={0} duration={6} yOffset={10} className="md:hidden flex flex-col items-center mb-8">
-            <div className="w-32 h-32 rounded-full border border-white/20 bg-black/80 backdrop-blur-xl flex items-center justify-center relative shadow-[0_0_50px_rgba(0,255,255,0.2)]">
-               <div className="absolute inset-0 rounded-full border-2 border-cyan-400/50 animate-[spin_4s_linear_infinite]" />
-               <div className="absolute inset-2 rounded-full border border-primary/50 animate-[spin_6s_linear_infinite_reverse]" />
-               <h3 className="text-2xl font-bold font-display text-white text-center leading-none">Pink<br/>Gorilla</h3>
+            <div className="w-32 h-32 rounded-full border border-white/20 bg-black/80 backdrop-blur-xl flex items-center justify-center relative shadow-[0_0_50px_rgba(0,255,255,0.2)] overflow-hidden">
+               {/* Neon racing light */}
+               <div className="absolute inset-0 rounded-full">
+                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[200%] -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(0,255,255,1)_360deg)] animate-[spin_3s_linear_infinite]" />
+                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[200%] -translate-y-1/2 bg-[conic-gradient(from_180deg,transparent_0_340deg,rgba(255,0,255,1)_360deg)] animate-[spin_3s_linear_infinite]" />
+               </div>
+               
+               <div className="absolute inset-[2px] rounded-full bg-black flex items-center justify-center">
+                 <div className="absolute inset-0 rounded-full border border-cyan-400/30 animate-[spin_4s_linear_infinite]" />
+                 <div className="absolute inset-2 rounded-full border border-primary/30 animate-[spin_6s_linear_infinite_reverse]" />
+                 <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl mix-blend-screen animate-pulse" />
+                 <h3 className="text-2xl font-bold font-display text-white text-center leading-none z-10">Pink<br/>Gorilla</h3>
+               </div>
             </div>
           </FloatingElement>
 
@@ -86,11 +95,19 @@ export function UnifiedPlatform() {
             style={{ top: circleTop }} 
             className="absolute left-1/2 -translate-x-1/2 z-30 hidden md:flex flex-col items-center pointer-events-none"
           >
-            <div className="w-32 h-32 rounded-full border border-white/20 bg-black/80 backdrop-blur-xl flex items-center justify-center relative shadow-[0_0_50px_rgba(255,0,255,0.4)]">
-               <div className="absolute inset-0 rounded-full border-2 border-cyan-400/80 animate-[spin_4s_linear_infinite]" />
-               <div className="absolute inset-2 rounded-full border-2 border-primary/80 animate-[spin_6s_linear_infinite_reverse]" />
-               <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl mix-blend-screen animate-pulse" />
-               <h3 className="text-2xl font-bold font-display text-white text-center leading-none z-10">Pink<br/>Gorilla</h3>
+            <div className="w-32 h-32 rounded-full border border-white/20 bg-black/80 backdrop-blur-xl flex items-center justify-center relative shadow-[0_0_50px_rgba(255,0,255,0.4)] overflow-hidden">
+               {/* Neon racing light */}
+               <div className="absolute inset-0 rounded-full">
+                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[200%] -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(0,255,255,1)_360deg)] animate-[spin_3s_linear_infinite]" />
+                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[200%] -translate-y-1/2 bg-[conic-gradient(from_180deg,transparent_0_340deg,rgba(255,0,255,1)_360deg)] animate-[spin_3s_linear_infinite]" />
+               </div>
+               
+               <div className="absolute inset-[2px] rounded-full bg-black flex items-center justify-center">
+                 <div className="absolute inset-0 rounded-full border border-cyan-400/30 animate-[spin_4s_linear_infinite]" />
+                 <div className="absolute inset-2 rounded-full border border-primary/30 animate-[spin_6s_linear_infinite_reverse]" />
+                 <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl mix-blend-screen animate-pulse" />
+                 <h3 className="text-2xl font-bold font-display text-white text-center leading-none z-10">Pink<br/>Gorilla</h3>
+               </div>
             </div>
           </motion.div>
 
