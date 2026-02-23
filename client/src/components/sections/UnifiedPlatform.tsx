@@ -51,11 +51,26 @@ export function UnifiedPlatform() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="w-[100vw] relative left-1/2 -translate-x-1/2 px-4 mb-12 flex flex-col items-center justify-center overflow-hidden">
-            <h3 className="text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[11vw] font-black font-display leading-[0.85] tracking-tighter w-full text-center uppercase">
-              <span className="text-white block hover:text-cyan-400 transition-colors duration-500 hover:scale-[1.02] transform cursor-default">Agencies Build.</span>
-              <span className="text-white/80 block hover:text-cyan-400 transition-colors duration-500 hover:scale-[1.02] transform cursor-default">Invoice. Leave.</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-fuchsia-400 to-primary block mt-4 lg:mt-8 filter drop-shadow-[0_0_40px_rgba(255,0,255,0.5)] hover:scale-[1.02] transform cursor-default transition-transform duration-500">We do not.</span>
+          <div className="w-[100vw] relative left-1/2 -translate-x-1/2 px-4 mb-16 flex flex-col items-center justify-center overflow-hidden">
+            <h3 className="text-[15vw] sm:text-[13vw] md:text-[11vw] lg:text-[12vw] font-black font-display leading-[0.8] tracking-tighter w-full text-center uppercase -rotate-2 transform">
+              <span 
+                className="text-white block hover:-translate-y-2 transition-transform duration-300 cursor-default"
+                style={{ textShadow: '4px 4px 0px #00ffff, 8px 8px 0px rgba(0,0,0,0.8)' }}
+              >
+                Agencies Build.
+              </span>
+              <span 
+                className="text-white block hover:-translate-y-2 transition-transform duration-300 cursor-default mt-2"
+                style={{ textShadow: '4px 4px 0px #00ffff, 8px 8px 0px rgba(0,0,0,0.8)' }}
+              >
+                Invoice. Leave.
+              </span>
+              <span 
+                className="text-primary block mt-8 lg:mt-12 hover:-translate-y-3 transition-transform duration-300 cursor-default"
+                style={{ textShadow: '6px 6px 0px #00ffff, 12px 12px 0px rgba(0,0,0,0.8)' }}
+              >
+                We do not.
+              </span>
             </h3>
           </div>
           <p className="text-xl md:text-3xl leading-relaxed font-light text-white/90 max-w-5xl mx-auto mb-16 text-center px-4">
