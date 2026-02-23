@@ -186,9 +186,76 @@ export function Portfolio() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-8 text-center md:text-right flex flex-col items-center md:items-end justify-center py-16 px-8 md:px-12 rounded-3xl bg-gradient-to-br from-primary/10 to-cyan-500/10 border border-white/10 relative overflow-hidden group"
+              className="mt-8 text-center md:text-right flex flex-col items-center md:items-end justify-center py-16 px-8 md:px-12 rounded-3xl bg-gradient-to-br from-primary/10 to-cyan-500/10 border border-white/10 relative overflow-hidden group min-h-[400px]"
             >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,var(--primary),transparent_70%)] opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,var(--primary),transparent_70%)] opacity-20 group-hover:opacity-40 transition-opacity duration-700 z-0" />
+              
+              {/* Animated Gorilla Hand Prints */}
+              <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden">
+                <motion.div 
+                  className="absolute top-10 left-10 text-primary w-24 h-24"
+                  animate={{ 
+                    opacity: [0, 0.4, 0],
+                    scale: [0.8, 1, 0.9],
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity,
+                    delay: 0
+                  }}
+                >
+                  <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M45,20 C42,10 35,5 25,10 C15,15 15,25 20,35 C23,40 30,45 35,45 C45,45 48,30 45,20 Z" />
+                    <path d="M60,15 C55,5 45,0 35,5 C25,10 25,20 30,30 C35,35 45,40 55,35 C65,30 65,20 60,15 Z" />
+                    <path d="M75,25 C70,15 60,10 50,15 C40,20 40,30 45,40 C50,45 60,50 70,45 C80,40 80,30 75,25 Z" />
+                    <path d="M85,45 C80,35 70,30 60,35 C50,40 50,50 55,60 C60,65 70,70 80,65 C90,60 90,50 85,45 Z" />
+                    <path d="M40,55 C30,50 20,55 15,65 C10,75 15,90 30,95 C45,100 60,95 70,85 C80,75 75,60 65,55 C55,50 45,60 40,55 Z" />
+                  </svg>
+                </motion.div>
+                
+                <motion.div 
+                  className="absolute bottom-10 right-20 text-cyan-500 w-32 h-32"
+                  animate={{ 
+                    opacity: [0, 0.3, 0],
+                    scale: [0.9, 1.1, 0.9],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity,
+                    delay: 2
+                  }}
+                >
+                  <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style={{transform: 'rotate(45deg)'}}>
+                    <path d="M45,20 C42,10 35,5 25,10 C15,15 15,25 20,35 C23,40 30,45 35,45 C45,45 48,30 45,20 Z" />
+                    <path d="M60,15 C55,5 45,0 35,5 C25,10 25,20 30,30 C35,35 45,40 55,35 C65,30 65,20 60,15 Z" />
+                    <path d="M75,25 C70,15 60,10 50,15 C40,20 40,30 45,40 C50,45 60,50 70,45 C80,40 80,30 75,25 Z" />
+                    <path d="M85,45 C80,35 70,30 60,35 C50,40 50,50 55,60 C60,65 70,70 80,65 C90,60 90,50 85,45 Z" />
+                    <path d="M40,55 C30,50 20,55 15,65 C10,75 15,90 30,95 C45,100 60,95 70,85 C80,75 75,60 65,55 C55,50 45,60 40,55 Z" />
+                  </svg>
+                </motion.div>
+                
+                <motion.div 
+                  className="absolute top-1/2 left-1/3 text-white/50 w-20 h-20"
+                  animate={{ 
+                    opacity: [0, 0.2, 0],
+                    scale: [0.8, 1, 0.8],
+                  }}
+                  transition={{ 
+                    duration: 4.5, 
+                    repeat: Infinity,
+                    delay: 1.5
+                  }}
+                >
+                  <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style={{transform: 'rotate(-20deg)'}}>
+                    <path d="M45,20 C42,10 35,5 25,10 C15,15 15,25 20,35 C23,40 30,45 35,45 C45,45 48,30 45,20 Z" />
+                    <path d="M60,15 C55,5 45,0 35,5 C25,10 25,20 30,30 C35,35 45,40 55,35 C65,30 65,20 60,15 Z" />
+                    <path d="M75,25 C70,15 60,10 50,15 C40,20 40,30 45,40 C50,45 60,50 70,45 C80,40 80,30 75,25 Z" />
+                    <path d="M85,45 C80,35 70,30 60,35 C50,40 50,50 55,60 C60,65 70,70 80,65 C90,60 90,50 85,45 Z" />
+                    <path d="M40,55 C30,50 20,55 15,65 C10,75 15,90 30,95 C45,100 60,95 70,85 C80,75 75,60 65,55 C55,50 45,60 40,55 Z" />
+                  </svg>
+                </motion.div>
+              </div>
+
               <h3 className="text-5xl md:text-7xl font-bold font-display leading-tight mb-8 relative z-10 text-white">
                 Want to see <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-primary">more of our Work?</span>
