@@ -61,37 +61,27 @@ export function UnifiedPlatform() {
           viewport={{ once: true }}
         >
           <div className="w-full px-4 mb-16 flex flex-col items-center justify-center overflow-hidden">
-            <h3 className="text-[14vw] sm:text-[12vw] md:text-[11vw] lg:text-[12vw] font-black font-display leading-[0.9] tracking-tighter w-full text-center uppercase">
-              <span 
-                className="text-white block hover:-translate-y-2 transition-transform duration-300 cursor-default"
-                style={{ textShadow: '4px 4px 0px #00ffff, 8px 8px 0px rgba(0,0,0,0.8)' }}
-              >
+            <h3 className="text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[4vw] font-black font-display leading-[1.1] tracking-tighter w-full text-center uppercase max-w-7xl mx-auto">
+              <span className="text-white inline-block mx-2">
                 Agencies Build.
               </span>
-              <span 
-                className="text-white block hover:-translate-y-2 transition-transform duration-300 cursor-default mt-2"
-                style={{ textShadow: '4px 4px 0px #00ffff, 8px 8px 0px rgba(0,0,0,0.8)' }}
-              >
+              <span className="text-white inline-block mx-2">
                 Invoice. Leave.
               </span>
               
-              <div className="mt-8 lg:mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 h-[20vw] md:h-[14vw] relative">
-                <span 
-                  className="text-white block"
-                  style={{ textShadow: '6px 6px 0px #00ffff, 12px 12px 0px rgba(0,0,0,0.8)' }}
-                >
+              <div className="mt-6 flex flex-row items-center justify-center gap-3 relative">
+                <span className="text-white inline-block">
                   We engineer
                 </span>
-                <div className="relative w-[60vw] md:w-[40vw] h-[16vw] md:h-[14vw] flex items-center justify-center md:justify-start">
+                <div className="relative w-[30vw] md:w-[20vw] h-[8vw] md:h-[5vw] flex items-center justify-start overflow-hidden">
                   <AnimatePresence mode="wait">
                     <motion.span 
                       key={outcomeIndex}
-                      initial={{ y: 40, opacity: 0, rotateX: -90 }}
-                      animate={{ y: 0, opacity: 1, rotateX: 0 }}
-                      exit={{ y: -40, opacity: 0, rotateX: 90 }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                      className="text-primary block absolute left-0 md:left-4"
-                      style={{ textShadow: '6px 6px 0px #00ffff, 12px 12px 0px rgba(0,0,0,0.8)' }}
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -20, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="text-primary absolute left-2 whitespace-nowrap"
                     >
                       {outcomes[outcomeIndex]}
                     </motion.span>
