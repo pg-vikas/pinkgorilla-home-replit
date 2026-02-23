@@ -45,6 +45,37 @@ export function UnifiedPlatform() {
   return (
     <section className="py-32 bg-background relative overflow-hidden" id="platform">
       <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
+          className="mb-32 w-full flex flex-col items-center relative"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="w-[100vw] relative left-1/2 -translate-x-1/2 px-4 mb-12 flex flex-col items-center justify-center overflow-hidden">
+            <h3 className="text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[11vw] font-black font-display leading-[0.85] tracking-tighter w-full text-center uppercase">
+              <span className="text-white block hover:text-cyan-400 transition-colors duration-500 hover:scale-[1.02] transform cursor-default">Agencies Build.</span>
+              <span className="text-white/80 block hover:text-cyan-400 transition-colors duration-500 hover:scale-[1.02] transform cursor-default">Invoice. Leave.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-fuchsia-400 to-primary block mt-4 lg:mt-8 filter drop-shadow-[0_0_40px_rgba(255,0,255,0.5)] hover:scale-[1.02] transform cursor-default transition-transform duration-500">We do not.</span>
+            </h3>
+          </div>
+          <p className="text-xl md:text-3xl leading-relaxed font-light text-white/90 max-w-5xl mx-auto mb-16 text-center px-4">
+            Pink Gorilla runs your digital systems on a low monthly model and stays in your corner. We maintain, improve, automate, and help your business grow through structured technology that works every day.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 relative z-10">
+            <Link href="/pricing">
+              <a className="px-12 py-6 rounded-full bg-cyan-500 text-black font-bold text-2xl transition-all shadow-[0_0_30px_rgba(0,255,255,0.6)] hover:shadow-[0_0_50px_rgba(0,255,255,1)] hover:scale-105">
+                GET STARTED
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="px-12 py-6 rounded-full bg-transparent border-2 border-primary/50 text-white font-bold text-2xl transition-all shadow-[inset_0_0_20px_rgba(255,0,255,0.3),0_0_20px_rgba(255,0,255,0.3)] hover:shadow-[inset_0_0_30px_rgba(255,0,255,0.6),0_0_40px_rgba(255,0,255,0.6)] hover:bg-primary/10 hover:border-primary hover:scale-105">
+                Contact Us
+              </a>
+            </Link>
+          </div>
+        </motion.div>
+
         <div className="text-center mb-24 max-w-4xl mx-auto space-y-6">
            <motion.h2 
              initial={{ opacity: 0, y: 20 }}
@@ -220,36 +251,6 @@ export function UnifiedPlatform() {
 
         </div>
 
-        <motion.div 
-          className="mt-32 w-full flex flex-col items-center relative"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="w-[100vw] relative left-1/2 -translate-x-1/2 px-4 mb-12 flex flex-col items-center justify-center overflow-hidden">
-            <h3 className="text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[11vw] font-black font-display leading-[0.85] tracking-tighter w-full text-center uppercase">
-              <span className="text-white block hover:text-cyan-400 transition-colors duration-500 hover:scale-[1.02] transform cursor-default">Agencies Build.</span>
-              <span className="text-white/80 block hover:text-cyan-400 transition-colors duration-500 hover:scale-[1.02] transform cursor-default">Invoice. Leave.</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-fuchsia-400 to-primary block mt-4 lg:mt-8 filter drop-shadow-[0_0_40px_rgba(255,0,255,0.5)] hover:scale-[1.02] transform cursor-default transition-transform duration-500">We do not.</span>
-            </h3>
-          </div>
-          <p className="text-xl md:text-3xl leading-relaxed font-light text-white/90 max-w-5xl mx-auto mb-16 text-center px-4">
-            Pink Gorilla runs your digital systems on a low monthly model and stays in your corner. We maintain, improve, automate, and help your business grow through structured technology that works every day.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 relative z-10">
-            <Link href="/pricing">
-              <a className="px-12 py-6 rounded-full bg-cyan-500 text-black font-bold text-2xl transition-all shadow-[0_0_30px_rgba(0,255,255,0.6)] hover:shadow-[0_0_50px_rgba(0,255,255,1)] hover:scale-105">
-                GET STARTED
-              </a>
-            </Link>
-            <Link href="/contact">
-              <a className="px-12 py-6 rounded-full bg-transparent border-2 border-primary/50 text-white font-bold text-2xl transition-all shadow-[inset_0_0_20px_rgba(255,0,255,0.3),0_0_20px_rgba(255,0,255,0.3)] hover:shadow-[inset_0_0_30px_rgba(255,0,255,0.6),0_0_40px_rgba(255,0,255,0.6)] hover:bg-primary/10 hover:border-primary hover:scale-105">
-                Contact Us
-              </a>
-            </Link>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
