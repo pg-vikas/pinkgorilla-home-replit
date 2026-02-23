@@ -60,39 +60,60 @@ export function UnifiedPlatform() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="w-full px-4 mb-16 flex flex-col items-center justify-center overflow-hidden">
-            <h3 className="text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[4vw] font-black font-display leading-[1.1] tracking-tighter w-full text-center uppercase max-w-7xl mx-auto">
-              <span className="text-white inline-block mx-2">
-                Agencies Build.
-              </span>
-              <span className="text-white inline-block mx-2">
-                Invoice. Leave.
-              </span>
-              
-              <div className="mt-6 flex flex-row items-center justify-center gap-3 relative">
-                <span className="text-white inline-block">
-                  We engineer
+          <div className="relative w-full max-w-7xl mx-auto px-4 py-24 mb-16 flex flex-col items-center justify-center overflow-hidden rounded-[2rem] border border-white/5 bg-black/20 backdrop-blur-sm shadow-[0_0_80px_rgba(0,255,255,0.03)] group">
+            
+            {/* Techy Grid Background */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none transition-opacity duration-700 opacity-50 group-hover:opacity-100" />
+
+            {/* Glowing Orbs */}
+            <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[150%] bg-cyan-500/10 rounded-full blur-[120px] animate-pulse pointer-events-none mix-blend-screen" />
+            <div className="absolute -bottom-[20%] -right-[10%] w-[50%] h-[150%] bg-primary/10 rounded-full blur-[120px] animate-[pulse_4s_ease-in-out_infinite_reverse] pointer-events-none mix-blend-screen" />
+            
+            {/* Scanning Line */}
+            <motion.div 
+              className="absolute left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none"
+              animate={{ top: ["0%", "100%", "0%"] }}
+              transition={{ duration: 8, ease: "linear", repeat: Infinity }}
+            />
+
+            {/* Content */}
+            <div className="relative z-10 w-full flex flex-col items-center">
+              <h3 className="text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[4vw] font-black font-display leading-[1.1] tracking-tighter w-full text-center uppercase">
+                <span className="text-white inline-block mx-2 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                  Agencies Build.
                 </span>
-                <div className="relative w-[30vw] md:w-[20vw] h-[8vw] md:h-[5vw] flex items-center justify-start overflow-hidden">
-                  <AnimatePresence mode="wait">
-                    <motion.span 
-                      key={outcomeIndex}
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -20, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="text-primary absolute left-2 whitespace-nowrap"
-                    >
-                      {outcomes[outcomeIndex]}
-                    </motion.span>
-                  </AnimatePresence>
+                <span className="text-white inline-block mx-2 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                  Invoice. Leave.
+                </span>
+                
+                <div className="mt-6 flex flex-row items-center justify-center gap-3 relative">
+                  <span className="text-white inline-block drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                    We engineer
+                  </span>
+                  <div className="relative w-[30vw] md:w-[20vw] h-[8vw] md:h-[5vw] flex items-center justify-start overflow-hidden">
+                    <AnimatePresence mode="wait">
+                      <motion.span 
+                        key={outcomeIndex}
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -20, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="text-primary absolute left-2 whitespace-nowrap drop-shadow-[0_0_15px_rgba(255,0,255,0.3)]"
+                      >
+                        {outcomes[outcomeIndex]}
+                      </motion.span>
+                    </AnimatePresence>
+                  </div>
                 </div>
-              </div>
-            </h3>
+              </h3>
+              
+              <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent my-10" />
+
+              <p className="text-xl md:text-3xl leading-relaxed font-light text-white/90 max-w-5xl mx-auto text-center px-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+                Pink Gorilla runs your digital systems on a low monthly model and stays in your corner. We maintain, improve, automate, and help your business grow through structured technology that works every day.
+              </p>
+            </div>
           </div>
-          <p className="text-xl md:text-3xl leading-relaxed font-light text-white/90 max-w-5xl mx-auto mb-16 text-center px-4">
-            Pink Gorilla runs your digital systems on a low monthly model and stays in your corner. We maintain, improve, automate, and help your business grow through structured technology that works every day.
-          </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 relative z-10">
             <Link href="/pricing">
