@@ -60,7 +60,7 @@ export function UnifiedPlatform() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="relative w-full max-w-7xl mx-auto px-4 py-24 mb-16 flex flex-col items-center justify-center overflow-hidden rounded-[2rem] border border-white/5 bg-black/20 backdrop-blur-sm shadow-[0_0_80px_rgba(0,255,255,0.03)] group">
+          <div className="relative w-[100vw] left-1/2 -translate-x-1/2 px-4 py-32 mb-16 flex flex-col items-center justify-center overflow-hidden border-y border-white/5 bg-black/40 backdrop-blur-md shadow-[0_0_100px_rgba(0,255,255,0.05)] group">
             
             {/* Techy Grid Background */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none transition-opacity duration-700 opacity-50 group-hover:opacity-100" />
