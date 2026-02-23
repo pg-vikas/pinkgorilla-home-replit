@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { 
   ArrowRight, Code, Smartphone, Globe, Cloud, Play, Database, CreditCard, LayoutTemplate,
   Webhook, Phone, MessageSquare, PenTool, Mail, Calendar, BarChart, Repeat, Server, FolderSync, MessageCircle
@@ -137,45 +138,67 @@ export function Portfolio() {
             </div>
           </div>
 
-          {/* Right Column - Bento Grid */}
-          <div className="xl:w-2/3 w-full grid grid-cols-1 md:grid-cols-2 auto-rows-[350px] gap-6">
-            {portfolioItems.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, scale: 0.95, y: 30 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`group relative rounded-3xl overflow-hidden bg-black/40 border border-white/10 hover:border-cyan-500/50 transition-all duration-500 ${item.span}`}
-              >
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
-                
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20 opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 w-full p-8 z-30 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="inline-block px-4 py-1.5 rounded-full bg-black/50 border border-white/10 text-cyan-400 text-xs font-bold tracking-wider uppercase mb-4 backdrop-blur-md group-hover:border-cyan-500/30 group-hover:bg-cyan-500/10 transition-colors">
-                    {item.category}
+          {/* Right Column */}
+          <div className="xl:w-2/3 w-full flex flex-col gap-12">
+            {/* Bento Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-[350px] gap-6">
+              {portfolioItems.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className={`group relative rounded-3xl overflow-hidden bg-black/40 border border-white/10 hover:border-cyan-500/50 transition-all duration-500 ${item.span}`}
+                >
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20 opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 w-full p-8 z-30 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="inline-block px-4 py-1.5 rounded-full bg-black/50 border border-white/10 text-cyan-400 text-xs font-bold tracking-wider uppercase mb-4 backdrop-blur-md group-hover:border-cyan-500/30 group-hover:bg-cyan-500/10 transition-colors">
+                      {item.category}
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{item.title}</h3>
+                    <a 
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm font-medium text-white/70 hover:text-white mt-2 group/link opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+                    >
+                      View Project
+                      <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover/link:translate-x-2" />
+                    </a>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{item.title}</h3>
-                  <a 
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-white/70 hover:text-white mt-2 group/link opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
-                  >
-                    View Project
-                    <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover/link:translate-x-2" />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom Right CTA */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-8 text-center md:text-right flex flex-col items-center md:items-end justify-center py-16 px-8 md:px-12 rounded-3xl bg-gradient-to-br from-primary/10 to-cyan-500/10 border border-white/10 relative overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,var(--primary),transparent_70%)] opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
+              <h3 className="text-5xl md:text-7xl font-bold font-display leading-tight mb-8 relative z-10 text-white">
+                Want to see <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-primary">more of our Work?</span>
+              </h3>
+              <Link href="/contact">
+                <a className="inline-block px-12 py-6 rounded-full bg-white text-black font-bold text-2xl transition-all shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.6)] hover:scale-105 relative z-10">
+                  Contact us today!
+                </a>
+              </Link>
+            </motion.div>
           </div>
 
         </div>
