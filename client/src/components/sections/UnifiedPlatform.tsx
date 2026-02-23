@@ -221,19 +221,35 @@ export function UnifiedPlatform() {
         </div>
 
         <motion.div 
-          className={`mt-16 text-center max-w-4xl mx-auto px-8 py-10 rounded-3xl border transition-all duration-700 relative overflow-hidden ${
+          className={`mt-16 text-center max-w-5xl mx-auto px-8 py-20 rounded-3xl border transition-all duration-700 relative overflow-hidden ${
             activeIndex === 5 
-              ? "border-cyan-500/50 bg-black/60 shadow-[0_0_50px_rgba(0,255,255,0.15)] scale-[1.02]" 
+              ? "border-cyan-500/50 shadow-[0_0_50px_rgba(0,255,255,0.15)] scale-[1.02]" 
               : "border-transparent bg-transparent scale-100"
           }`}
         >
+          {/* Background Video */}
+          <div className={`absolute inset-0 transition-opacity duration-1000 z-0 ${activeIndex === 5 ? "opacity-100" : "opacity-0"}`}>
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/src/assets/videos/happy-team.mp4" type="video/mp4" />
+            </video>
+            {/* Dark overlay to make text readable */}
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-black/40 to-background/80" />
+          </div>
+
           {/* Top connecting line that lights up */}
           <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-px h-10 transition-colors duration-700 ${activeIndex === 5 ? "bg-gradient-to-b from-cyan-400 to-transparent shadow-[0_0_15px_cyan]" : "bg-white/10"}`} />
           
           {/* Connecting glow on top edge */}
           <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px transition-all duration-700 ${activeIndex === 5 ? "bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-100 shadow-[0_0_20px_cyan]" : "opacity-0"}`} />
 
-          <h3 className={`text-3xl md:text-5xl font-bold font-display mb-6 transition-colors duration-700 relative z-10 ${activeIndex === 5 ? "text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]" : "text-white/70"}`}>
+          <h3 className={`text-4xl md:text-6xl font-bold font-display mb-6 transition-colors duration-700 relative z-10 ${activeIndex === 5 ? "text-white" : "text-white/70"}`}>
             Agencies build. Invoice. Leave. <br />
             <span className="text-primary mt-2 block">We do not.</span>
           </h3>
