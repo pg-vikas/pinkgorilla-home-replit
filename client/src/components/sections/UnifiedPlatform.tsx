@@ -22,7 +22,8 @@ export function UnifiedPlatform() {
     else if (latest < 0.5) setActiveIndex(1);
     else if (latest < 0.7) setActiveIndex(2);
     else if (latest < 0.9) setActiveIndex(3);
-    else setActiveIndex(4);
+    else if (latest < 0.95) setActiveIndex(4);
+    else setActiveIndex(5);
   });
 
   const coreFeatures = [
@@ -220,16 +221,23 @@ export function UnifiedPlatform() {
         </div>
 
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center max-w-4xl mx-auto px-4"
+          className={`mt-16 text-center max-w-4xl mx-auto px-8 py-10 rounded-3xl border transition-all duration-700 relative overflow-hidden ${
+            activeIndex === 5 
+              ? "border-cyan-500/50 bg-black/60 shadow-[0_0_50px_rgba(0,255,255,0.15)] scale-[1.02]" 
+              : "border-transparent bg-transparent scale-100"
+          }`}
         >
-          <h3 className="text-3xl md:text-5xl font-bold font-display text-white mb-6">
+          {/* Top connecting line that lights up */}
+          <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-px h-10 transition-colors duration-700 ${activeIndex === 5 ? "bg-gradient-to-b from-cyan-400 to-transparent shadow-[0_0_15px_cyan]" : "bg-white/10"}`} />
+          
+          {/* Connecting glow on top edge */}
+          <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px transition-all duration-700 ${activeIndex === 5 ? "bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-100 shadow-[0_0_20px_cyan]" : "opacity-0"}`} />
+
+          <h3 className={`text-3xl md:text-5xl font-bold font-display mb-6 transition-colors duration-700 relative z-10 ${activeIndex === 5 ? "text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]" : "text-white/70"}`}>
             A Full Digital Brand with Pink Gorilla
           </h3>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
-            <span className="text-white font-medium">How Businesses Are Changing How They Operate.</span> We don't just build websites; we architect complete digital ecosystems. By centralizing your front-end presence and back-end operations under one unified strategy, we eliminate friction, accelerate growth, and build unshakable infrastructure that scales with your ambition.
+          <p className={`text-xl md:text-2xl leading-relaxed font-light transition-colors duration-700 relative z-10 ${activeIndex === 5 ? "text-white/90" : "text-muted-foreground"}`}>
+            <span className={`font-medium transition-colors duration-700 ${activeIndex === 5 ? "text-cyan-400" : "text-white/80"}`}>How Businesses Are Changing How They Operate.</span> We don't just build websites; we architect complete digital ecosystems. By centralizing your front-end presence and back-end operations under one unified strategy, we eliminate friction, accelerate growth, and build unshakable infrastructure that scales with your ambition.
           </p>
         </motion.div>
       </div>
