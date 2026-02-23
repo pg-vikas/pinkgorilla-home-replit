@@ -1,7 +1,7 @@
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { FloatingElement } from "@/components/motion/FloatingElement";
 import { GeometricShape } from "@/components/motion/GeometricShape";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link } from "wouter";
 
 export function UnifiedPlatform() {
@@ -15,6 +15,15 @@ export function UnifiedPlatform() {
   const circleTop = useTransform(scrollYProgress, [0, 1], ["0%", "85%"]);
   
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [outcomeIndex, setOutcomeIndex] = useState(0);
+  const outcomes = ["Growth.", "Scale.", "Automation.", "Systems.", "Results."];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setOutcomeIndex((prev) => (prev + 1) % outcomes.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (latest < 0.1) setActiveIndex(-1);
@@ -52,7 +61,7 @@ export function UnifiedPlatform() {
           viewport={{ once: true }}
         >
           <div className="w-[100vw] relative left-1/2 -translate-x-1/2 px-4 mb-16 flex flex-col items-center justify-center overflow-hidden">
-            <h3 className="text-[15vw] sm:text-[13vw] md:text-[11vw] lg:text-[12vw] font-black font-display leading-[0.8] tracking-tighter w-full text-center uppercase -rotate-2 transform">
+            <h3 className="text-[12vw] sm:text-[10vw] md:text-[9vw] lg:text-[10vw] font-black font-display leading-[0.9] tracking-tighter w-full text-center uppercase -rotate-2 transform">
               <span 
                 className="text-white block hover:-translate-y-2 transition-transform duration-300 cursor-default"
                 style={{ textShadow: '4px 4px 0px #00ffff, 8px 8px 0px rgba(0,0,0,0.8)' }}
@@ -65,12 +74,30 @@ export function UnifiedPlatform() {
               >
                 Invoice. Leave.
               </span>
-              <span 
-                className="text-primary block mt-8 lg:mt-12 hover:-translate-y-3 transition-transform duration-300 cursor-default"
-                style={{ textShadow: '6px 6px 0px #00ffff, 12px 12px 0px rgba(0,0,0,0.8)' }}
-              >
-                We do not.
-              </span>
+              
+              <div className="mt-8 lg:mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 h-[20vw] md:h-[12vw] relative">
+                <span 
+                  className="text-white block"
+                  style={{ textShadow: '6px 6px 0px #00ffff, 12px 12px 0px rgba(0,0,0,0.8)' }}
+                >
+                  We engineer
+                </span>
+                <div className="relative w-[60vw] md:w-[40vw] h-[12vw] md:h-[10vw] flex items-center justify-center md:justify-start">
+                  <AnimatePresence mode="wait">
+                    <motion.span 
+                      key={outcomeIndex}
+                      initial={{ y: 40, opacity: 0, rotateX: -90 }}
+                      animate={{ y: 0, opacity: 1, rotateX: 0 }}
+                      exit={{ y: -40, opacity: 0, rotateX: 90 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className="text-primary block absolute left-0 md:left-4"
+                      style={{ textShadow: '6px 6px 0px #00ffff, 12px 12px 0px rgba(0,0,0,0.8)' }}
+                    >
+                      {outcomes[outcomeIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
+              </div>
             </h3>
           </div>
           <p className="text-xl md:text-3xl leading-relaxed font-light text-white/90 max-w-5xl mx-auto mb-16 text-center px-4">
