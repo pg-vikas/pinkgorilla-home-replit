@@ -16,7 +16,7 @@ export function FinalCTA() {
            className="max-w-4xl mx-auto flex flex-col items-center justify-center"
         >
           <h2 className="text-5xl md:text-8xl font-bold font-display leading-none mb-8 tracking-tighter text-white">
-            Strong brands are not loud. <br />
+            Successful brands are not accidents. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary">
               They are structured.
             </span>
