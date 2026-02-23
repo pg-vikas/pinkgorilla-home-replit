@@ -61,28 +61,28 @@ export function UnifiedPlatform() {
           viewport={{ once: true }}
         >
           <div className="w-[100vw] relative left-1/2 -translate-x-1/2 px-4 mb-16 flex flex-col items-center justify-center overflow-hidden">
-            <h3 className="text-[12vw] sm:text-[10vw] md:text-[9vw] lg:text-[10vw] font-black font-display leading-[0.9] tracking-tighter w-full text-center uppercase -rotate-2 transform">
+            <h3 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] font-black font-display leading-[1.1] tracking-tighter w-full text-center uppercase -rotate-2 transform">
               <span 
-                className="text-white block hover:-translate-y-2 transition-transform duration-300 cursor-default"
-                style={{ textShadow: '4px 4px 0px #00ffff, 8px 8px 0px rgba(0,0,0,0.8)' }}
+                className="text-white inline-block hover:-translate-y-2 transition-transform duration-300 cursor-default mx-2 px-6 py-2 rounded-2xl bg-white/5 border border-white/20 backdrop-blur-sm shadow-[0_10px_0_#00ffff]"
+                style={{ WebkitTextStroke: '2px black' }}
               >
                 Agencies Build.
               </span>
               <span 
-                className="text-white block hover:-translate-y-2 transition-transform duration-300 cursor-default mt-2"
-                style={{ textShadow: '4px 4px 0px #00ffff, 8px 8px 0px rgba(0,0,0,0.8)' }}
+                className="text-white inline-block hover:-translate-y-2 transition-transform duration-300 cursor-default mt-6 mx-2 px-6 py-2 rounded-2xl bg-white/5 border border-white/20 backdrop-blur-sm shadow-[0_10px_0_#00ffff]"
+                style={{ WebkitTextStroke: '2px black' }}
               >
                 Invoice. Leave.
               </span>
               
-              <div className="mt-8 lg:mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 h-[20vw] md:h-[12vw] relative">
+              <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-6 h-[24vw] md:h-[12vw] relative w-full max-w-6xl mx-auto px-4">
                 <span 
-                  className="text-white block"
-                  style={{ textShadow: '6px 6px 0px #00ffff, 12px 12px 0px rgba(0,0,0,0.8)' }}
+                  className="text-white inline-block px-8 py-4 rounded-3xl bg-black/60 border-4 border-cyan-400 shadow-[0_12px_0_#00ffff]"
+                  style={{ WebkitTextStroke: '2px black' }}
                 >
                   We engineer
                 </span>
-                <div className="relative w-[60vw] md:w-[40vw] h-[12vw] md:h-[10vw] flex items-center justify-center md:justify-start">
+                <div className="relative w-full md:w-[40vw] h-[16vw] md:h-[12vw] flex items-center justify-center md:justify-start">
                   <AnimatePresence mode="wait">
                     <motion.span 
                       key={outcomeIndex}
@@ -90,8 +90,8 @@ export function UnifiedPlatform() {
                       animate={{ y: 0, opacity: 1, rotateX: 0 }}
                       exit={{ y: -40, opacity: 0, rotateX: 90 }}
                       transition={{ duration: 0.5, ease: "easeInOut" }}
-                      className="text-primary block absolute left-0 md:left-4"
-                      style={{ textShadow: '6px 6px 0px #00ffff, 12px 12px 0px rgba(0,0,0,0.8)' }}
+                      className="text-primary absolute left-0 md:left-4 px-8 py-4 rounded-3xl bg-black/80 border-4 border-primary shadow-[0_12px_0_#ff00ff,0_0_30px_rgba(255,0,255,0.5)] z-10"
+                      style={{ WebkitTextStroke: '2px black' }}
                     >
                       {outcomes[outcomeIndex]}
                     </motion.span>
