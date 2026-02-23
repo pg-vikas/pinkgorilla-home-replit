@@ -144,12 +144,12 @@ export function UnifiedPlatform() {
           </div>
         </motion.div>
 
-        <div className="text-center mb-24 max-w-4xl mx-auto space-y-6">
+        <div className="text-center mb-32 max-w-5xl mx-auto space-y-8 px-4">
            <motion.h2 
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
-             className="text-4xl md:text-6xl font-bold font-display"
+             className="text-5xl md:text-7xl lg:text-8xl font-black font-display uppercase tracking-tight"
            >
              The Complete Ecosystem
            </motion.h2>
@@ -158,7 +158,7 @@ export function UnifiedPlatform() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.1 }}
-             className="text-xl text-muted-foreground"
+             className="text-2xl md:text-3xl text-white/90 font-medium leading-relaxed"
            >
              Front-end presence and back-end operations working in perfect harmony. Decide if Gorilla Core is what your business needs or Gorilla Apps or Both for bundled value and super charging your entire business.
            </motion.p>
