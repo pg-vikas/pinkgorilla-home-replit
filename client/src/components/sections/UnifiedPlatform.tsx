@@ -60,21 +60,36 @@ export function UnifiedPlatform() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="relative w-[100vw] left-1/2 -translate-x-1/2 px-4 py-32 mb-16 flex flex-col items-center justify-center overflow-hidden border-y border-white/5 bg-black/40 backdrop-blur-md shadow-[0_0_100px_rgba(0,255,255,0.05)] group">
+          <div className="relative w-[100vw] ml-[calc(50%-50vw)] px-4 py-32 mb-16 flex flex-col items-center justify-center overflow-hidden border-y border-white/5 bg-black/40 backdrop-blur-md shadow-[0_0_100px_rgba(0,255,255,0.05)] group" style={{ perspective: '1000px' }}>
             
-            {/* Techy Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none transition-opacity duration-700 opacity-50 group-hover:opacity-100" />
+            {/* Digital Skyline & Road Background */}
+            <div className="absolute inset-0 pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity duration-1000">
+              {/* Skyline Buildings */}
+              <div className="absolute top-0 left-0 right-0 bottom-[40%] flex items-end justify-between px-4 gap-1 sm:gap-2 opacity-30 [mask-image:linear-gradient(to_bottom,transparent_10%,black_100%)]">
+                {[...Array(30)].map((_, i) => {
+                  const heights = [30, 70, 45, 90, 20, 60, 85, 40, 75, 50, 80, 25, 65, 95, 35, 55, 80, 40, 70, 20, 60, 85, 40, 75, 50, 80, 25, 65, 95, 35];
+                  return (
+                    <div 
+                      key={i}
+                      className={`w-full bg-gradient-to-t ${i % 3 === 0 ? 'from-primary' : 'from-cyan-500'} to-transparent`}
+                      style={{ height: `${heights[i]}%` }}
+                    />
+                  );
+                })}
+              </div>
 
-            {/* Glowing Orbs */}
-            <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[150%] bg-cyan-500/10 rounded-full blur-[120px] animate-pulse pointer-events-none mix-blend-screen" />
-            <div className="absolute -bottom-[20%] -right-[10%] w-[50%] h-[150%] bg-primary/10 rounded-full blur-[120px] animate-[pulse_4s_ease-in-out_infinite_reverse] pointer-events-none mix-blend-screen" />
-            
-            {/* Scanning Line */}
-            <motion.div 
-              className="absolute left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none"
-              animate={{ top: ["0%", "100%", "0%"] }}
-              transition={{ duration: 8, ease: "linear", repeat: Infinity }}
-            />
+              {/* Moving Road / Grid */}
+              <motion.div 
+                className="absolute left-[-50%] right-[-50%] top-[60%] bottom-[-50%] bg-[linear-gradient(rgba(0,255,255,0.15)_2px,transparent_2px),linear-gradient(90deg,rgba(0,255,255,0.15)_2px,transparent_2px)] bg-[size:40px_40px] [mask-image:linear-gradient(to_bottom,transparent,black)]"
+                style={{ transformOrigin: 'top center', transform: 'rotateX(75deg)' }}
+                animate={{ backgroundPosition: ["0px 0px", "0px 40px"] }}
+                transition={{ duration: 1, ease: "linear", repeat: Infinity }}
+              />
+              
+              {/* Horizon Glow */}
+              <div className="absolute top-[60%] left-0 w-full h-[2px] bg-cyan-500/50 shadow-[0_0_20px_#00ffff]" />
+              <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-full h-[40%] bg-cyan-500/10 blur-[50px] mix-blend-screen" />
+            </div>
 
             {/* Content */}
             <div className="relative z-10 w-full flex flex-col items-center">
@@ -86,11 +101,11 @@ export function UnifiedPlatform() {
                   Invoice. Leave.
                 </span>
                 
-                <div className="mt-6 flex flex-row items-center justify-center gap-3 relative">
-                  <span className="text-white inline-block drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 relative w-full">
+                  <span className="text-white inline-block drop-shadow-[0_0_15px_rgba(0,0,0,0.5)] text-center">
                     We engineer
                   </span>
-                  <div className="relative w-[30vw] md:w-[20vw] h-[8vw] md:h-[5vw] flex items-center justify-start overflow-hidden">
+                  <div className="relative w-full sm:w-[30vw] md:w-[25vw] h-[10vw] sm:h-[8vw] md:h-[5vw] flex items-center justify-center overflow-hidden">
                     <AnimatePresence mode="wait">
                       <motion.span 
                         key={outcomeIndex}
@@ -98,7 +113,7 @@ export function UnifiedPlatform() {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -20, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="text-primary absolute left-2 whitespace-nowrap drop-shadow-[0_0_15px_rgba(255,0,255,0.3)]"
+                        className="text-primary absolute text-center w-full whitespace-nowrap drop-shadow-[0_0_15px_rgba(255,0,255,0.3)]"
                       >
                         {outcomes[outcomeIndex]}
                       </motion.span>
