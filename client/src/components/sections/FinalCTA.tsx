@@ -28,7 +28,7 @@ export function FinalCTA() {
           
           <ModalLeadForm>
             <Button size="lg" className="rounded-full px-12 text-xl h-16 bg-white text-black hover:bg-white/90 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all">
-              Book a Strategy Call
+              Ready to Launch
             </Button>
           </ModalLeadForm>
         </motion.div>
