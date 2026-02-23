@@ -152,7 +152,7 @@ export function HeroSection() {
           >
             <FloatingElement delay={0} duration={6} yOffset={-15} xOffset={10} className="top-5 -left-16">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-cyan-500/30 backdrop-blur-xl text-white font-bold shadow-[0_0_30px_rgba(0,255,255,0.2)] text-lg flex items-center gap-3">
                       <div className="w-3 h-3 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_rgba(0,255,255,0.8)]" />
@@ -164,7 +164,7 @@ export function HeroSection() {
 
             <FloatingElement delay={1} duration={7} yOffset={15} xOffset={-10} className="top-40 -right-12">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-primary/30 backdrop-blur-xl text-primary font-bold shadow-[0_0_30px_rgba(255,0,255,0.2)] text-lg flex items-center gap-3 overflow-hidden">
                       <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -177,7 +177,7 @@ export function HeroSection() {
 
             <FloatingElement delay={2} duration={8} yOffset={20} className="bottom-48 -left-20">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-secondary to-green-400 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-secondary/30 backdrop-blur-xl text-secondary font-bold shadow-[0_0_30px_rgba(0,255,170,0.2)] text-lg flex items-center gap-3">
                       <div className="relative flex h-3 w-3">
@@ -192,7 +192,7 @@ export function HeroSection() {
 
             <FloatingElement delay={1.5} duration={6.5} yOffset={-20} className="bottom-20 right-10">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-orange-500/30 backdrop-blur-xl text-white font-bold shadow-[0_0_30px_rgba(255,165,0,0.2)] text-lg flex items-center gap-3">
                        <div className="flex gap-1 h-3 items-end">
@@ -208,7 +208,7 @@ export function HeroSection() {
 
             <FloatingElement delay={0.5} duration={5} yOffset={10} xOffset={20} className="top-[60%] left-[40%] -translate-x-1/2 -translate-y-1/2">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-accent to-yellow-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-accent/30 backdrop-blur-xl text-accent font-bold shadow-[0_0_30px_rgba(173,255,47,0.2)] text-lg flex items-center gap-3">
                       <div className="w-4 h-4 rounded border-2 border-accent flex items-center justify-center animate-[spin_3s_linear_infinite]">
@@ -222,7 +222,7 @@ export function HeroSection() {
 
             <FloatingElement delay={2.5} duration={9} yOffset={25} xOffset={-15} className="-top-8 right-16">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-white/10 rounded-full blur-xl opacity-40 group-hover:opacity-80 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-white/10 border-2 border-white/30 backdrop-blur-xl text-white font-bold shadow-[0_0_40px_rgba(255,255,255,0.3)] text-lg flex items-center gap-3 relative overflow-hidden">
                       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.3)_50%,transparent_75%)] bg-[length:250%_250%] animate-[shimmer_2s_infinite]" />
@@ -237,7 +237,7 @@ export function HeroSection() {
 
             <FloatingElement delay={3} duration={10} yOffset={30} xOffset={-30} className="top-[30%] -left-24">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-emerald-500/30 backdrop-blur-xl text-emerald-400 font-bold shadow-[0_0_30px_rgba(16,185,129,0.2)] text-lg flex items-center gap-3">
                       <div className="flex gap-1">
@@ -258,7 +258,7 @@ export function HeroSection() {
 
             <FloatingElement delay={4} duration={11} yOffset={-25} xOffset={25} className="bottom-[10%] left-[20%]">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-400 to-gray-200 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-slate-400/30 backdrop-blur-xl text-slate-300 font-bold shadow-[0_0_30px_rgba(148,163,184,0.2)] text-lg flex items-center gap-3">
                       <div className="w-4 h-4 border-2 border-slate-400 rounded-sm relative">
@@ -276,7 +276,7 @@ export function HeroSection() {
 
             <FloatingElement delay={1.8} duration={8.5} yOffset={35} xOffset={-20} className="top-[70%] right-[5%]">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-rose-500/30 backdrop-blur-xl text-rose-400 font-bold shadow-[0_0_30px_rgba(244,63,94,0.2)] text-lg flex items-center gap-3">
                       <motion.div 
@@ -294,7 +294,7 @@ export function HeroSection() {
 
             <FloatingElement delay={2.2} duration={7.5} yOffset={-15} xOffset={30} className="top-[15%] right-[25%]">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-sky-400 to-indigo-400 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-sky-400/30 backdrop-blur-xl text-sky-300 font-bold shadow-[0_0_30px_rgba(56,189,248,0.2)] text-lg flex items-center gap-3">
                       <div className="relative w-5 h-5">
@@ -314,7 +314,7 @@ export function HeroSection() {
             {/* New Words */}
             <FloatingElement delay={0.8} duration={8} yOffset={25} xOffset={-25} className="bottom-[5%] right-[15%]">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500 to-purple-600 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-fuchsia-500/30 backdrop-blur-xl text-fuchsia-400 font-bold shadow-[0_0_30px_rgba(217,70,239,0.2)] text-lg flex items-center gap-3">
                       <div className="w-2 h-2 rounded-sm bg-fuchsia-400 animate-ping" />
@@ -326,7 +326,7 @@ export function HeroSection() {
 
             <FloatingElement delay={3.5} duration={9} yOffset={-30} xOffset={20} className="top-[45%] -right-16">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-400 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-amber-500/30 backdrop-blur-xl text-amber-400 font-bold shadow-[0_0_30px_rgba(245,158,11,0.2)] text-lg flex items-center gap-3">
                       <div className="flex gap-0.5">
@@ -341,7 +341,7 @@ export function HeroSection() {
 
             <FloatingElement delay={1.2} duration={7} yOffset={20} xOffset={-10} className="bottom-[35%] -left-32">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-green-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-lime-400/30 backdrop-blur-xl text-lime-400 font-bold shadow-[0_0_30px_rgba(163,230,53,0.2)] text-lg flex items-center gap-3">
                       <motion.div animate={{ rotate: 180 }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="w-4 h-4 border-2 border-lime-400 border-t-transparent rounded-full" />
@@ -353,7 +353,7 @@ export function HeroSection() {
 
             <FloatingElement delay={4.5} duration={10} yOffset={-20} xOffset={30} className="-top-12 left-[20%]">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-blue-400/30 backdrop-blur-xl text-blue-400 font-bold shadow-[0_0_30px_rgba(96,165,250,0.2)] text-lg flex items-center gap-3">
                       <div className="flex gap-1">
@@ -369,7 +369,7 @@ export function HeroSection() {
 
             <FloatingElement delay={2.8} duration={8.5} yOffset={25} xOffset={-15} className="top-[85%] left-[10%]">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-stone-400 to-neutral-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-stone-400/30 backdrop-blur-xl text-stone-300 font-bold shadow-[0_0_30px_rgba(168,162,158,0.2)] text-lg flex items-center gap-3">
                       <div className="relative w-4 h-4 border-2 border-stone-400 rounded-full flex items-center justify-center">
@@ -383,7 +383,7 @@ export function HeroSection() {
 
             <FloatingElement delay={0.2} duration={6} yOffset={-10} xOffset={20} className="bottom-[45%] right-[8%]">
                <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="pointer-events-auto">
-                 <div className="relative group">
+                 <div className="relative group hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-500 rounded-full blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
                     <div className="px-8 py-4 rounded-full bg-black/80 border-2 border-emerald-400/30 backdrop-blur-xl text-emerald-400 font-bold shadow-[0_0_30px_rgba(52,211,153,0.2)] text-lg flex items-center gap-3">
                       <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity }} className="w-0 h-0 border-l-[6px] border-l-emerald-400 border-y-[4px] border-y-transparent" />
