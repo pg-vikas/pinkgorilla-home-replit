@@ -38,18 +38,18 @@ const VIDEOS = [
   }
 ];
 
-type CopyMode = "direct" | "energetic" | "minimal";
+type CopyMode = "direct" | "personalized" | "growth";
 
 const COPY_MODES: Record<CopyMode, { headline: string; body: string }> = {
   direct: {
     headline: "Gorilla Labs is the radical marketing arm of Pink Gorilla.",
     body: "A dedicated team of creators, designers, graphic artists, strategists, and social media operators focused on building authentic, high impact campaigns that move real audiences.\n\nWe do not manufacture content.\nWe create ecosystems.\n\nFrom concept to execution, Gorilla Labs brings structure, creativity, and consistency together into one unified marketing force."
   },
-  energetic: {
+  personalized: {
     headline: "Gorilla Labs is where culture meets execution.",
     body: "It is our high impact marketing division built around authentic storytelling, social media dominance, and content that feels real, not staged.\n\nBehind every campaign is a coordinated team of creators, designers, editors, and organizers working in sync to build a living, breathing content ecosystem around your brand.\n\nThis is not random posting.\nThis is controlled momentum."
   },
-  minimal: {
+  growth: {
     headline: "Gorilla Labs is the marketing division of Pink Gorilla.",
     body: "A collaborative team of creators, designers, and social media specialists producing authentic content and coordinated campaigns that build real presence and sustained momentum.\n\nIt is marketing as an ecosystem, not isolated posts."
   }
