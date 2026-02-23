@@ -234,11 +234,30 @@ export function UnifiedPlatform() {
           <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px transition-all duration-700 ${activeIndex === 5 ? "bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-100 shadow-[0_0_20px_cyan]" : "opacity-0"}`} />
 
           <h3 className={`text-3xl md:text-5xl font-bold font-display mb-6 transition-colors duration-700 relative z-10 ${activeIndex === 5 ? "text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]" : "text-white/70"}`}>
-            A Full Digital Brand with Pink Gorilla
+            Agencies build. Invoice. Leave. <br />
+            <span className="text-primary mt-2 block">We do not.</span>
           </h3>
           <p className={`text-xl md:text-2xl leading-relaxed font-light transition-colors duration-700 relative z-10 ${activeIndex === 5 ? "text-white/90" : "text-muted-foreground"}`}>
-            <span className={`font-medium transition-colors duration-700 ${activeIndex === 5 ? "text-cyan-400" : "text-white/80"}`}>How Businesses Are Changing How They Operate.</span> We don't just build websites; we architect complete digital ecosystems. By centralizing your front-end presence and back-end operations under one unified strategy, we eliminate friction, accelerate growth, and build unshakable infrastructure that scales with your ambition.
+            Pink Gorilla runs your digital systems on a low monthly model and stays in your corner. We maintain, improve, automate, and help your business grow through structured technology that works every day.
           </p>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={activeIndex === 5 ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-12 relative z-10"
+          >
+            <Link href="/pricing">
+              <a className="px-10 py-5 rounded-full bg-cyan-500 text-black font-bold text-xl transition-all shadow-[0_0_30px_rgba(0,255,255,0.6)] hover:shadow-[0_0_50px_rgba(0,255,255,1)] hover:scale-105">
+                GET STARTED
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="px-10 py-5 rounded-full bg-transparent border-2 border-primary/50 text-white font-bold text-xl transition-all shadow-[inset_0_0_20px_rgba(255,0,255,0.3),0_0_20px_rgba(255,0,255,0.3)] hover:shadow-[inset_0_0_30px_rgba(255,0,255,0.6),0_0_40px_rgba(255,0,255,0.6)] hover:bg-primary/10 hover:border-primary hover:scale-105">
+                Contact Us
+              </a>
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>
