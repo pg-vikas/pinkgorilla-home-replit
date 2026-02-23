@@ -63,9 +63,13 @@ export function WhatWeDo() {
                 {nodes.map((node, i) => {
                   // Distribute nodes in a circle around the center
                   const angle = (i / nodes.length) * Math.PI * 2;
-                  const radius = 180; // Distance from center
+                  const radius = 160; // Distance from center
                   const x = Math.cos(angle) * radius;
                   const y = Math.sin(angle) * radius;
+                  
+                  // Calculate animation timings for sequential laser beams
+                  const totalDuration = nodes.length * 1.5;
+                  const delay = i * 1.5;
                   
                   return (
                     <div key={node} className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -83,37 +87,113 @@ export function WhatWeDo() {
                            strokeDasharray="4 4"
                          />
                          
-                         {/* Animated Pong Ball */}
-                         <motion.circle
-                           r="3"
-                           fill="white"
-                           style={{ filter: "drop-shadow(0 0 5px white)" }}
+                         {/* Sequential Sonar Laser Beam */}
+                         <motion.line
+                           x1="50%"
+                           y1="50%"
+                           x2={`calc(50% + ${x}px)`}
+                           y2={`calc(50% + ${y}px)`}
+                           stroke="currentColor"
+                           className="text-cyan-400"
+                           strokeWidth="6"
+                           strokeLinecap="round"
+                           style={{ filter: "drop-shadow(0 0 12px currentColor)" }}
+                           initial={{ pathLength: 0, opacity: 0 }}
                            animate={{
-                             cx: ["50%", `calc(50% + ${x}px)`, "50%"],
-                             cy: ["50%", `calc(50% + ${y}px)`, "50%"]
+                             pathLength: [0, 1, 1, 0],
+                             opacity: [0, 1, 1, 0],
                            }}
                            transition={{
-                             duration: 2 + Math.random() * 2,
+                             duration: totalDuration,
                              repeat: Infinity,
-                             ease: "linear",
-                             delay: Math.random() * 2
+                             ease: "easeInOut",
+                             times: [
+                               (delay) / totalDuration,
+                               (delay + 0.2) / totalDuration,
+                               (delay + 0.6) / totalDuration,
+                               (delay + 0.8) / totalDuration
+                             ]
+                           }}
+                         />
+                         
+                         {/* Bouncing Energy Particle */}
+                         <motion.circle
+                           r="6"
+                           fill="#00ffff"
+                           style={{ filter: "drop-shadow(0 0 10px #00ffff)" }}
+                           initial={{ cx: "50%", cy: "50%", opacity: 0 }}
+                           animate={{
+                             cx: ["50%", `calc(50% + ${x}px)`, `calc(50% + ${x}px)`, "50%"],
+                             cy: ["50%", `calc(50% + ${y}px)`, `calc(50% + ${y}px)`, "50%"],
+                             opacity: [0, 1, 1, 0]
+                           }}
+                           transition={{
+                             duration: totalDuration,
+                             repeat: Infinity,
+                             ease: "easeInOut",
+                             times: [
+                               (delay) / totalDuration,
+                               (delay + 0.2) / totalDuration,
+                               (delay + 0.6) / totalDuration,
+                               (delay + 0.8) / totalDuration
+                             ]
                            }}
                          />
                       </svg>
 
-                      {/* Node */}
+                      {/* Node Point */}
                       <div className="absolute z-10 pointer-events-auto" style={{ transform: `translate(${x}px, ${y}px)` }}>
                         <FloatingElement
                           delay={i * 0.2}
                           duration={4 + (i % 3)}
                           yOffset={10}
                         >
-                          <div className="relative group flex flex-col items-center">
-                            <div className="w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_15px_rgba(0,255,255,0.8)] animate-pulse" />
-                            <div className="absolute top-6 px-3 py-1.5 rounded bg-black/80 border border-white/20 text-xs font-medium backdrop-blur-md whitespace-nowrap text-white group-hover:border-cyan-400 transition-colors">
-                              {node}
+                          <motion.div 
+                            className="relative group flex flex-col items-center cursor-pointer"
+                            animate={{
+                              scale: [1, 1.4, 1],
+                              filter: [
+                                "drop-shadow(0 0 10px rgba(0,255,255,0.5))",
+                                "drop-shadow(0 0 30px rgba(0,255,255,1))",
+                                "drop-shadow(0 0 10px rgba(0,255,255,0.5))"
+                              ]
+                            }}
+                            transition={{
+                              duration: totalDuration,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                              times: [
+                                (delay + 0.1) / totalDuration,
+                                (delay + 0.4) / totalDuration,
+                                (delay + 0.7) / totalDuration
+                              ]
+                            }}
+                          >
+                            <div className="w-10 h-10 rounded-lg bg-black border-2 border-cyan-400 flex items-center justify-center transform rotate-45 group-hover:bg-cyan-900 transition-colors">
+                               <div className="w-4 h-4 rounded-sm bg-cyan-300 transform -rotate-45 shadow-[0_0_10px_cyan]" />
                             </div>
-                          </div>
+                            
+                            {/* Node Label */}
+                            <motion.div 
+                              className="absolute top-12 px-4 py-2 rounded-lg bg-black/90 border border-cyan-500/50 text-sm font-bold backdrop-blur-xl whitespace-nowrap text-white"
+                              animate={{
+                                opacity: [0.5, 1, 0.5],
+                                y: [0, -5, 0]
+                              }}
+                              transition={{
+                                duration: totalDuration,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                times: [
+                                  (delay + 0.1) / totalDuration,
+                                  (delay + 0.4) / totalDuration,
+                                  (delay + 0.7) / totalDuration
+                                ]
+                              }}
+                            >
+                              {node}
+                            </motion.div>
+                          </motion.div>
                         </FloatingElement>
                       </div>
                     </div>
