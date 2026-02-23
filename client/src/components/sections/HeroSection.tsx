@@ -4,35 +4,86 @@ import { FloatingElement } from "@/components/motion/FloatingElement";
 import { cn } from "@/lib/utils";
 import { Command, Figma, Slack, Trello, Hexagon, Layers, Box, Database, Chrome, Cloud, Layout, Globe, Briefcase, Building2, Shield, Lock, Fingerprint, Activity } from "lucide-react";
 
-function LogoSphere({ className }: { className?: string }) {
-  const icons = [Command, Figma, Slack, Hexagon, Layers, Box, Database, Chrome, Cloud, Layout, Globe, Briefcase, Building2, Shield, Lock, Fingerprint, Trello, Activity];
-  
+function LiquidOrb({ className }: { className?: string }) {
   return (
-    <div className={cn("absolute inset-0 flex items-center justify-center", className)} style={{ transformStyle: "preserve-3d" }}>
-      {icons.map((Icon, i) => {
-        const phi = Math.acos(-1 + (2 * i) / icons.length);
-        const theta = Math.sqrt(icons.length * Math.PI) * phi;
-        const radius = 160;
-        const x = radius * Math.cos(theta) * Math.sin(phi);
-        const y = radius * Math.sin(theta) * Math.sin(phi);
-        const z = radius * Math.cos(phi);
-        
-        const colors = ["text-primary", "text-cyan-400", "text-white"];
-        const color = colors[i % colors.length];
-        
-        return (
-          <div
-            key={i}
-            className={cn("absolute flex items-center justify-center", color)}
-            style={{
-              transform: `translate3d(${x}px, ${y}px, ${z}px) rotateX(${theta}rad) rotateY(${phi}rad)`,
-              transformStyle: "preserve-3d"
+    <div className={cn("absolute inset-0 flex items-center justify-center", className)}>
+      <motion.div 
+        className="w-full h-full relative flex items-center justify-center"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      >
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-[120%] h-[120%] absolute blur-xl opacity-60">
+          <motion.path 
+            fill="url(#grad1)" 
+            animate={{
+              d: [
+                "M42,-65C54.4,-57.4,64.2,-44.6,71.2,-30.3C78.2,-16,82.4,-0.2,79.5,14C76.6,28.2,66.6,40.8,54.7,51.8C42.8,62.8,29,72.2,13.6,76.5C-1.8,80.8,-18.8,80,-33.1,73.4C-47.4,66.8,-59.1,54.4,-67.2,40.5C-75.3,26.6,-79.8,11.2,-78.5,-3.7C-77.2,-18.6,-70.1,-33,-60.1,-44.8C-50.1,-56.6,-37.2,-65.8,-23.3,-69.5C-9.4,-73.2,5.5,-71.4,19.8,-69.5C34.1,-67.6,47.8,-65.6,42,-65Z",
+                "M39.6,-59.5C53,-50.2,66.7,-42.6,73.1,-30.7C79.5,-18.8,78.6,-2.6,73.8,11.8C69,26.2,60.3,38.8,49.8,49.8C39.3,60.8,27,70.2,11.7,73.8C-3.6,77.4,-21.9,75.2,-37.6,67.6C-53.3,60,-66.4,47,-72.9,31.5C-79.4,16,-79.3,-2,-74.6,-18.4C-69.9,-34.8,-60.6,-49.6,-48,-59C-35.4,-68.4,-19.5,-72.4,-4.1,-69.9C11.3,-67.4,26.2,-68.8,39.6,-59.5Z",
+                "M46.7,-64.1C60.1,-55.8,70.3,-42.2,75.7,-27.1C81.1,-12,81.7,4.6,77.1,19.6C72.5,34.6,62.7,48,50.1,58.3C37.5,68.6,22,76.5,4.7,74.9C-12.6,73.3,-31.7,62.2,-46.8,50.3C-61.9,38.4,-73,25.7,-78.1,11.1C-83.2,-3.5,-82.3,-20,-75.1,-34.2C-67.9,-48.4,-54.4,-60.3,-40,-67.8C-25.6,-75.3,-10.3,-78.4,3.7,-78.1C17.7,-77.8,33.3,-72.4,46.7,-64.1Z",
+                "M42,-65C54.4,-57.4,64.2,-44.6,71.2,-30.3C78.2,-16,82.4,-0.2,79.5,14C76.6,28.2,66.6,40.8,54.7,51.8C42.8,62.8,29,72.2,13.6,76.5C-1.8,80.8,-18.8,80,-33.1,73.4C-47.4,66.8,-59.1,54.4,-67.2,40.5C-75.3,26.6,-79.8,11.2,-78.5,-3.7C-77.2,-18.6,-70.1,-33,-60.1,-44.8C-50.1,-56.6,-37.2,-65.8,-23.3,-69.5C-9.4,-73.2,5.5,-71.4,19.8,-69.5C34.1,-67.6,47.8,-65.6,42,-65Z"
+              ]
             }}
-          >
-            <Icon className="w-16 h-16 opacity-90" style={{ filter: "drop-shadow(0 0 15px currentColor)" }} />
-          </div>
-        );
-      })}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            transform="translate(100 100)" 
+          />
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="rgba(0, 255, 255, 1)" />
+              <stop offset="50%" stopColor="rgba(255, 0, 255, 0.8)" />
+              <stop offset="100%" stopColor="rgba(0, 255, 170, 0.6)" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full absolute">
+          <motion.path 
+            fill="url(#grad2)" 
+            animate={{
+              d: [
+                "M39.6,-59.5C53,-50.2,66.7,-42.6,73.1,-30.7C79.5,-18.8,78.6,-2.6,73.8,11.8C69,26.2,60.3,38.8,49.8,49.8C39.3,60.8,27,70.2,11.7,73.8C-3.6,77.4,-21.9,75.2,-37.6,67.6C-53.3,60,-66.4,47,-72.9,31.5C-79.4,16,-79.3,-2,-74.6,-18.4C-69.9,-34.8,-60.6,-49.6,-48,-59C-35.4,-68.4,-19.5,-72.4,-4.1,-69.9C11.3,-67.4,26.2,-68.8,39.6,-59.5Z",
+                "M46.7,-64.1C60.1,-55.8,70.3,-42.2,75.7,-27.1C81.1,-12,81.7,4.6,77.1,19.6C72.5,34.6,62.7,48,50.1,58.3C37.5,68.6,22,76.5,4.7,74.9C-12.6,73.3,-31.7,62.2,-46.8,50.3C-61.9,38.4,-73,25.7,-78.1,11.1C-83.2,-3.5,-82.3,-20,-75.1,-34.2C-67.9,-48.4,-54.4,-60.3,-40,-67.8C-25.6,-75.3,-10.3,-78.4,3.7,-78.1C17.7,-77.8,33.3,-72.4,46.7,-64.1Z",
+                "M42,-65C54.4,-57.4,64.2,-44.6,71.2,-30.3C78.2,-16,82.4,-0.2,79.5,14C76.6,28.2,66.6,40.8,54.7,51.8C42.8,62.8,29,72.2,13.6,76.5C-1.8,80.8,-18.8,80,-33.1,73.4C-47.4,66.8,-59.1,54.4,-67.2,40.5C-75.3,26.6,-79.8,11.2,-78.5,-3.7C-77.2,-18.6,-70.1,-33,-60.1,-44.8C-50.1,-56.6,-37.2,-65.8,-23.3,-69.5C-9.4,-73.2,5.5,-71.4,19.8,-69.5C34.1,-67.6,47.8,-65.6,42,-65Z",
+                "M39.6,-59.5C53,-50.2,66.7,-42.6,73.1,-30.7C79.5,-18.8,78.6,-2.6,73.8,11.8C69,26.2,60.3,38.8,49.8,49.8C39.3,60.8,27,70.2,11.7,73.8C-3.6,77.4,-21.9,75.2,-37.6,67.6C-53.3,60,-66.4,47,-72.9,31.5C-79.4,16,-79.3,-2,-74.6,-18.4C-69.9,-34.8,-60.6,-49.6,-48,-59C-35.4,-68.4,-19.5,-72.4,-4.1,-69.9C11.3,-67.4,26.2,-68.8,39.6,-59.5Z"
+              ]
+            }}
+            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            transform="translate(100 100)" 
+          />
+          <defs>
+            <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="rgba(255, 0, 255, 1)" />
+              <stop offset="50%" stopColor="rgba(0, 255, 255, 0.7)" />
+              <stop offset="100%" stopColor="rgba(173, 255, 47, 0.5)" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-[80%] h-[80%] absolute mix-blend-overlay">
+          <motion.path 
+            fill="url(#grad3)" 
+            animate={{
+              d: [
+                "M46.7,-64.1C60.1,-55.8,70.3,-42.2,75.7,-27.1C81.1,-12,81.7,4.6,77.1,19.6C72.5,34.6,62.7,48,50.1,58.3C37.5,68.6,22,76.5,4.7,74.9C-12.6,73.3,-31.7,62.2,-46.8,50.3C-61.9,38.4,-73,25.7,-78.1,11.1C-83.2,-3.5,-82.3,-20,-75.1,-34.2C-67.9,-48.4,-54.4,-60.3,-40,-67.8C-25.6,-75.3,-10.3,-78.4,3.7,-78.1C17.7,-77.8,33.3,-72.4,46.7,-64.1Z",
+                "M42,-65C54.4,-57.4,64.2,-44.6,71.2,-30.3C78.2,-16,82.4,-0.2,79.5,14C76.6,28.2,66.6,40.8,54.7,51.8C42.8,62.8,29,72.2,13.6,76.5C-1.8,80.8,-18.8,80,-33.1,73.4C-47.4,66.8,-59.1,54.4,-67.2,40.5C-75.3,26.6,-79.8,11.2,-78.5,-3.7C-77.2,-18.6,-70.1,-33,-60.1,-44.8C-50.1,-56.6,-37.2,-65.8,-23.3,-69.5C-9.4,-73.2,5.5,-71.4,19.8,-69.5C34.1,-67.6,47.8,-65.6,42,-65Z",
+                "M39.6,-59.5C53,-50.2,66.7,-42.6,73.1,-30.7C79.5,-18.8,78.6,-2.6,73.8,11.8C69,26.2,60.3,38.8,49.8,49.8C39.3,60.8,27,70.2,11.7,73.8C-3.6,77.4,-21.9,75.2,-37.6,67.6C-53.3,60,-66.4,47,-72.9,31.5C-79.4,16,-79.3,-2,-74.6,-18.4C-69.9,-34.8,-60.6,-49.6,-48,-59C-35.4,-68.4,-19.5,-72.4,-4.1,-69.9C11.3,-67.4,26.2,-68.8,39.6,-59.5Z",
+                "M46.7,-64.1C60.1,-55.8,70.3,-42.2,75.7,-27.1C81.1,-12,81.7,4.6,77.1,19.6C72.5,34.6,62.7,48,50.1,58.3C37.5,68.6,22,76.5,4.7,74.9C-12.6,73.3,-31.7,62.2,-46.8,50.3C-61.9,38.4,-73,25.7,-78.1,11.1C-83.2,-3.5,-82.3,-20,-75.1,-34.2C-67.9,-48.4,-54.4,-60.3,-40,-67.8C-25.6,-75.3,-10.3,-78.4,3.7,-78.1C17.7,-77.8,33.3,-72.4,46.7,-64.1Z"
+              ]
+            }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            transform="translate(100 100)" 
+          />
+          <defs>
+            <linearGradient id="grad3" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="rgba(255, 255, 255, 0.8)" />
+              <stop offset="50%" stopColor="rgba(0, 255, 255, 0.4)" />
+              <stop offset="100%" stopColor="rgba(255, 0, 255, 0.6)" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        {/* Inner glow and highlight */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-400/20 to-magenta-500/20 mix-blend-screen filter blur-md animate-pulse" />
+      </motion.div>
     </div>
   );
 }
@@ -87,57 +138,8 @@ export function HeroSection() {
                {/* Morphing Holographic Container */}
                <div className="relative w-[90%] max-w-[600px] aspect-square flex items-center justify-center" style={{ transformStyle: "preserve-3d" }}>
                  
-                 {/* Glitch / Morph Layer 1 */}
-                 <motion.div 
-                   className="absolute inset-0 w-full h-full opacity-40 mix-blend-screen"
-                   style={{ transformStyle: "preserve-3d" }}
-                   animate={{ 
-                     rotateZ: [0, 360], 
-                     rotateX: [0, 45, -45, 0],
-                     rotateY: [0, -45, 45, 0],
-                     scale: [1, 1.3, 0.8, 1],
-                     filter: ["hue-rotate(0deg) blur(2px)", "hue-rotate(180deg) blur(6px)", "hue-rotate(360deg) blur(2px)"]
-                   }}
-                   transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                 >
-                   <LogoSphere />
-                 </motion.div>
+                 <LiquidOrb />
                  
-                 {/* Glitch / Morph Layer 2 */}
-                 <motion.div 
-                   className="absolute inset-0 w-full h-full opacity-40 mix-blend-color-dodge"
-                   style={{ transformStyle: "preserve-3d" }}
-                   animate={{ 
-                     rotateZ: [360, 0], 
-                     rotateX: [0, -30, 30, 0],
-                     rotateY: [0, 60, -60, 0],
-                     scale: [0.9, 1.4, 0.9],
-                     filter: ["hue-rotate(90deg) blur(4px)", "hue-rotate(270deg) blur(1px)", "hue-rotate(90deg) blur(4px)"]
-                   }}
-                   transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                 >
-                   <LogoSphere />
-                 </motion.div>
-
-                 {/* Main Core Layer */}
-                 <motion.div 
-                   className="relative z-10 w-full h-full opacity-100 mix-blend-screen" 
-                   style={{ transformStyle: "preserve-3d" }}
-                   animate={{ 
-                     rotateZ: [0, 360],
-                     rotateX: [0, 360],
-                     rotateY: [0, 360],
-                     scale: [1, 1.1, 0.9, 1]
-                   }}
-                   transition={{ 
-                     rotateZ: { duration: 25, repeat: Infinity, ease: "linear" },
-                     rotateX: { duration: 30, repeat: Infinity, ease: "linear" },
-                     rotateY: { duration: 35, repeat: Infinity, ease: "linear" },
-                     scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-                   }}
-                 >
-                   <LogoSphere />
-                 </motion.div>
                </div>
              </FloatingElement>
            </div>
