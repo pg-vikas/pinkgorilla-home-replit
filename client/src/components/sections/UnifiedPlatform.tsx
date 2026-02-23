@@ -218,6 +218,20 @@ export function UnifiedPlatform() {
           </div>
 
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center max-w-4xl mx-auto px-4"
+        >
+          <h3 className="text-3xl md:text-5xl font-bold font-display text-white mb-6">
+            A Full Digital Brand with Pink Gorilla
+          </h3>
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
+            <span className="text-white font-medium">How Businesses Are Changing How They Operate.</span> We don't just build websites; we architect complete digital ecosystems. By centralizing your front-end presence and back-end operations under one unified strategy, we eliminate friction, accelerate growth, and build unshakable infrastructure that scales with your ambition.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
