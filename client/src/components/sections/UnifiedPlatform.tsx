@@ -60,15 +60,11 @@ export function UnifiedPlatform() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="relative w-[100vw] ml-[calc(50%-50vw)] px-4 py-32 mb-16 flex flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-cyan-950/20 via-black to-primary/10 border-y border-white/5 backdrop-blur-md">
+          <div className="relative w-full max-w-5xl mx-auto px-4 py-16 mb-16 flex flex-col items-center justify-center">
             
-            {/* Clean Banner Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent pointer-events-none" />
-
             {/* Content */}
-            <div className="relative z-10 w-full flex flex-col items-center">
-              <h3 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] font-black font-display leading-[1.1] tracking-tighter w-full text-center uppercase">
+            <div className="relative w-full flex flex-col items-center">
+              <h3 className="text-[8vw] sm:text-[7vw] md:text-[6vw] lg:text-[5vw] font-black font-display leading-[1.1] tracking-tighter w-full text-center uppercase">
                 <span className="text-white inline-block mx-2 drop-shadow-md">
                   Agencies Build.
                 </span>
@@ -76,11 +72,11 @@ export function UnifiedPlatform() {
                   Invoice. Leave.
                 </span>
                 
-                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 relative w-full">
+                <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 relative w-full">
                   <span className="text-white inline-block drop-shadow-md text-center">
                     We engineer
                   </span>
-                  <div className="relative w-full sm:w-[40vw] md:w-[35vw] lg:w-[28vw] h-[16vw] sm:h-[12vw] md:h-[10vw] lg:h-[8vw] flex items-center justify-center overflow-hidden">
+                  <div className="relative w-full sm:w-[35vw] md:w-[25vw] lg:w-[20vw] h-[12vw] sm:h-[8vw] md:h-[7vw] lg:h-[6vw] flex items-center justify-center overflow-hidden">
                     <AnimatePresence mode="wait">
                       <motion.span 
                         key={outcomeIndex}
@@ -97,9 +93,9 @@ export function UnifiedPlatform() {
                 </div>
               </h3>
               
-              <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-cyan-500/80 to-transparent my-12" />
+              <div className="w-24 h-[2px] bg-cyan-500/50 my-10" />
 
-              <p className="text-2xl md:text-4xl leading-relaxed font-light text-white/90 max-w-6xl mx-auto text-center px-4 drop-shadow-sm">
+              <p className="text-xl md:text-2xl leading-relaxed font-light text-white/80 max-w-4xl mx-auto text-center px-4">
                 Pink Gorilla runs your digital systems on a low monthly model and stays in your corner. We maintain, improve, automate, and help your business grow through structured technology that works every day.
               </p>
             </div>
