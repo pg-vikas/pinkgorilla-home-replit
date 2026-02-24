@@ -15,18 +15,18 @@ import {
   Legend
 } from "recharts";
 
-type ProjectType = "Basic Website" | "Five Page WordPress" | "Custom Website" | "Enterprise Platform";
+type ProjectType = "Basic Website" | "Advanced Website" | "Custom Website" | "Enterprise Platform";
 
 const AGENCY_DATA: Record<ProjectType, { build: number; maintenance: number; discovery: number }> = {
   "Basic Website": { build: 6500, maintenance: 250, discovery: 500 },
-  "Five Page WordPress": { build: 8500, maintenance: 350, discovery: 750 },
+  "Advanced Website": { build: 8500, maintenance: 350, discovery: 750 },
   "Custom Website": { build: 20000, maintenance: 800, discovery: 2000 },
   "Enterprise Platform": { build: 120000, maintenance: 2500, discovery: 8000 },
 };
 
 const PROJECT_TYPES: ProjectType[] = [
   "Basic Website",
-  "Five Page WordPress",
+  "Advanced Website",
   "Custom Website",
   "Enterprise Platform"
 ];
