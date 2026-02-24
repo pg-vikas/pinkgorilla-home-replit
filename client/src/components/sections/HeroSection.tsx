@@ -163,45 +163,14 @@ export function HeroSection() {
 
             <a
               href="tel:15622846463"
-              className="group relative mx-auto lg:mx-0 inline-flex w-full max-w-[720px] items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-md transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 overflow-hidden"
+              className="mx-auto lg:mx-0 inline-flex w-full max-w-[720px] items-center justify-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-4 backdrop-blur-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
               data-testid="link-phone-number"
             >
-              {/* Gooey animated glow */}
-              <span className="absolute -inset-8 blur-2xl opacity-80" aria-hidden="true">
-                <span className="absolute left-0 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-cyan-400/55 animate-[pg-blob_4.5s_ease-in-out_infinite]" />
-                <span className="absolute left-12 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-primary/45 animate-[pg-blob_5.5s_ease-in-out_infinite_0.6s]" />
-                <span className="absolute left-28 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-emerald-300/35 animate-[pg-blob_6.2s_ease-in-out_infinite_1.1s]" />
+              <span className="text-white/70 text-sm md:text-base font-semibold" data-testid="text-phone-cta-label">Call or text</span>
+              <span className="text-white text-xl md:text-3xl font-black font-display tracking-tight" data-testid="text-phone-cta-number">
+                562 284 6463
               </span>
-              <span className="absolute inset-0 bg-white/6" aria-hidden="true" />
-              <span className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,255,255,0.18),transparent_60%)]" aria-hidden="true" />
-
-              <span className="relative inline-flex items-center gap-3" style={{ filter: "url(#goo)" }}>
-                <span
-                  className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/15 ring-1 ring-cyan-400/30"
-                  aria-hidden="true"
-                >
-                  <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(0,255,255,0.7)]" />
-                </span>
-                <span className="relative text-white/70 text-sm md:text-base font-semibold">Call or text</span>
-                <span className="relative text-white text-xl md:text-3xl font-black font-display tracking-tight">
-                  562 284 6463
-                </span>
-                <span className="relative text-white/50 text-sm md:text-base">anytime</span>
-              </span>
-
-              {/* SVG filter definition for gooey effect */}
-              <svg width="0" height="0" className="absolute" aria-hidden="true" focusable="false">
-                <filter id="goo">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                  <feColorMatrix
-                    in="blur"
-                    mode="matrix"
-                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                    result="goo"
-                  />
-                  <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                </filter>
-              </svg>
+              <span className="text-white/50 text-sm md:text-base" data-testid="text-phone-cta-anytime">anytime</span>
             </a>
           </div>
         </motion.div>
