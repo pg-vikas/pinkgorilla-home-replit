@@ -126,34 +126,40 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start">
               <button
                 type="button"
-                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-black transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-black transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 active:scale-[0.99]"
                 data-testid="button-chat-now"
                 onClick={() => window.open("https://pinkgorilla.online", "_blank", "noopener,noreferrer")}
               >
-                <span className="absolute inset-0 rounded-full bg-white shadow-[0_0_60px_rgba(255,255,255,0.22)] transition-all group-hover:shadow-[0_0_80px_rgba(0,255,255,0.22)]" />
-                <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-400/70 via-white/30 to-primary/60 blur-lg opacity-50 transition-opacity group-hover:opacity-70" />
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-300 via-white to-emerald-300 shadow-[0_0_80px_rgba(0,255,255,0.22)] transition-all duration-300 group-hover:shadow-[0_0_120px_rgba(0,255,255,0.32)]" />
+                <span className="absolute inset-0 rounded-full opacity-70 mix-blend-overlay bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.95),transparent_55%)]" />
+                <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-400/70 via-white/30 to-emerald-400/70 blur-xl opacity-60 transition-opacity duration-300 group-hover:opacity-90" />
+                <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[conic-gradient(from_90deg,rgba(0,255,255,0.0),rgba(0,255,255,0.45),rgba(255,255,255,0.0),rgba(34,197,94,0.35),rgba(0,255,255,0.0))] animate-[spin_3s_linear_infinite]" />
                 <span className="relative">Chat now</span>
               </button>
 
               <button
                 type="button"
-                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 active:scale-[0.99]"
                 data-testid="button-book-call"
                 onClick={() => window.open("/contact", "_self")}
               >
-                <span className="absolute inset-0 rounded-full bg-white/7 border border-white/18 backdrop-blur-md shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)] transition-all group-hover:bg-white/10 group-hover:border-white/28" />
-                <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_top,rgba(0,255,255,0.18),transparent_60%)] opacity-0 transition-opacity group-hover:opacity-100" />
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/95 via-fuchsia-500/85 to-violet-500/85 shadow-[0_0_90px_rgba(255,0,255,0.22)] transition-all duration-300 group-hover:shadow-[0_0_130px_rgba(255,0,255,0.35)]" />
+                <span className="absolute inset-0 rounded-full opacity-70 mix-blend-overlay bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.9),transparent_55%)]" />
+                <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary/60 via-fuchsia-400/40 to-violet-400/40 blur-xl opacity-55 transition-opacity duration-300 group-hover:opacity-85" />
+                <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[conic-gradient(from_90deg,rgba(255,0,255,0.0),rgba(255,0,255,0.45),rgba(255,255,255,0.0),rgba(139,92,246,0.35),rgba(255,0,255,0.0))] animate-[spin_3s_linear_infinite]" />
                 <span className="relative">Book a call</span>
               </button>
 
               <button
                 type="button"
-                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-black transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 active:scale-[0.99]"
                 data-testid="button-pick-package"
                 onClick={() => window.open("/pricing", "_self")}
               >
-                <span className="absolute inset-0 rounded-full bg-white/7 border border-white/18 backdrop-blur-md shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)] transition-all group-hover:bg-white/10 group-hover:border-white/28" />
-                <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_top,rgba(255,0,255,0.16),transparent_60%)] opacity-0 transition-opacity group-hover:opacity-100" />
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-300 via-yellow-200 to-orange-300 shadow-[0_0_90px_rgba(251,191,36,0.22)] transition-all duration-300 group-hover:shadow-[0_0_130px_rgba(251,191,36,0.35)]" />
+                <span className="absolute inset-0 rounded-full opacity-70 mix-blend-overlay bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.95),transparent_55%)]" />
+                <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-amber-400/60 via-yellow-200/40 to-orange-400/50 blur-xl opacity-55 transition-opacity duration-300 group-hover:opacity-90" />
+                <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[conic-gradient(from_90deg,rgba(251,191,36,0.0),rgba(251,191,36,0.55),rgba(255,255,255,0.0),rgba(249,115,22,0.35),rgba(251,191,36,0.0))] animate-[spin_3s_linear_infinite]" />
                 <span className="relative">Pick your package</span>
               </button>
             </div>
