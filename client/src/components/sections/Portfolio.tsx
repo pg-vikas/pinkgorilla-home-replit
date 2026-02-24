@@ -194,7 +194,7 @@ export function Portfolio() {
               
               {/* Massive animated background marks */}
               <div className="absolute inset-0 z-0 opacity-30 pointer-events-none overflow-hidden">
-                {[...Array(12)].map((_, i) => {
+                {[...Array(40)].map((_, i) => {
                   const type = i % 3 === 0 ? 'face' : i % 3 === 1 ? 'foot' : 'hand';
                   const size = 60 + Math.random() * 80;
                   const left = Math.random() * 100;
