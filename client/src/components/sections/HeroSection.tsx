@@ -132,7 +132,6 @@ export function HeroSection() {
               >
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-300 via-white to-emerald-300" aria-hidden="true" />
                 <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.9),transparent_60%)] opacity-80" aria-hidden="true" />
-                <span className="absolute inset-0 rounded-full opacity-70 bg-[conic-gradient(from_90deg,rgba(0,255,255,0.0),rgba(0,255,255,0.35),rgba(255,255,255,0.0),rgba(34,197,94,0.28),rgba(0,255,255,0.0))] animate-[spin_4.5s_linear_infinite]" aria-hidden="true" />
                 <span className="relative">Chat now</span>
               </button>
 
@@ -144,7 +143,6 @@ export function HeroSection() {
               >
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-fuchsia-500 via-primary to-violet-500" aria-hidden="true" />
                 <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.55),transparent_62%)] opacity-70" aria-hidden="true" />
-                <span className="absolute inset-0 rounded-full opacity-60 bg-[conic-gradient(from_90deg,rgba(255,0,255,0.0),rgba(255,0,255,0.32),rgba(255,255,255,0.0),rgba(139,92,246,0.26),rgba(255,0,255,0.0))] animate-[spin_4.5s_linear_infinite]" aria-hidden="true" />
                 <span className="relative">Book a call</span>
               </button>
 
@@ -156,7 +154,6 @@ export function HeroSection() {
               >
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-300 via-yellow-200 to-orange-300" aria-hidden="true" />
                 <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.9),transparent_60%)] opacity-75" aria-hidden="true" />
-                <span className="absolute inset-0 rounded-full opacity-65 bg-[conic-gradient(from_90deg,rgba(251,191,36,0.0),rgba(251,191,36,0.38),rgba(255,255,255,0.0),rgba(249,115,22,0.28),rgba(251,191,36,0.0))] animate-[spin_4.5s_linear_infinite]" aria-hidden="true" />
                 <span className="relative">Pick your package</span>
               </button>
             </div>
