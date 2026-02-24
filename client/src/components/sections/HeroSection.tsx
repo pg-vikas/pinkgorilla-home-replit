@@ -126,42 +126,51 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start">
               <button
                 type="button"
-                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-black bg-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 active:scale-[0.99] hover:bg-white/90"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-black transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60 active:scale-[0.99]"
                 data-testid="button-chat-now"
                 onClick={() => window.open("https://pinkgorilla.online", "_blank", "noopener,noreferrer")}
               >
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-300 via-white to-emerald-300" aria-hidden="true" />
+                <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.9),transparent_60%)] opacity-80" aria-hidden="true" />
+                <span className="absolute inset-0 rounded-full opacity-70 bg-[conic-gradient(from_90deg,rgba(0,255,255,0.0),rgba(0,255,255,0.35),rgba(255,255,255,0.0),rgba(34,197,94,0.28),rgba(0,255,255,0.0))] animate-[spin_4.5s_linear_infinite]" aria-hidden="true" />
                 <span className="relative">Chat now</span>
               </button>
 
               <button
                 type="button"
-                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white border border-white/20 bg-white/5 backdrop-blur-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 active:scale-[0.99] hover:bg-white/10"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/60 active:scale-[0.99]"
                 data-testid="button-book-call"
                 onClick={() => window.open("/contact", "_self")}
               >
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-fuchsia-500 via-primary to-violet-500" aria-hidden="true" />
+                <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.55),transparent_62%)] opacity-70" aria-hidden="true" />
+                <span className="absolute inset-0 rounded-full opacity-60 bg-[conic-gradient(from_90deg,rgba(255,0,255,0.0),rgba(255,0,255,0.32),rgba(255,255,255,0.0),rgba(139,92,246,0.26),rgba(255,0,255,0.0))] animate-[spin_4.5s_linear_infinite]" aria-hidden="true" />
                 <span className="relative">Book a call</span>
               </button>
 
               <button
                 type="button"
-                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white border border-white/20 bg-white/5 backdrop-blur-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 active:scale-[0.99] hover:bg-white/10"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-black transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 active:scale-[0.99]"
                 data-testid="button-pick-package"
                 onClick={() => window.open("/pricing", "_self")}
               >
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-300 via-yellow-200 to-orange-300" aria-hidden="true" />
+                <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.9),transparent_60%)] opacity-75" aria-hidden="true" />
+                <span className="absolute inset-0 rounded-full opacity-65 bg-[conic-gradient(from_90deg,rgba(251,191,36,0.0),rgba(251,191,36,0.38),rgba(255,255,255,0.0),rgba(249,115,22,0.28),rgba(251,191,36,0.0))] animate-[spin_4.5s_linear_infinite]" aria-hidden="true" />
                 <span className="relative">Pick your package</span>
               </button>
             </div>
 
             <a
               href="tel:15622846463"
-              className="mx-auto lg:mx-0 inline-flex w-full max-w-[520px] items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-4 backdrop-blur-md transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="mx-auto lg:mx-0 inline-flex w-full max-w-[520px] items-center justify-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-4 backdrop-blur-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60"
               data-testid="link-phone-number"
             >
-              <span className="text-white/70 text-sm md:text-base font-semibold" data-testid="text-phone-cta-label">Call or text</span>
+              <span className="text-cyan-200 text-sm md:text-base font-bold" data-testid="text-phone-cta-label">Call or text</span>
               <span className="text-white text-xl md:text-3xl font-black font-display tracking-tight" data-testid="text-phone-cta-number">
                 562 284 6463
               </span>
-              <span className="text-white/50 text-sm md:text-base" data-testid="text-phone-cta-anytime">anytime</span>
+              <span className="text-white/60 text-sm md:text-base font-semibold" data-testid="text-phone-cta-anytime">anytime</span>
             </a>
           </div>
         </motion.div>
