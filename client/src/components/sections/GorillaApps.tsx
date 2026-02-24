@@ -41,6 +41,24 @@ export function GorillaApps() {
       imageKey: "analytics",
       color: "border-l-primary",
     },
+    {
+      title: "Integrated telephone system",
+      desc: "Calls, routing, and recordings in one place",
+      imageKey: "phone",
+      color: "border-l-secondary",
+    },
+    {
+      title: "Scheduled texting and emailing",
+      desc: "Automated follow ups that run on schedule",
+      imageKey: "scheduler",
+      color: "border-l-accent",
+    },
+    {
+      title: "Payments with Visa, Zelle, and Venmo",
+      desc: "Unified checkout and clean reconciliation",
+      imageKey: "payments",
+      color: "border-l-primary",
+    },
   ];
 
   return (
