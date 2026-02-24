@@ -102,10 +102,34 @@ export function ComparisonTool() {
           viewport={{ once: true }}
           className="text-center max-w-4xl mx-auto mb-16 space-y-6"
         >
-          <h2 className="text-4xl md:text-6xl font-bold font-display text-white tracking-tight">
+          {savings > 0 && (
+            <motion.div
+              key={`${projectType}-${months}-${pgMonthlyFee}-${pgSetupFee}-${includeMaintenance}`}
+              initial={{ opacity: 0, y: 10, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="inline-flex flex-col items-center justify-center gap-2 rounded-3xl border border-green-400/30 bg-green-400/10 px-6 py-5 backdrop-blur-xl shadow-[0_0_40px_rgba(34,197,94,0.15)]"
+              data-testid="card-savings-hero"
+            >
+              <div className="text-white/70 text-sm md:text-base font-semibold uppercase tracking-[0.22em]" data-testid="text-savings-label">
+                Savings at {months} months
+              </div>
+              <div
+                className="text-4xl md:text-6xl font-black font-display tracking-tight text-green-300 drop-shadow-[0_0_20px_rgba(34,197,94,0.25)]"
+                data-testid="text-savings-value"
+              >
+                {formatCurrency(savings)}
+              </div>
+              <div className="text-white/60 text-sm md:text-base" data-testid="text-savings-subtitle">
+                {savingsPercent}% less than a traditional agency
+              </div>
+            </motion.div>
+          )}
+
+          <h2 className="text-4xl md:text-6xl font-bold font-display text-white tracking-tight" data-testid="text-comparison-headline">
             Traditional agencies charge upfront fees and then charge again for maintenance.
           </h2>
-          <p className="text-xl md:text-2xl text-white/80 font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/80 font-light leading-relaxed" data-testid="text-comparison-body">
             Pink Gorilla stays with you on a low monthly model so your digital systems keep improving without surprise costs.
           </p>
         </motion.div>
