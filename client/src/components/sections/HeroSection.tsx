@@ -163,11 +163,11 @@ export function HeroSection() {
               className="mx-auto lg:mx-0 inline-flex w-full max-w-[520px] items-center justify-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-4 backdrop-blur-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60"
               data-testid="link-phone-number"
             >
-              <span className="text-cyan-200 text-sm md:text-base font-bold" data-testid="text-phone-cta-label">Call or text</span>
-              <span className="text-white text-xl md:text-3xl font-black font-display tracking-tight" data-testid="text-phone-cta-number">
+              <span className="text-emerald-300 text-sm md:text-base font-black" data-testid="text-phone-cta-label">Call or text</span>
+              <span className="text-emerald-200 text-xl md:text-3xl font-black font-display tracking-tight" data-testid="text-phone-cta-number">
                 562 284 6463
               </span>
-              <span className="text-white/60 text-sm md:text-base font-semibold" data-testid="text-phone-cta-anytime">anytime</span>
+              <span className="text-emerald-100/70 text-sm md:text-base font-bold" data-testid="text-phone-cta-anytime">anytime</span>
             </a>
           </div>
         </motion.div>
