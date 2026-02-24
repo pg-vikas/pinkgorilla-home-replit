@@ -126,10 +126,20 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               className="rounded-full px-8 text-lg h-14 border-white/20 hover:bg-white/10 backdrop-blur-sm"
-              data-testid="button-call-text"
-              onClick={() => window.open("tel:15622846463", "_self")}
+              data-testid="button-book-call"
+              onClick={() => window.open("/contact", "_self")}
             >
-              Call or text anytime, day or night
+              Book a call
+            </Button>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full px-8 text-lg h-14 border-white/20 hover:bg-white/10 backdrop-blur-sm"
+              data-testid="button-pick-package"
+              onClick={() => window.open("/pricing", "_self")}
+            >
+              Pick your package
             </Button>
           </div>
 
