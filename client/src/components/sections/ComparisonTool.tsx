@@ -33,13 +33,16 @@ const PROJECT_TYPES: ProjectType[] = [
 
 export function ComparisonTool() {
   const [projectType, setProjectType] = useState<ProjectType>("Basic Website");
+  
+  // Ensure we never crash if options change
+  const safeProjectType = PROJECT_TYPES.includes(projectType) ? projectType : PROJECT_TYPES[0];
   const [months, setMonths] = useState<number>(1);
   const [pgMonthlyFee, setPgMonthlyFee] = useState<number>(299);
   const [pgSetupFee, setPgSetupFee] = useState<number>(0);
   const [includeMaintenance, setIncludeMaintenance] = useState<boolean>(true);
 
   // Calculations
-  const data = AGENCY_DATA[projectType];
+  const data = AGENCY_DATA[safeProjectType];
   
   const agencyTotal = useMemo(() => {
     const maintenanceTotal = includeMaintenance ? data.maintenance * months : 0;
@@ -109,7 +112,7 @@ export function ComparisonTool() {
             Pink Gorilla stays with you on a low monthly model so your digital systems keep improving without surprise costs.
             {savings > 0 && (
               <motion.span
-                key={`${projectType}-${months}-${pgMonthlyFee}-${pgSetupFee}-${includeMaintenance}`}
+                key={`${safeProjectType}-${months}-${pgMonthlyFee}-${pgSetupFee}-${includeMaintenance}`}
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
