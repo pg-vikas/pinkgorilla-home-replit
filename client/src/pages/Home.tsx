@@ -7,11 +7,13 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { GorillaLabs } from "@/components/sections/GorillaLabs";
 import { GorillaApps } from "@/components/sections/GorillaApps";
 import { Portfolio } from "@/components/sections/Portfolio";
+import { ComparisonTool } from "@/components/sections/ComparisonTool";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20">
       <HeroSection />
+      <ComparisonTool />
       <FinalCTA />
       <UnifiedPlatform />
       <Portfolio />
