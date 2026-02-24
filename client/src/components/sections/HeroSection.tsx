@@ -112,54 +112,59 @@ export function HeroSection() {
             Pink Gorilla designs, builds, and powers complete digital ecosystems for serious operators who want more than just a website.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-            <Button
-              size="lg"
-              className="rounded-full px-8 text-lg h-14 bg-white text-black hover:bg-white/90"
-              data-testid="button-chat-now"
-              onClick={() => window.open("https://pinkgorilla.online", "_blank", "noopener,noreferrer")}
-            >
-              Chat now
-            </Button>
+          <div className="flex flex-col gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start">
+              <button
+                type="button"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-black transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+                data-testid="button-chat-now"
+                onClick={() => window.open("https://pinkgorilla.online", "_blank", "noopener,noreferrer")}
+              >
+                <span className="absolute inset-0 rounded-full bg-white shadow-[0_0_60px_rgba(255,255,255,0.22)] transition-all group-hover:shadow-[0_0_80px_rgba(0,255,255,0.22)]" />
+                <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-400/70 via-white/30 to-primary/60 blur-lg opacity-50 transition-opacity group-hover:opacity-70" />
+                <span className="relative">Chat now</span>
+              </button>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full px-8 text-lg h-14 border-white/20 hover:bg-white/10 backdrop-blur-sm"
-              data-testid="button-book-call"
-              onClick={() => window.open("/contact", "_self")}
-            >
-              Book a call
-            </Button>
+              <button
+                type="button"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+                data-testid="button-book-call"
+                onClick={() => window.open("/contact", "_self")}
+              >
+                <span className="absolute inset-0 rounded-full bg-white/7 border border-white/18 backdrop-blur-md shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)] transition-all group-hover:bg-white/10 group-hover:border-white/28" />
+                <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_top,rgba(0,255,255,0.18),transparent_60%)] opacity-0 transition-opacity group-hover:opacity-100" />
+                <span className="relative">Book a call</span>
+              </button>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full px-8 text-lg h-14 border-white/20 hover:bg-white/10 backdrop-blur-sm"
-              data-testid="button-pick-package"
-              onClick={() => window.open("/pricing", "_self")}
-            >
-              Pick your package
-            </Button>
-          </div>
+              <button
+                type="button"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+                data-testid="button-pick-package"
+                onClick={() => window.open("/pricing", "_self")}
+              >
+                <span className="absolute inset-0 rounded-full bg-white/7 border border-white/18 backdrop-blur-md shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)] transition-all group-hover:bg-white/10 group-hover:border-white/28" />
+                <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_top,rgba(255,0,255,0.16),transparent_60%)] opacity-0 transition-opacity group-hover:opacity-100" />
+                <span className="relative">Pick your package</span>
+              </button>
+            </div>
 
-          <div className="flex items-center justify-center lg:justify-start gap-3 pt-1">
             <a
               href="tel:15622846463"
-              className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-5 py-3 backdrop-blur-md hover:bg-white/10 transition-all"
+              className="group relative mx-auto lg:mx-0 inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-4 backdrop-blur-md transition-all hover:bg-white/10 hover:border-white/25 hover:shadow-[0_0_50px_rgba(0,255,255,0.12)]"
               data-testid="link-phone-number"
             >
+              <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-400/30 via-transparent to-primary/30 blur-xl opacity-0 transition-opacity group-hover:opacity-100" />
               <span
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-cyan-500/15 ring-1 ring-cyan-400/30"
+                className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/15 ring-1 ring-cyan-400/30"
                 aria-hidden="true"
               >
                 <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(0,255,255,0.7)]" />
               </span>
-              <span className="text-white/70 text-sm md:text-base font-semibold">Call or text</span>
-              <span className="text-white text-lg md:text-2xl font-black font-display tracking-tight">
+              <span className="relative text-white/70 text-sm md:text-base font-semibold">Call or text</span>
+              <span className="relative text-white text-xl md:text-3xl font-black font-display tracking-tight">
                 562 284 6463
               </span>
-              <span className="text-white/50 text-sm md:text-base">anytime</span>
+              <span className="relative text-white/50 text-sm md:text-base">anytime</span>
             </a>
           </div>
         </motion.div>
