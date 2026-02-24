@@ -56,7 +56,7 @@ export function WhatWeDo() {
                       <div className="w-4 h-4 rounded-full bg-white relative z-10 shadow-[0_0_15px_white]" />
                    </div>
                    <div className="mt-4 text-lg font-bold text-white whitespace-nowrap bg-black/60 px-4 py-2 rounded-xl backdrop-blur-md border border-white/10">
-                     Command Center
+                     Your Business with Pink Gorilla
                    </div>
                 </FloatingElement>
 
