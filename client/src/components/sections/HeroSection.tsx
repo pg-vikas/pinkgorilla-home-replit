@@ -133,11 +133,24 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <div
-            className="text-sm md:text-base text-muted-foreground/90"
-            data-testid="text-phone-number"
-          >
-            562 284 6463
+          <div className="flex items-center justify-center lg:justify-start gap-3 pt-1">
+            <a
+              href="tel:15622846463"
+              className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-5 py-3 backdrop-blur-md hover:bg-white/10 transition-all"
+              data-testid="link-phone-number"
+            >
+              <span
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-cyan-500/15 ring-1 ring-cyan-400/30"
+                aria-hidden="true"
+              >
+                <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(0,255,255,0.7)]" />
+              </span>
+              <span className="text-white/70 text-sm md:text-base font-semibold">Call or text</span>
+              <span className="text-white text-lg md:text-2xl font-black font-display tracking-tight">
+                562 284 6463
+              </span>
+              <span className="text-white/50 text-sm md:text-base">anytime</span>
+            </a>
           </div>
         </motion.div>
 
