@@ -54,66 +54,6 @@ export function UnifiedPlatform() {
   return (
     <section className="py-32 bg-background relative overflow-hidden" id="platform">
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
-          className="mb-32 w-full flex flex-col items-center relative"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="relative w-full max-w-5xl mx-auto px-4 py-16 mb-16 flex flex-col items-center justify-center">
-            
-            {/* Content */}
-            <div className="relative w-full flex flex-col items-center">
-              <h3 className="text-[8vw] sm:text-[7vw] md:text-[6vw] lg:text-[5vw] font-black font-display leading-[1.1] tracking-tighter w-full text-center uppercase">
-                <span className="text-white inline-block mx-2 drop-shadow-md">
-                  Agencies Build.
-                </span>
-                <span className="text-white inline-block mx-2 drop-shadow-md">
-                  Invoice. Leave.
-                </span>
-                
-                <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 relative w-full">
-                  <span className="text-white inline-block drop-shadow-md text-center">
-                    We engineer
-                  </span>
-                  <div className="relative w-full sm:w-[35vw] md:w-[25vw] lg:w-[20vw] h-[12vw] sm:h-[8vw] md:h-[7vw] lg:h-[6vw] flex items-center justify-center overflow-hidden">
-                    <AnimatePresence mode="wait">
-                      <motion.span 
-                        key={outcomeIndex}
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -30, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="text-primary absolute text-center w-full whitespace-nowrap drop-shadow-md"
-                      >
-                        {outcomes[outcomeIndex]}
-                      </motion.span>
-                    </AnimatePresence>
-                  </div>
-                </div>
-              </h3>
-              
-              <div className="w-24 h-[2px] bg-cyan-500/50 my-10" />
-
-              <p className="text-xl md:text-2xl leading-relaxed font-light text-white/80 max-w-4xl mx-auto text-center px-4">
-                Pink Gorilla runs your digital systems on a low monthly model and stays in your corner. We maintain, improve, automate, and help your business grow through structured technology that works every day.
-              </p>
-            </div>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 relative z-10">
-            <Link href="/pricing">
-              <a className="px-12 py-6 rounded-full bg-cyan-500 text-black font-bold text-2xl transition-all shadow-[0_0_30px_rgba(0,255,255,0.6)] hover:shadow-[0_0_50px_rgba(0,255,255,1)] hover:scale-105">
-                GET STARTED
-              </a>
-            </Link>
-            <Link href="/contact">
-              <a className="px-12 py-6 rounded-full bg-transparent border-2 border-primary/50 text-white font-bold text-2xl transition-all shadow-[inset_0_0_20px_rgba(255,0,255,0.3),0_0_20px_rgba(255,0,255,0.3)] hover:shadow-[inset_0_0_30px_rgba(255,0,255,0.6),0_0_40px_rgba(255,0,255,0.6)] hover:bg-primary/10 hover:border-primary hover:scale-105">
-                Contact Us
-              </a>
-            </Link>
-          </div>
-        </motion.div>
 
         <div className="relative w-[100vw] left-1/2 -translate-x-1/2 bg-black/40 border-y border-white/5 backdrop-blur-sm py-16 mb-24">
           <div className="text-center max-w-5xl mx-auto space-y-8 px-4 relative z-10">
