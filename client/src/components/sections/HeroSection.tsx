@@ -126,44 +126,35 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start">
               <button
                 type="button"
-                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-black transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 active:scale-[0.99]"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-black bg-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 active:scale-[0.99] hover:bg-white/90"
                 data-testid="button-chat-now"
                 onClick={() => window.open("https://pinkgorilla.online", "_blank", "noopener,noreferrer")}
               >
-                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-300 via-white to-emerald-300 shadow-[0_0_80px_rgba(0,255,255,0.22)] transition-all duration-300" />
-                <span className="absolute inset-0 rounded-full opacity-70 mix-blend-overlay bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.95),transparent_55%)]" />
-                <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-400/70 via-white/30 to-emerald-400/70 blur-xl opacity-60 transition-opacity duration-300" />
                 <span className="relative">Chat now</span>
               </button>
 
               <button
                 type="button"
-                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 active:scale-[0.99]"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white border border-white/20 bg-white/5 backdrop-blur-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 active:scale-[0.99] hover:bg-white/10"
                 data-testid="button-book-call"
                 onClick={() => window.open("/contact", "_self")}
               >
-                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/95 via-fuchsia-500/85 to-violet-500/85 shadow-[0_0_90px_rgba(255,0,255,0.22)] transition-all duration-300" />
-                <span className="absolute inset-0 rounded-full opacity-70 mix-blend-overlay bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.9),transparent_55%)]" />
-                <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary/60 via-fuchsia-400/40 to-violet-400/40 blur-xl opacity-55 transition-opacity duration-300" />
                 <span className="relative">Book a call</span>
               </button>
 
               <button
                 type="button"
-                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-black transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 active:scale-[0.99]"
+                className="group relative inline-flex h-14 items-center justify-center rounded-full px-8 text-lg font-black font-display tracking-tight text-white border border-white/20 bg-white/5 backdrop-blur-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 active:scale-[0.99] hover:bg-white/10"
                 data-testid="button-pick-package"
                 onClick={() => window.open("/pricing", "_self")}
               >
-                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-300 via-yellow-200 to-orange-300 shadow-[0_0_90px_rgba(251,191,36,0.22)] transition-all duration-300" />
-                <span className="absolute inset-0 rounded-full opacity-70 mix-blend-overlay bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.95),transparent_55%)]" />
-                <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-amber-400/60 via-yellow-200/40 to-orange-400/50 blur-xl opacity-55 transition-opacity duration-300" />
                 <span className="relative">Pick your package</span>
               </button>
             </div>
 
             <a
               href="tel:15622846463"
-              className="mx-auto lg:mx-0 inline-flex w-full max-w-[520px] items-center justify-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-4 backdrop-blur-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+              className="mx-auto lg:mx-0 inline-flex w-full max-w-[520px] items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-4 backdrop-blur-md transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               data-testid="link-phone-number"
             >
               <span className="text-white/70 text-sm md:text-base font-semibold" data-testid="text-phone-cta-label">Call or text</span>
