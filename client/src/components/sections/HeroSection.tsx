@@ -166,7 +166,7 @@ export function HeroSection() {
 
             <a
               href="tel:15622846463"
-              className="group relative mx-auto lg:mx-0 inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-md transition-all hover:border-white/20 hover:shadow-[0_0_60px_rgba(0,255,255,0.14)] focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 overflow-hidden"
+              className="group relative mx-auto lg:mx-0 inline-flex w-full max-w-[720px] items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-md transition-all hover:border-white/20 hover:shadow-[0_0_60px_rgba(0,255,255,0.14)] focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 overflow-hidden"
               data-testid="link-phone-number"
             >
               {/* Gooey animated glow */}
