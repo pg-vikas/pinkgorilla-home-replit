@@ -4,6 +4,15 @@ import { FloatingElement } from "@/components/motion/FloatingElement";
 import { cn } from "@/lib/utils";
 import { Command, Figma, Slack, Trello, Hexagon, Layers, Box, Database, Chrome, Cloud, Layout, Globe, Briefcase, Building2, Shield, Lock, Fingerprint, Activity } from "lucide-react";
 
+const heroKeyframes = `
+@keyframes pg-blob {
+  0% { transform: translate3d(0,-50%,0) scale(1); }
+  33% { transform: translate3d(38px,-65%,0) scale(1.08); }
+  66% { transform: translate3d(86px,-38%,0) scale(0.94); }
+  100% { transform: translate3d(0,-50%,0) scale(1); }
+}
+`;
+
 function LiquidOrb({ className }: { className?: string }) {
   return (
     <div className={cn("absolute inset-0 flex items-center justify-center", className)}>
@@ -91,6 +100,7 @@ function LiquidOrb({ className }: { className?: string }) {
 export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 bg-background" id="hero">
+      <style>{heroKeyframes}</style>
       {/* Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
@@ -150,21 +160,45 @@ export function HeroSection() {
 
             <a
               href="tel:15622846463"
-              className="group relative mx-auto lg:mx-0 inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-4 backdrop-blur-md transition-all hover:bg-white/10 hover:border-white/25 hover:shadow-[0_0_50px_rgba(0,255,255,0.12)]"
+              className="group relative mx-auto lg:mx-0 inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-md transition-all hover:border-white/20 hover:shadow-[0_0_60px_rgba(0,255,255,0.14)] focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 overflow-hidden"
               data-testid="link-phone-number"
             >
-              <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-400/30 via-transparent to-primary/30 blur-xl opacity-0 transition-opacity group-hover:opacity-100" />
-              <span
-                className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/15 ring-1 ring-cyan-400/30"
-                aria-hidden="true"
-              >
-                <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(0,255,255,0.7)]" />
+              {/* Gooey animated glow */}
+              <span className="absolute -inset-8 blur-2xl opacity-70 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true">
+                <span className="absolute left-0 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-cyan-400/55 animate-[pg-blob_4.5s_ease-in-out_infinite]" />
+                <span className="absolute left-12 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-primary/45 animate-[pg-blob_5.5s_ease-in-out_infinite_0.6s]" />
+                <span className="absolute left-28 top-1/2 h-20 w-20 -translate-y-1/2 rounded-full bg-emerald-300/35 animate-[pg-blob_6.2s_ease-in-out_infinite_1.1s]" />
               </span>
-              <span className="relative text-white/70 text-sm md:text-base font-semibold">Call or text</span>
-              <span className="relative text-white text-xl md:text-3xl font-black font-display tracking-tight">
-                562 284 6463
+              <span className="absolute inset-0 bg-white/5 group-hover:bg-white/8 transition-colors" aria-hidden="true" />
+              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_30%_20%,rgba(0,255,255,0.22),transparent_60%)]" aria-hidden="true" />
+
+              <span className="relative inline-flex items-center gap-3" style={{ filter: "url(#goo)" }}>
+                <span
+                  className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/15 ring-1 ring-cyan-400/30"
+                  aria-hidden="true"
+                >
+                  <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(0,255,255,0.7)]" />
+                </span>
+                <span className="relative text-white/70 text-sm md:text-base font-semibold">Call or text</span>
+                <span className="relative text-white text-xl md:text-3xl font-black font-display tracking-tight">
+                  562 284 6463
+                </span>
+                <span className="relative text-white/50 text-sm md:text-base">anytime</span>
               </span>
-              <span className="relative text-white/50 text-sm md:text-base">anytime</span>
+
+              {/* SVG filter definition for gooey effect */}
+              <svg width="0" height="0" className="absolute" aria-hidden="true" focusable="false">
+                <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                  <feColorMatrix
+                    in="blur"
+                    mode="matrix"
+                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                    result="goo"
+                  />
+                  <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                </filter>
+              </svg>
             </a>
           </div>
         </motion.div>
