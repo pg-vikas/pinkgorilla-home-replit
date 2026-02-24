@@ -1,0 +1,105 @@
+```text
+Build a dynamic comparison tool section for the Pink Gorilla homepage inside my existing Replit project.
+
+Primary goal
+Create an interactive pricing comparison that shows how traditional agencies charge large upfront build fees plus ongoing maintenance, while Pink Gorilla charges a low predictable monthly fee. The tool should make it visually obvious that the monthly model is better over time.
+
+Design style
+Big bold premium design.
+Large easy to read fonts.
+Beautiful cards, glass panels, soft shadows, rounded corners.
+High motion but smooth: Framer Motion animations, hover lift, animated background gradient.
+No em dashes or hyphens anywhere in visible UI text.
+No gorilla icons.
+
+Section placement
+This is a homepage section component called ComparisonTool that can be inserted below the hero.
+
+User controls
+1 A project type selector with 4 options:
+Basic Website
+Five Page WordPress
+Custom Website
+Enterprise Platform
+
+2 A timeline slider:
+1 to 60 months
+
+3 A monthly fee input for Pink Gorilla:
+Default 299
+Allow editing
+
+4 Optional toggle:
+Include maintenance for agency
+Default on
+
+Data model and assumptions
+Create a local data object with typical US agency pricing ranges and use a simple average for calculations.
+Use these default averages:
+Basic Website build: 6500
+Five Page WordPress build: 8500
+Custom Website build: 20000
+Enterprise Platform build: 120000
+
+Agency maintenance assumption:
+Basic: 250 per month
+WordPress: 350 per month
+Custom: 800 per month
+Enterprise: 2500 per month
+
+Also include a one time agency discovery fee:
+Basic: 500
+WordPress: 750
+Custom: 2000
+Enterprise: 8000
+
+Calculations to show
+Agency total cost over selected months:
+Discovery fee plus build fee plus maintenance times months if toggle on
+
+Pink Gorilla total cost over selected months:
+Monthly fee times months
+Add optional one time setup fee field default 0
+
+Show outputs
+1 Big totals side by side:
+Agency total
+Pink Gorilla total
+Show savings amount and savings percent
+
+2 Breakdowns
+Agency breakdown: Discovery, Build, Maintenance
+Pink Gorilla breakdown: Monthly total, Setup
+
+3 Visual chart
+Use Recharts line chart with months on x axis and total cost cumulative on y axis
+Two lines: Agency vs Pink Gorilla
+
+4 Friendly but direct copy below
+Headline:
+Traditional agencies charge upfront fees and then charge again for maintenance.
+Body:
+Pink Gorilla stays with you on a low monthly model so your digital systems keep improving without surprise costs.
+Small note:
+These are typical market estimates and vary by scope.
+
+Interactivity
+Update totals and chart instantly when user changes project type, months, monthly fee, and maintenance toggle.
+
+Motion requirements
+Animate section entrance on scroll.
+Animate totals counting up when values change.
+Hover animations on cards and buttons.
+Animated gradient background behind the section.
+
+Deliverables
+Create a reusable component:
+components/ComparisonTool.tsx
+Add it to the homepage.
+Ensure it matches existing layout and styling patterns in the project.
+
+Quality checks
+No empty placeholders.
+No UI text contains em dashes or hyphens.
+Everything works on mobile and desktop.
+```
