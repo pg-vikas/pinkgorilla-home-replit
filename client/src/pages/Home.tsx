@@ -5,6 +5,7 @@ import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith";
 import { AboutPreview } from "@/components/sections/AboutPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { GorillaLabs } from "@/components/sections/GorillaLabs";
+import { GorillaApps } from "@/components/sections/GorillaApps";
 import { Portfolio } from "@/components/sections/Portfolio";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Portfolio />
       <WhoWeWorkWith />
       <GorillaLabs />
+      <GorillaApps />
       <AboutPreview />
       <WhatWeDo />
     </div>

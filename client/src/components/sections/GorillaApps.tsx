@@ -14,7 +14,7 @@ export function GorillaApps() {
       {/* Background dark grid or subtle pattern could go here */}
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-16 max-w-4xl mx-auto">
            <motion.h2 
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
@@ -28,9 +28,9 @@ export function GorillaApps() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.1 }}
-             className="text-xl text-muted-foreground"
+             className="text-xl md:text-2xl text-white/90 leading-relaxed font-light"
            >
-             Powerful operational software designed to run your business with precision.
+             These are our custom SaaS Products to help customize your backend of your business - we script and build this software to the specifications of your business and help you grow, scale and stabilize. Soon you will find it impossible how you used to run your business without your own custom software.
            </motion.p>
         </div>
 
