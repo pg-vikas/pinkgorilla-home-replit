@@ -113,13 +113,31 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-            <Button size="lg" className="rounded-full px-8 text-lg h-14 bg-white text-black hover:bg-white/90">
-              Build My Platform
+            <Button
+              size="lg"
+              className="rounded-full px-8 text-lg h-14 bg-white text-black hover:bg-white/90"
+              data-testid="button-chat-now"
+              onClick={() => window.open("https://pinkgorilla.online", "_blank", "noopener,noreferrer")}
+            >
+              Chat now
             </Button>
-            
-            <Button size="lg" variant="outline" className="rounded-full px-8 text-lg h-14 border-white/20 hover:bg-white/10 backdrop-blur-sm">
-              Book a Strategy Call
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full px-8 text-lg h-14 border-white/20 hover:bg-white/10 backdrop-blur-sm"
+              data-testid="button-call-text"
+              onClick={() => window.open("tel:15622846463", "_self")}
+            >
+              Call or text anytime, day or night
             </Button>
+          </div>
+
+          <div
+            className="text-sm md:text-base text-muted-foreground/90"
+            data-testid="text-phone-number"
+          >
+            562 284 6463
           </div>
         </motion.div>
 
