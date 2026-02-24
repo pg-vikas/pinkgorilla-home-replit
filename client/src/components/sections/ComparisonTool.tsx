@@ -33,7 +33,7 @@ const PROJECT_TYPES: ProjectType[] = [
 
 export function ComparisonTool() {
   const [projectType, setProjectType] = useState<ProjectType>("Basic Website");
-  const [months, setMonths] = useState<number>(24);
+  const [months, setMonths] = useState<number>(1);
   const [pgMonthlyFee, setPgMonthlyFee] = useState<number>(299);
   const [pgSetupFee, setPgSetupFee] = useState<number>(0);
   const [includeMaintenance, setIncludeMaintenance] = useState<boolean>(true);
