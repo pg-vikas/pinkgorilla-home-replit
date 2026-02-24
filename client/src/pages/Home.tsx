@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20">
       <HeroSection />
-      <UnifiedPlatform />
       <FinalCTA />
+      <UnifiedPlatform />
       <Portfolio />
       <WhoWeWorkWith />
       <GorillaLabs />
