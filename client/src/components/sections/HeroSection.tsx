@@ -187,11 +187,7 @@ export function HeroSection() {
                {/* Morphing Holographic Container */}
                <div className="relative w-[90%] max-w-[600px] aspect-square flex items-center justify-center" style={{ transformStyle: "preserve-3d" }}>
                  
-                 <img 
-                   src="/hero-animation.gif" 
-                   alt="Holographic Sphere" 
-                   className="w-full h-full object-contain rounded-full opacity-90 mix-blend-screen pointer-events-none" 
-                 />
+                 <LiquidOrb />
                  
                </div>
              </FloatingElement>
