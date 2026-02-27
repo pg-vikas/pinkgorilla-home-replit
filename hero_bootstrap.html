@@ -39,9 +39,7 @@
         }
 
         @media (min-width: 992px) {
-            .hero-title {
-                font-size: 4.5rem;
-            }
+            .hero-title { font-size: 4.5rem; }
         }
 
         .hero-description {
@@ -68,15 +66,8 @@
             text-decoration: none;
         }
         
-        .btn-custom:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-            text-decoration: none;
-        }
-
-        .btn-custom:active {
-            transform: scale(0.98);
-        }
+        .btn-custom:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); text-decoration: none; }
+        .btn-custom:active { transform: scale(0.98); }
 
         .btn-chat { background: linear-gradient(to right, #67e8f9, #ffffff, #6ee7b7); color: black; }
         .btn-book { background: linear-gradient(to right, #d946ef, #f0abfc, #8b5cf6); color: white; }
@@ -120,10 +111,10 @@
             50% { transform: translate(10px, -15px); }
         }
 
-        @keyframes liquid-orb {
-            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: scale(1); }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: scale(1.1); }
-            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: scale(1); }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(0.8); opacity: 0.5; }
         }
 
         .visual-area {
@@ -135,14 +126,46 @@
             justify-content: center;
         }
 
-        .liquid-orb {
+        /* --- SKY BLUE ROTATING CORE --- */
+        .core-sun-container {
             position: absolute;
-            width: 350px;
-            height: 350px;
-            background: linear-gradient(45deg, #00d2ff 0%, #3a7bd5 50%, #d946ef 100%);
+            width: 450px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .core-orb {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, #22d3ee 0%, #0891b2 40%, transparent 70%);
+            border-radius: 50%;
             filter: blur(40px);
-            opacity: 0.6;
-            animation: liquid-orb 8s ease-in-out infinite;
+            opacity: 0.7;
+            animation: pulse-ring 4s ease-in-out infinite;
+        }
+
+        .rotating-rays {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, rgba(34, 211, 238, 0.15) 50%, transparent 70%);
+            mask-image: repeating-conic-gradient(black 0deg 15deg, transparent 15deg 30deg);
+            -webkit-mask-image: repeating-conic-gradient(black 0deg 15deg, transparent 15deg 30deg);
+            animation: rotate-container 20s linear infinite;
+        }
+
+        .inner-glow {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: #22d3ee;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
         }
 
         .orbit-container {
@@ -150,12 +173,10 @@
             width: 100%;
             height: 100%;
             animation: rotate-container 60s linear infinite;
+            z-index: 10;
         }
 
-        .badge-wrapper {
-            position: absolute;
-            animation: floating 6s ease-in-out infinite;
-        }
+        .badge-wrapper { position: absolute; animation: floating 6s ease-in-out infinite; }
 
         .badge-content {
             animation: counter-rotate 60s linear infinite;
@@ -181,21 +202,20 @@
             background: rgba(20, 20, 20, 0.95);
         }
 
-        /* Dot Indicators */
         .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
         .dot-cyan { background: #22d3ee; box-shadow: 0 0 10px #22d3ee; }
         .dot-purple { background: #d946ef; box-shadow: 0 0 10px #d946ef; }
         .dot-green { background: #4ade80; box-shadow: 0 0 10px #4ade80; }
         .dot-orange { background: #fb923c; box-shadow: 0 0 10px #fb923c; }
 
-        /* Badge Positions (Relative to center) */
-        .pos-1 { top: 10%; left: 5%; animation-delay: 0s; }
-        .pos-2 { top: 25%; right: 5%; animation-delay: 1s; }
-        .pos-3 { bottom: 30%; left: -5%; animation-delay: 2s; }
-        .pos-4 { bottom: 15%; right: 10%; animation-delay: 0.5s; }
-        .pos-5 { top: 50%; left: 40%; animation-delay: 1.5s; }
-        .pos-6 { top: 0%; right: 20%; animation-delay: 2.5s; }
-        .pos-7 { top: 35%; left: -15%; animation-delay: 3s; }
+        /* Badge Positions */
+        .pos-1 { top: 5%; left: 0%; animation-delay: 0s; }
+        .pos-2 { top: 20%; right: 0%; animation-delay: 1s; }
+        .pos-3 { bottom: 25%; left: -10%; animation-delay: 2s; }
+        .pos-4 { bottom: 10%; right: 5%; animation-delay: 0.5s; }
+        .pos-5 { top: 45%; left: 35%; animation-delay: 1.5s; }
+        .pos-6 { top: -5%; right: 25%; animation-delay: 2.5s; }
+        .pos-7 { top: 30%; left: -20%; animation-delay: 3s; }
     </style>
 </head>
 <body>
@@ -227,10 +247,15 @@
                 </div>
             </div>
 
-            <!-- Visual Content with Full Animation -->
+            <!-- Visual Content with Sky Blue Core -->
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="visual-area">
-                    <div class="liquid-orb"></div>
+                    <!-- The Rotating Sky Blue Core -->
+                    <div class="core-sun-container">
+                        <div class="core-orb"></div>
+                        <div class="rotating-rays"></div>
+                        <div class="inner-glow"></div>
+                    </div>
                     
                     <div class="orbit-container">
                         <!-- Orbiting Badges -->
